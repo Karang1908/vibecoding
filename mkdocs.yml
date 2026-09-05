@@ -1,0 +1,111 @@
+site_name: Vibecoding 101
+site_description: 3-Day Masterclass on AI-First Engineering, High-Token Free Models, Live Prototyping & Production Deployment
+site_author: Priyanshu & Armaan | GDG BITS Pilani Dubai Campus
+site_url: https://prxcode.github.io/vibecoding101/
+repo_name: prxcode/vibecoding101
+repo_url: https://github.com/prxcode/vibecoding101
+copyright: Google Developer Groups &bull; BITS Pilani Dubai Campus
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  logo: assets/images/gdg-brackets.svg
+  favicon: assets/images/favicon.svg
+  palette:
+    # Light mode
+    - scheme: default
+      primary: white
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Outfit
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/prxcode/vibecoding101
+      name: GitHub
+    - icon: fontawesome/brands/google
+      link: https://developers.google.com/community/gdg
+      name: Google
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/gdg-bpdc/
+      name: LinkedIn
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Workshop Overview: index.md
+  - "Day 1: Fundamentals & Tech Ecosystem":
+      - "1.1 Foundations: From IDEs to Vibecoding": day-1/01-what-is-vibecoding.md
+      - "1.2 LLMs & Free High-Token Models": day-1/02-tools-and-environment.md
+      - "1.3 Prompting, Rules & Context Engineering": day-1/03-prompting-and-context-engineering.md
+      - "1.4 Architecture: APIs, Specs & MCP": day-1/04-architecture-spec-and-mcp.md
+      - "1.5 Hands-On: Rapid Prototyping (20 Min)": day-1/05-hands-on-rapid-prototyping.md
+      - "1.6 Setup & Readiness Checklist for Day 2": day-1/06-day1-prep-and-readiness.md
+  - "Day 2: 2-Hour Live Product Build":
+      - "2.1 The Free Tech Stack & Project Blueprint": day-2/01-live-build-overview.md
+      - "2.2 Phase 1: Live Spec & Scaffolding (0-30m)": day-2/02-phase-1-spec-and-scaffolding.md
+      - "2.3 Phase 2: Live Gemini 2.0 Integration (30-75m)": day-2/03-phase-2-live-gemini-integration.md
+      - "2.4 Phase 3: Multimodal Vision & UI Polish (75-105m)": day-2/04-phase-3-multimodal-and-polish.md
+      - "2.5 Live Error Handling & Apology Loops": day-2/05-debugging-and-steering-models.md
+      - "2.6 Phase 4: Backup Code & Overnight Challenge": day-2/06-phase-4-wrapup-and-overnight-challenge.md
+  - "Day 3: Shipping, Production & Review Clinic":
+      - "3.1 Audience Project Review Clinic": day-3/01-audience-project-review-clinic.md
+      - "3.2 Git & GitHub Mastery for Vibecoders": day-3/02-git-and-github-mastery.md
+      - "3.3 Zero-to-Live on Vercel & Cloud": day-3/03-shipping-to-vercel-and-cloud.md
+      - "3.4 Environment Variables & Secret Security": day-3/04-environment-variables-and-secrets.md
+      - "3.5 Autonomous Agents & Self-Healing Workflows": day-3/05-agentic-workflows-and-subagents.md
+      - "3.6 Vibecoder's Handbook & Next Steps": day-3/06-vibecoders-handbook-and-next-steps.md

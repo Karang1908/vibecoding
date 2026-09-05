@@ -1,0 +1,465 @@
+/* ==========================================================================
+   GDG Vibecoding 101 - Custom Stylesheet
+   Identity: Google Developer Groups • BITS Pilani Dubai Campus
+   Instructors: Priyanshu & Armaan
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+
+:root {
+  /* Google Developer Brand Colors */
+  --gdg-blue: #4285F4;
+  --gdg-red: #EA4335;
+  --gdg-yellow: #FBBC05;
+  --gdg-green: #34A853;
+  --gdg-blue-hover: #1a73e8;
+  --gdg-blue-subtle: rgba(66, 133, 244, 0.08);
+
+  /* Light Scheme Palette - High Contrast */
+  --md-default-fg-color: #202124;
+  --md-default-fg-color--light: #3c4043;
+  --md-default-fg-color--lighter: #5f6368;
+  --md-default-fg-color--lightest: #80868b;
+  --md-default-bg-color: #ffffff;
+  --md-default-bg-color--light: #f8f9fa;
+
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #3c4043;
+  --md-primary-fg-color--dark: #202124;
+  --md-primary-bg-color: #202124;
+  --md-primary-bg-color--light: #3c4043;
+  --md-accent-fg-color: #4285F4;
+  --md-accent-fg-color--transparent: rgba(66, 133, 244, 0.12);
+
+  /* Typography */
+  --md-text-font: 'Outfit', 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --md-code-font: 'JetBrains Mono', monospace;
+
+  /* Card and Border Accents */
+  --gdg-border-radius: 12px;
+  --gdg-card-border: 1px solid #dadce0;
+  --gdg-card-shadow: 0 2px 8px rgba(60, 64, 67, 0.08);
+}
+
+/* Dark Scheme Palette (Slate) */
+[data-md-color-scheme="slate"] {
+  --md-default-fg-color: #e8eaed;
+  --md-default-fg-color--light: #bdc1c6;
+  --md-default-fg-color--lighter: #9aa0a6;
+  --md-default-fg-color--lightest: #5f6368;
+  --md-default-bg-color: #121314;
+  --md-default-bg-color--light: #1e1f20;
+
+  --md-primary-fg-color: #1a1a1c;
+  --md-primary-fg-color--light: #e8eaed;
+  --md-primary-fg-color--dark: #121314;
+  --md-primary-bg-color: #f1f3f4;
+  --md-accent-fg-color: #8ab4f8;
+  --md-accent-fg-color--transparent: rgba(138, 180, 248, 0.16);
+
+  --gdg-card-border: 1px solid #3c4043;
+  --gdg-card-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --gdg-blue-subtle: rgba(138, 180, 248, 0.12);
+}
+
+/* ==========================================================================
+   Header & Logo Sizing (Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+.md-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(
+    90deg,
+    #4285F4 0%,
+    #4285F4 25%,
+    #EA4335 25%,
+    #EA4335 50%,
+    #FBBC05 50%,
+    #FBBC05 75%,
+    #34A853 75%,
+    #34A853 100%
+  ) 1;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Logo prominence & visibility */
+.md-header__button.md-logo {
+  margin: auto 0.6rem auto 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.2rem !important;
+  width: auto !important;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.md-header__button.md-logo:hover img,
+.md-header__button.md-logo:hover svg {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    height: 1.85rem !important;
+  }
+}
+
+[data-md-color-scheme="default"] .md-header {
+  background-color: #ffffff !important;
+  color: #202124 !important;
+}
+
+[data-md-color-scheme="default"] .md-header__title,
+[data-md-color-scheme="default"] .md-header__topic,
+[data-md-color-scheme="default"] .md-header__button {
+  color: #202124 !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #1e1f20 !important;
+  color: #e8eaed !important;
+}
+
+/* Header Navigation Tabs */
+.md-tabs {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #f8f9fa;
+  color: #3c4043;
+}
+
+[data-md-color-scheme="default"] .md-tabs__link--active,
+[data-md-color-scheme="default"] .md-tabs__link:hover {
+  color: #4285F4;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #242628;
+  border-bottom: 1px solid #3c4043;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link--active,
+[data-md-color-scheme="slate"] .md-tabs__link:hover {
+  color: #8ab4f8;
+}
+
+/* ==========================================================================
+   Hero & Cards
+   ========================================================================== */
+
+.gdg-hero {
+  border-radius: var(--gdg-border-radius);
+  padding: 2.2rem 1.8rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.08) 0%, rgba(52, 168, 83, 0.06) 100%);
+  border: 1px solid rgba(66, 133, 244, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+[data-md-color-scheme="slate"] .gdg-hero {
+  background: linear-gradient(135deg, rgba(66, 133, 244, 0.12) 0%, rgba(52, 168, 83, 0.1) 100%);
+  border-color: rgba(138, 180, 248, 0.25);
+}
+
+.gdg-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #4285F4, #EA4335, #FBBC05, #34A853);
+}
+
+.gdg-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.gdg-badge-blue { background: #e8f0fe; color: #1967d2; }
+.gdg-badge-red { background: #fce8e6; color: #c5221f; }
+.gdg-badge-yellow { background: #fef7e0; color: #b06000; }
+.gdg-badge-green { background: #e6f4ea; color: #137333; }
+
+[data-md-color-scheme="slate"] .gdg-badge-blue { background: rgba(66, 133, 244, 0.2); color: #8ab4f8; }
+[data-md-color-scheme="slate"] .gdg-badge-red { background: rgba(234, 67, 53, 0.2); color: #f28b82; }
+[data-md-color-scheme="slate"] .gdg-badge-yellow { background: rgba(251, 188, 5, 0.2); color: #fdd663; }
+[data-md-color-scheme="slate"] .gdg-badge-green { background: rgba(52, 168, 83, 0.2); color: #81c995; }
+
+/* Grid Cards with responsive breakpoints */
+.gdg-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .gdg-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gdg-card {
+  border-radius: var(--gdg-border-radius);
+  border: var(--gdg-card-border);
+  box-shadow: var(--gdg-card-shadow);
+  padding: 1.4rem;
+  background: var(--md-default-bg-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gdg-card p {
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.6;
+}
+
+.gdg-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(60, 64, 67, 0.12);
+  border-color: var(--gdg-blue);
+}
+
+[data-md-color-scheme="slate"] .gdg-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border-color: #8ab4f8;
+}
+
+/* ==========================================================================
+   Session Overview & Focus Banners (Slide-Ready Header)
+   ========================================================================== */
+
+.presenter-cue,
+.session-banner {
+  background: var(--gdg-blue-subtle);
+  border-left: 4px solid var(--gdg-blue);
+  border-radius: 0 var(--gdg-border-radius) var(--gdg-border-radius) 0;
+  padding: 1rem 1.3rem;
+  margin: 1.4rem 0;
+  color: var(--md-default-fg-color);
+}
+
+.presenter-cue .cue-header,
+.session-banner .banner-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.presenter-cue .cue-header svg,
+.session-banner .banner-header svg {
+  color: var(--gdg-blue);
+  flex-shrink: 0;
+}
+
+.presenter-cue strong.cue-title,
+.session-banner strong.banner-title {
+  display: inline-block;
+  color: var(--gdg-blue);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Prompt Box Styling */
+.prompt-box {
+  background: #f1f3f4;
+  border: 1px solid #dadce0;
+  border-radius: var(--gdg-border-radius);
+  padding: 1.2rem;
+  margin: 1.25rem 0;
+  position: relative;
+  font-family: var(--md-code-font);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #202124;
+}
+
+[data-md-color-scheme="slate"] .prompt-box {
+  background: #202124;
+  border-color: #3c4043;
+  color: #e8eaed;
+}
+
+.prompt-box .prompt-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gdg-blue);
+  margin-bottom: 0.6rem;
+}
+
+/* Clean Button Styles */
+.gdg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--gdg-blue);
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 0.55rem 1.15rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.gdg-btn:hover {
+  background-color: var(--gdg-blue-hover);
+  transform: translateY(-1px);
+}
+
+.gdg-btn-outline {
+  background-color: transparent;
+  color: var(--gdg-blue) !important;
+  border: 1.5px solid var(--gdg-blue);
+}
+
+[data-md-color-scheme="slate"] .gdg-btn-outline {
+  color: #8ab4f8 !important;
+  border-color: #8ab4f8;
+}
+
+.gdg-btn-outline:hover {
+  background-color: var(--gdg-blue-subtle);
+}
+
+/* Footer Accent & Clean Single-Line Alignment */
+.md-footer {
+  border-top: 1px solid #dadce0;
+}
+
+[data-md-color-scheme="slate"] .md-footer {
+  border-top: 1px solid #3c4043;
+}
+
+.md-footer-meta__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.md-copyright {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ==========================================================================
+   Mermaid Diagrams - Dark & Light Mode Visibility Masterclass
+   ========================================================================== */
+
+.mermaid {
+  font-family: var(--md-text-font) !important;
+  margin: 1.5rem 0 !important;
+  text-align: center;
+}
+
+.mermaid text,
+.mermaid .label {
+  font-family: var(--md-text-font) !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+}
+
+/* LIGHT THEME MERMAID VISIBILITY */
+[data-md-color-scheme="default"] .mermaid text,
+[data-md-color-scheme="default"] .mermaid .label,
+[data-md-color-scheme="default"] .mermaid .node .label,
+[data-md-color-scheme="default"] .mermaid .cluster .label,
+[data-md-color-scheme="default"] .mermaid .edgeLabel {
+  fill: #202124 !important;
+  color: #202124 !important;
+}
+
+[data-md-color-scheme="default"] .mermaid .edgePath .path {
+  stroke: #5f6368 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* DARK THEME MERMAID VISIBILITY */
+[data-md-color-scheme="slate"] .mermaid text,
+[data-md-color-scheme="slate"] .mermaid .label,
+[data-md-color-scheme="slate"] .mermaid .node .label,
+[data-md-color-scheme="slate"] .mermaid .cluster .label,
+[data-md-color-scheme="slate"] .mermaid .edgeLabel,
+[data-md-color-scheme="slate"] .mermaid span,
+[data-md-color-scheme="slate"] .mermaid p,
+[data-md-color-scheme="slate"] .mermaid div {
+  fill: #f8f9fa !important;
+  color: #f8f9fa !important;
+}
+
+/* Force dark surface on all nodes in dark theme so light fills don't hide text */
+[data-md-color-scheme="slate"] .mermaid .node rect,
+[data-md-color-scheme="slate"] .mermaid .node circle,
+[data-md-color-scheme="slate"] .mermaid .node polygon,
+[data-md-color-scheme="slate"] .mermaid .node path {
+  fill: #202124 !important;
+  stroke: #8ab4f8 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Clusters / Subgraphs in dark mode */
+[data-md-color-scheme="slate"] .mermaid .cluster rect {
+  fill: #161719 !important;
+  stroke: #5f6368 !important;
+  stroke-width: 1px !important;
+}
+
+/* Flowchart Edges and Arrows in dark mode */
+[data-md-color-scheme="slate"] .mermaid .edgePath .path,
+[data-md-color-scheme="slate"] .mermaid .flowchart-link {
+  stroke: #8ab4f8 !important;
+  stroke-width: 1.5px !important;
+}
+
+[data-md-color-scheme="slate"] .mermaid .marker {
+  fill: #8ab4f8 !important;
+  stroke: #8ab4f8 !important;
+}
+
+[data-md-color-scheme="slate"] .mermaid .edgeLabel rect {
+  fill: #121314 !important;
+  opacity: 0.95 !important;
+}
+
+/* Timeline & Actor blocks in dark mode */
+[data-md-color-scheme="slate"] .mermaid .timeline-event,
+[data-md-color-scheme="slate"] .mermaid .actor {
+  fill: #202124 !important;
+  stroke: #8ab4f8 !important;
+}

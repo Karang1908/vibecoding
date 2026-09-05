@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 96" width="100%" height="100%">
+  <defs>
+    <style>
+      .bracket { stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .brand-title { font-family: 'Outfit', 'Google Sans', 'Roboto', sans-serif; font-weight: 700; font-size: 26px; fill: currentColor; }
+      .brand-sub { font-family: 'Outfit', 'Google Sans', 'Roboto', sans-serif; font-weight: 500; font-size: 15px; fill: #5f6368; }
+    </style>
+  </defs>
+  <g transform="translate(10, 8)">
+    <!-- Left Bracket < (Blue, Red) -->
+    <path class="bracket" stroke="#EA4335" d="M 52,22 L 24,48" />
+    <path class="bracket" stroke="#4285F4" d="M 24,48 L 52,74" />
+    <!-- Right Bracket > (Green, Yellow) -->
+    <path class="bracket" stroke="#34A853" d="M 68,22 L 96,48" />
+    <path class="bracket" stroke="#FBBC05" d="M 96,48 L 68,74" />
+  </g>
+  <g transform="translate(130, 42)">
+    <text class="brand-title" x="0" y="0">Google Developer Groups</text>
+    <text class="brand-sub" x="0" y="24">Vibecoding 101 • 3-Day Workshop</text>
+  </g>
+</svg>
