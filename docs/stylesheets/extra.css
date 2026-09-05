@@ -463,3 +463,76 @@
   fill: #202124 !important;
   stroke: #8ab4f8 !important;
 }
+
+/* ==========================================================================
+   Mobile Ergonomics & Edge Padding (Smartphones & Tablets)
+   ========================================================================== */
+
+@media screen and (max-width: 768px) {
+  /* Ensure content does not touch phone screen edges */
+  .md-main__inner {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .md-content__inner {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Custom components edge spacing */
+  .gdg-hero {
+    padding: 1.5rem 1.25rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .session-banner,
+  .presenter-cue {
+    padding: 0.9rem 1.1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .prompt-box {
+    padding: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .gdg-card {
+    padding: 1.25rem !important;
+  }
+
+  .comments-section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .comments-section .gdg-card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Extra breathing room on small smartphone screens */
+  .md-main__inner {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  .md-content__inner {
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+  }
+
+  .gdg-hero {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .session-banner {
+    padding: 0.85rem 0.95rem !important;
+  }
+}
+
