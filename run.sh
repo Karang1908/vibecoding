@@ -5,9 +5,6 @@ echo "==================================================="
 echo ""
 
 mkdir -p "docs/assets/images"
-if [ -f "gdg-logo.png" ]; then
-    cp -f "gdg-logo.png" "docs/assets/images/logo.png"
-fi
 
 if ! command -v python3 &> /dev/null; then
     echo "[!] Python3 not found. Please install Python 3.9+"

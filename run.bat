@@ -7,12 +7,6 @@ echo.
 :: Ensure docs/assets/images directory exists
 if not exist "docs\assets\images" mkdir "docs\assets\images"
 
-:: Copy existing gdg-logo.png if present
-if exist "gdg-logo.png" (
-    echo [+] Syncing GDG logo asset...
-    copy /Y "gdg-logo.png" "docs\assets\images\logo.png" >nul
-)
-
 :: Check if Python is installed
 python --version >nul 2>&1
 if %errorlevel% neq 0 (
