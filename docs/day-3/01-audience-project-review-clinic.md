@@ -15,7 +15,7 @@ description: "Live review of student projects submitted between Day 2 and Day 3,
 
 ## The Review Clinic Structure
 
-Live code reviews provide immediate, high-retention feedback. During this opening session, Priyanshu and Armaan review projects across four core evaluation lenses:
+Live code reviews provide immediate, high-retention feedback. During this opening session, [Priyanshu](https://github.com/prxcode) and [Armaan](https://github.com/armaaxs) review projects across four core evaluation lenses:
 
 ```mermaid
 graph TD

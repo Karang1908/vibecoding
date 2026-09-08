@@ -1,5 +1,5 @@
 ---
-title: "Vibecoding 101 | Workshop Notes & Tutorial"
+title: "Vibecoding 101 | Workshop Notes & Syllabus"
 description: "Mastering AI-First Software Engineering, Live Prototyping, Free High-Token Models, and Production Deployments."
 ---
 
@@ -18,117 +18,113 @@ description: "Mastering AI-First Software Engineering, Live Prototyping, Free Hi
   <p style="font-size: 0.9rem; margin-bottom: 1.2rem; color: var(--gdg-blue);">
     <strong>Workshop Conducted by:</strong> 
     <a href="https://github.com/prxcode" target="_blank" rel="noopener" style="font-weight: 600; text-decoration: underline;">Priyanshu</a> 
-    and <strong>Armaan</strong> &bull; GDG BITS Pilani Dubai Campus
+    and <a href="https://github.com/armaaxs" target="_blank" rel="noopener" style="font-weight: 600; text-decoration: underline;">Armaan</a> &bull; GDG BITS Pilani Dubai Campus
   </p>
   
-  <a href="day-1/01-what-is-vibecoding.md" class="gdg-btn">Start Day 1 &rarr;</a>
-  <a href="#workshop-curriculum-at-a-glance" class="gdg-btn gdg-btn-outline" style="margin-left: 0.5rem;">View Agenda</a>
+  <a href="pre-workshop/01-stack-setup/" class="gdg-btn">Pre-Workshop Setup &rarr;</a>
+  <a href="day-1/01-what-is-vibecoding/" class="gdg-btn gdg-btn-outline" style="margin-left: 0.5rem;">Start Day 1 &rarr;</a>
 </div>
 
 <div class="session-banner">
   <div class="banner-header">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-    <strong class="banner-title">Zero-to-Hero Roadmap for CSE Students (1st, 2nd & 3rd Year)</strong>
+    <strong class="banner-title">Zero-to-Hero Roadmap for CSE Students</strong>
   </div>
-  This curriculum is engineered to take university students across all levels from ground-zero basics to frontier autonomous systems:
-  <ul style="margin: 0.5rem 0 0 1.2rem; padding: 0; line-height: 1.6;">
-    <li><strong>1st Year CSE (Freshers)</strong>: What is source code vs machine binary, how compilers and runtimes work, what an IDE is (VS Code, Google Antigravity, Cursor vs Notepad), and what an API/JSON is.</li>
-    <li><strong>2nd Year CSE (Sophomores)</strong>: How AI IDEs index repos using ASTs, prompt and context engineering (.cursorrules, AGENTS.md), and building real apps using Google Gemini 2.0 Flash (1M free tokens).</li>
-    <li><strong>3rd Year CSE (Juniors)</strong>: Spec-Driven Development, Model Context Protocol (MCP & JSON-RPC 2.0), autonomous agent ReAct loops, multi-agent subagent hierarchies, and production CI/CD deployments.</li>
-  </ul>
+  This documentation serves as the comprehensive syllabus for the Vibecoding 101 Workshop, replacing traditional slides with a live, actionable reference. The curriculum is broken down into a 3-day sprint designed to take beginners from zero to a deployed, backend-supported application.
 </div>
 
 ---
 
-## What is Vibecoding?
+## Workshop Timeline & Key Deliverables
 
-> "There is a new kind of coding I call 'vibecoding', where you fully give in to the vibes, embrace the LLM, and forget that the code even exists. You just talk, iterate, watch it work, and steer."  
-> — **Andrej Karpathy** (Co-founder OpenAI, former Director of AI at Tesla)
-
-```mermaid
-graph LR
-    A[Human Intent & Architecture] -->|Natural Language Spec| B[LLM / Frontier Model]
-    B -->|Generates Multi-File Code| C[Runtime & Compiler Loop]
-    C -->|Errors, Diffs, UX Feedback| B
-    C -->|Taste & Evaluation| A
-```
-
-True professional vibecoding is the discipline of **Context Engineering**, **Spec-Driven Architecture**, and **Deterministic Evaluation**. The AI handles repetitive boilerplate; you provide systems architecture, security boundaries, and product taste.
+| Workshop Timeline | Phase Focus | Key Deliverables |
+| :--- | :--- | :--- |
+| **Pre-Workshop** | Environment & Secrets | Configured IDE (Cursor/VS Code), Node.js, Git, Free Cloud Accounts & API Keys |
+| **Day 1** | Learn + Choose the Build | GitHub Repo, Defined PRD, Locked MVP Idea |
+| **Day 2** | Live Product Build | Local Working App, Core UI/UX, Git Commits |
+| **Day 3** | Backend & Shipping | Supabase Database, Live Vercel URL, Final Polish |
+| **Post-Workshop** | Beyond Vibecoding 101 | Live Documentation Workflows, Safe MVP Scaling, Open Source Contribution |
 
 ---
 
-## Workshop Curriculum at a Glance
+## Phase Breakdowns & Daily Curriculum
 
-<div class="gdg-card-grid">
+### 0. Pre-Workshop: Setup & Prerequisites
 
-  <div class="gdg-card">
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <span class="gdg-badge gdg-badge-blue">Day 1</span>
-      <span style="font-size: 0.8rem; color: #5f6368;">Masterclass</span>
-    </div>
-    <h3 style="margin: 0.75rem 0 0.5rem 0;">Fundamentals & Tech Ecosystem</h3>
-    <p style="font-size: 0.9rem; flex-grow: 1; color: var(--md-default-fg-color--light);">
-      Master all core concepts in one intensive session. Learn token mechanics, KV caching, hallucination triggers, system rules (.cursorrules, AGENTS.md), and explore free high-token models like Gemini 2.0 Flash (1M tokens free tier).
-    </p>
-    <a href="day-1/01-what-is-vibecoding.md" style="font-weight: 600; color: #4285F4; text-decoration: none;">Explore Day 1 Modules &rarr;</a>
-  </div>
+*Before Day 1 begins, participants need their environment ready so time isn't wasted on installations.*
 
-  <div class="gdg-card">
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <span class="gdg-badge gdg-badge-red">Day 2</span>
-      <span style="font-size: 0.8rem; color: #5f6368;">Live Build</span>
-    </div>
-    <h3 style="margin: 0.75rem 0 0.5rem 0;">2-Hour Live Product Build</h3>
-    <p style="font-size: 0.9rem; flex-grow: 1; color: var(--md-default-fg-color--light);">
-      Watch an end-to-end fullstack AI application ("OmniVibe AI Studio") built live in 120 minutes. Integrating free Google AI Studio Gemini 2.0 Flash APIs, live streaming, vision analysis, error recovery, and UI polish.
-    </p>
-    <a href="day-2/01-live-build-overview.md" style="font-weight: 600; color: #EA4335; text-decoration: none;">Explore Day 2 Modules &rarr;</a>
-  </div>
-
-  <div class="gdg-card">
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <span class="gdg-badge gdg-badge-green">Day 3</span>
-      <span style="font-size: 0.8rem; color: #5f6368;">Production & Review</span>
-    </div>
-    <h3 style="margin: 0.75rem 0 0.5rem 0;">Shipping, Reviews & Vercel Deploy</h3>
-    <p style="font-size: 0.9rem; flex-grow: 1; color: var(--md-default-fg-color--light);">
-      Live Code Review Clinic of projects built by attendees overnight. Master Git/GitHub workflows, 1-click deployments to Vercel, and environment variable (.env) secret hygiene.
-    </p>
-    <a href="day-3/01-audience-project-review-clinic.md" style="font-weight: 600; color: #34A853; text-decoration: none;">Explore Day 3 Modules &rarr;</a>
-  </div>
-
-</div>
+* **[The Vibecoding Stack Setup](pre-workshop/01-stack-setup.md):** Downloading and installing Cursor (or VS Code with AI extensions), Node.js (LTS), and Git.
+* **[Account Provisioning](pre-workshop/02-account-provisioning.md):** Creating free-tier developer accounts for GitHub, Vercel, Supabase, and Google AI Studio.
+* **[API Keys 101](pre-workshop/03-api-keys-101.md):** How to generate necessary API keys (Google Gemini / AI Studio, Anthropic, OpenAI) and why you must never commit them to public repositories.
 
 ---
 
-## Complete 3-Day Schedule
+### Day 1: Fundamentals & Tech Ecosystem
 
-| Day | Module | Focus Area | Deliverable |
-| :--- | :--- | :--- | :--- |
-| **Day 1** | [1.1 Foundations: From IDEs to Vibecoding](day-1/01-what-is-vibecoding.md) | Ground-zero basics: IDEs, compilers, runtimes & the AI paradigm shift | Foundational mindset |
-| **Day 1** | [1.2 LLMs & Free High-Token Models](day-1/02-tools-and-environment.md) | Transformer mechanics, Gemini 2.0 Flash 1M tokens free tier, IDE setup | Configured AI toolchain |
-| **Day 1** | [1.3 Prompting, Rules & Context](day-1/03-prompting-and-context-engineering.md) | .cursorrules, AGENTS.md, negative constraints & symbol pinning | Custom project rules |
-| **Day 1** | [1.4 Architecture: APIs, Specs & MCP](day-1/04-architecture-spec-and-mcp.md) | Client-server APIs, JSON, Spec-Driven Development & Model Context Protocol | Production PRD template |
-| **Day 1** | [1.5 Hands-On Warm-up (20 Min)](day-1/05-hands-on-rapid-prototyping.md) | Rapid build: PromptVault Lite using clean 3-file architecture | Running prototype |
-| **Day 1** | [1.6 Setup & Readiness Checklist](day-1/06-day1-prep-and-readiness.md) | Free Google AI Studio API key verification & Git environment test | Verified workstation |
-| **Day 2** | [2.1 Live Build Blueprint](day-2/01-live-build-overview.md) | OmniVibe Studio architecture, zero-cost stack & 120-min roadmap | Architectural spec |
-| **Day 2** | [2.2 Phase 1: Live Spec & Scaffolding](day-2/02-phase-1-spec-and-scaffolding.md) | Feature ideation, SPEC.md & Google Material 3 layout | Running workspace UI |
-| **Day 2** | [2.3 Phase 2: Live Gemini Integration](day-2/03-phase-2-live-gemini-integration.md) | Gemini 2.0 Flash REST API, streaming response & error handling | Live AI intelligence |
-| **Day 2** | [2.4 Phase 3: Multimodal Vision & Polish](day-2/04-phase-3-multimodal-and-polish.md) | Drag-and-drop image analysis, Markdown export & dark mode | Complete fullstack app |
-| **Day 2** | [2.5 Diagnostic Error Handling](day-2/05-debugging-and-steering-models.md) | Resolving hallucination loops, compiler traces & context resets | Error recovery playbook |
-| **Day 2** | [2.6 Backup Code & Overnight Challenge](day-2/06-phase-4-wrapup-and-overnight-challenge.md) | Full verified codebase checkpoint & student hackathon assignment | Overnight challenge |
-| **Day 3** | [3.1 Audience Project Review Clinic](day-3/01-audience-project-review-clinic.md) | Peer review of overnight student repositories & live diagnostic clinic | Code quality audit |
-| **Day 3** | [3.2 Git & GitHub Mastery](day-3/02-git-and-github-mastery.md) | Git vs GitHub, commits, branches, PRs & portfolio README | Published GitHub repo |
-| **Day 3** | [3.3 Zero-to-Live on Vercel](day-3/03-shipping-to-vercel-and-cloud.md) | Vercel CLI, automated GitHub CI/CD & custom domains | Public HTTPS live URL |
-| **Day 3** | [3.4 Environment Variables & Secrets](day-3/04-environment-variables-and-secrets.md) | .env management, preventing credential scraping & Vercel secrets | Secure cloud deployment |
-| **Day 3** | [3.5 Autonomous Agents & Workflows](day-3/05-agentic-workflows-and-subagents.md) | Chatbots vs Agents, ReAct loops & autonomous self-healing tests | Multi-agent workflows |
-| **Day 3** | [3.6 Vibecoder's Handbook & Next Steps](day-3/06-vibecoders-handbook-and-next-steps.md) | The 10 Commandments, Solution Challenge & GDG community pathway | Certificate & roadmap |
+**Goal:** Understand the AI-assisted workflow, set up version control, and lock in a highly focused project scope.  
+**Key Deliverables:** Initialized GitHub Repo, Defined PRD & `SPEC.md`, Locked MVP Idea.
+
+* **[The Vibecoding Workflow](day-1/01-what-is-vibecoding.md):** Introduction to the Antigravity framework. Master the core loop: `prompt → build → inspect → iterate`.
+* **[LLMs & Free High-Token Models](day-1/02-tools-and-environment.md):** Transformer token mechanics, KV caching, and leveraging Google Gemini 2.0 Flash (1M tokens free tier).
+* **[The Anatomy of a Perfect Prompt](day-1/03-prompting-and-context-engineering.md):** Breaking down prompts into three pillars: Context (what we have), Intent (what we want), and Constraints (what the AI should *not* do).
+* **[Context Window Management](day-1/03-prompting-and-context-engineering.md):** Understanding the memory limits of AI models. How to use `@-mentions` (like `@Files` or `@Docs` in Cursor) to feed the AI only the specific files it needs, rather than confusing it with the whole codebase.
+* **[Zero-Shot vs. Few-Shot Prompting](day-1/03-prompting-and-context-engineering.md):** When to just ask the AI to build something (zero-shot) versus when to provide examples of the code style or UI pattern you want it to mimic (few-shot).
+* **[Agent Instructions (SKILL.md)](day-1/03-prompting-and-context-engineering.md):** How to write and use reusable project instructions to effectively steer the coding agent without micromanaging syntax.
+* **[Version Control Essentials](day-1/04-architecture-spec-and-mcp.md):** Setting up a GitHub repository. Understanding commits, branches, pushes, and why version control is your safety net when working with AI.
+* **[PRD & MVP Basics](day-1/04-architecture-spec-and-mcp.md):** Define the target user, the core problem, and the "done" criteria. When framing your MVP, commit to a narrow, specialized core flow. A flawlessly executed, highly focused tool signals genuine competence for future internship applications, keeping your portfolio from looking like a jack of all trades but master of none.
+* **[Idea Selection & Feasibility](day-1/04-architecture-spec-and-mcp.md):** Review submissions, debate feasibility, and lock the scope of the app the group will build over the next two days.
+* **[Hands-On Rapid Prototyping](day-1/05-hands-on-rapid-prototyping.md):** 20-minute rapid prototype build warm-up.
+* **[Day 1 Checkpoint & Readiness](day-1/06-day1-prep-and-readiness.md):** Final deliverable audit before the Day 2 build sprint.
 
 ---
 
-## Speaker Details
+### Day 2: The Build Sprint
 
-- **Instructor**: Priyanshu — GitHub: [github.com/prxcode](https://github.com/prxcode)
-- **Co-Instructor**: Armaan
-- **Chapter**: GDG BITS Pilani Dubai Campus
-- **Inquiries & Doubts**: Post directly in the comments section below or join the community discord.
+**Goal:** Transform the PRD into a functional, localized application with a complete core user journey.  
+**Key Deliverables:** Local Working App, Core UI/UX, Git Commits.
+
+* **[Live Build Overview & Blueprint](day-2/01-live-build-overview.md):** OmniVibe AI Studio architecture, free tech stack, and 120-minute pacing guide.
+* **[Project Initialization & Component-Driven Generation](day-2/02-phase-1-spec-and-scaffolding.md):** Set up the environment and prompt the coding agent to generate the initial file structure and baseline UI components. Why you should ask the AI to build small, isolated components (e.g., "Build the navigation bar") instead of full pages (e.g., "Build the whole dashboard").
+* **[Core Flow Construction & Logic Integration](day-2/03-phase-2-live-gemini-integration.md):** Build the main screens interactively. Practice prompting the AI, testing output, and iterating on design. Wire up application logic, state management, and the Google Gemini 2.0 Flash REST API.
+* **[Multimodal Vision & UI Polish](day-2/04-phase-3-multimodal-and-polish.md):** Drag-and-drop screenshot analysis, Google Material 3 tokens, and responsive mobile docking.
+* **[Taming AI Hallucinations & Reading the Red](day-2/05-debugging-and-steering-models.md):** How to spot when the AI invents fake libraries, uses deprecated code, or hallucinates non-existent API endpoints. A beginner's guide to reading terminal stack traces and console errors, and how to paste those errors back to the AI for self-correction.
+* **[The Micro-Commit Strategy](day-2/05-debugging-and-steering-models.md):** Training the habit of committing code *every time* the app works, no matter how small the change. This creates a "save state" to revert to when an AI prompt inevitably breaks the application.
+* **[Collaborative Debugging & Feature Freeze](day-2/06-phase-4-wrapup-and-overnight-challenge.md):** Stop adding new ideas. Focus exclusively on cleaning up the UI, fixing critical bugs, and committing the final local progress to GitHub.
+* **[Overnight Hackathon Challenge](day-2/06-phase-4-wrapup-and-overnight-challenge.md):** Verified codebase checkpoint and student builder extensions.
+
+---
+
+### Day 3: Backend, Shipping & Production
+
+**Goal:** Connect a database, deploy to the live web, and present a functional application.  
+**Key Deliverables:** Supabase Database, Live Vercel URL, Final Polish.
+
+* **[Database Schema Design with AI](day-3/01-database-schema-and-supabase.md):** How to prompt the AI to write SQL or Prisma schemas that make sense for your MVP's data structure.
+* **[Backend Integration (Supabase)](day-3/01-database-schema-and-supabase.md):** Create a new project, provision database tables, insert test data, and configure environment variables in your local environment to verify data persistence.
+* **[Row Level Security (RLS) Basics](day-3/01-database-schema-and-supabase.md):** The most critical security step for beginners. Ensuring that User A cannot read, edit, or delete User B's data in the database.
+* **[Git & GitHub Mastery for Builders](day-3/02-git-and-github-mastery.md):** Branching strategies, pull requests, and crafting portfolio-worthy README files.
+* **[Production Deployment (Vercel)](day-3/03-shipping-to-vercel-and-cloud.md):** Connect your GitHub repository to Vercel, inject Supabase environment variables into production settings, and trigger the live build.
+* **[Environment Variables (`.env.local`) & Secrets](day-3/04-environment-variables-and-secrets.md):** The crucial difference between local secrets and production secrets, and how to map local Supabase URLs and Anon Keys into Vercel's dashboard.
+* **[Handling Hydration Errors & Final QA](day-3/04-environment-variables-and-secrets.md):** A common trap when deploying Next.js/React apps built by AI. How to recognize server-vs-client mismatches and guide the AI to fix them. Testing the live Vercel URL to make the demo presentation-ready.
+* **[Lightning Demos & Autonomous Agents](day-3/05-agentic-workflows-and-subagents.md):** Present the live application to the group, showcasing the complete journey from the initial idea and PRD to the final deployed URL. ReAct agent loops and self-healing test suites.
+* **[Open Q&A Clinic](day-3/05-agentic-workflows-and-subagents.md):** Final troubleshooting clinic covering prompting strategies, debugging, or next steps for expanding the app post-workshop.
+
+---
+
+### Post-Workshop: Beyond Vibecoding 101
+
+*A final section to wrap up the documentation site and give you next steps.*
+
+* **[How to Read Official Documentation](post-workshop/01-beyond-vibecoding.md):** AI models have a knowledge cutoff. Teaching participants how to feed up-to-date documentation links directly into the AI to use the newest framework features.
+* **[Scaling the MVP](post-workshop/01-beyond-vibecoding.md):** Strategies for adding features later without the AI breaking the existing, working foundation.
+* **[Open Source & Community](post-workshop/01-beyond-vibecoding.md):** How to contribute to other AI-built projects and where to find templates to start your next build faster.
+* **[The Vibecoder's Handbook & Next Steps](post-workshop/02-handbook-and-roadmap.md):** The 10 Commandments of Professional Vibecoding, Google Solution Challenge, and community pathways.
+
+---
+
+## Speaker Details & Community Support
+
+- **Lead Instructor**: Priyanshu — GitHub: [github.com/prxcode](https://github.com/prxcode)
+- **Co-Instructor**: Armaan — GitHub: [github.com/armaaxs](https://github.com/armaaxs)
+- **Host Chapter**: GDG BITS Pilani Dubai Campus
+- **Community Discussions**: Post questions, bug reports, and project demos directly on [GitHub Discussions](https://github.com/prxcode/vibecoding101/discussions).

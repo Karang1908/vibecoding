@@ -328,6 +328,31 @@ For study, testing, and extension, here is the complete 3-file codebase:
 
 ---
 
+## The Feature Freeze Protocol: Committing Local Progress
+
+Before concluding Day 2, teams must enforce a strict **Feature Freeze**:
+
+```mermaid
+graph LR
+    Build["Live Build Complete"] --> Freeze["1. Feature Freeze: Stop Adding Scope"]
+    Freeze --> Polish["2. Polish UI and Fix Edge Cases"]
+    Polish --> Commit["3. Final Local Progress Commit"]
+    Commit --> Ready["Ready for Day 3 Backend and Shipping"]
+```
+
+### The 3 Rules of Feature Freeze
+1. **Stop Adding New Ideas**: Do not start building new screens or experimental features in the last 15 minutes.
+2. **Defensive UI Polish**: Ensure empty states look intentional, error banners dismiss cleanly, and buttons have visible disabled states while loading.
+3. **Commit Your Local Progress**:
+   ```bash
+   git add .
+   git commit -m "chore: Day 2 feature freeze - core flow verified"
+   git push origin main
+   ```
+This locks in your working milestone. In Day 3, we connect this local app to a persistent Supabase database and deploy it to a live Vercel URL.
+
+---
+
 ## The Student Overnight Challenge
 
 Between Day 2 and Day 3, every attendee must build upon this foundation:
@@ -339,4 +364,4 @@ Between Day 2 and Day 3, every attendee must build upon this foundation:
    - **Feature C**: Add a Model Selector toggle between `gemini-2.0-flash` and `gemini-2.0-flash-thinking-exp`.
 3. **Push to GitHub**: Commit your changes and share your repository URL in our GDG workshop channel.
 
-Priyanshu and Armaan will review student repositories live on screen during **Day 3: The Audience Project Review Clinic**!
+[Priyanshu](https://github.com/prxcode) and [Armaan](https://github.com/armaaxs) will review student repositories live on screen during **Day 3: The Audience Project Review Clinic**!

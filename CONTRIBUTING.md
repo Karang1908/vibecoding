@@ -1,6 +1,6 @@
 # Contributing to Vibecoding 101
 
-Thank you for your interest in contributing to the **Vibecoding 101** workshop documentation! This open-source repository is maintained by **Google Developer Groups (GDG) • BITS Pilani Dubai Campus**, instructed by **[Priyanshu](https://github.com/prxcode)** and **Armaan**.
+Thank you for your interest in contributing to the **Vibecoding 101** workshop documentation! This open-source repository is maintained by **Google Developer Groups (GDG) • BITS Pilani Dubai Campus**, instructed by **[Priyanshu](https://github.com/prxcode)** and **[Armaan](https://github.com/armaaxs)**.
 
 Whether you're fixing a typo, adding prompt engineering templates, submitting your Day 2 challenge project, or improving accessibility, your contributions are warmly welcome.
 
@@ -76,4 +76,4 @@ git commit -m "docs: add step-by-step vercel continuous deployment guide"
 If you have questions regarding workshop content or need help with setup:
 - Open a question on [GitHub Discussions](https://github.com/prxcode/vibecoding101/discussions).
 - Open an issue on [GitHub Issues](https://github.com/prxcode/vibecoding101/issues).
-- Connect directly with **[Priyanshu](https://github.com/prxcode)** and **Armaan** at GDG BITS Pilani Dubai Campus.
+- Connect directly with **[Priyanshu](https://github.com/prxcode)** and **[Armaan](https://github.com/armaaxs)** at GDG BITS Pilani Dubai Campus.

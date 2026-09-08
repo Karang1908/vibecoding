@@ -70,7 +70,76 @@ JSON is the universal language-agnostic text format used to exchange structured 
 
 ---
 
-## Part 2: Spec-Driven Development (SDD)
+---
+
+## Part 2: Version Control Essentials (Git & GitHub)
+
+When building with autonomous coding agents, **Git is not just for backup—it is your primary safety net**.
+
+```mermaid
+graph LR
+    Working["Working App Milestone"] -->|git commit -m save| SafeState["Safe State Recorded"]
+    SafeState -->|Agent introduces broken bug| BrokenState["Broken App State"]
+    BrokenState -->|git reset or checkout| SafeState
+```
+
+### The 4 Fundamental Git Commands Every Builder Must Know
+1. **`git init` / `git clone`**: Initializes a new repository or downloads an existing codebase from GitHub.
+2. **`git status` & `git diff`**: Inspects exactly what files changed. Always run `git diff` before accepting an AI change to ensure the model didn't delete critical lines or silently change logic.
+3. **`git add .` & `git commit -m "..."`**: Records a permanent snapshot. Commit every time a feature or bugfix works.
+4. **`git push origin main`**: Synchronizes your local commits to GitHub, triggering your automated deployment pipeline on Vercel.
+
+---
+
+## Part 3: PRD & MVP Basics: Framing High-Competence Scopes
+
+A major hurdle for beginners is **scope creep**—attempting to build a multi-sided marketplace, a social network, and an AI agent all in one weekend.
+
+### Narrow, Specialized Core Flows vs. "Jack of All Trades"
+When framing your Minimum Viable Product (MVP), commit to a **single, narrow, specialized core flow**:
+
+```mermaid
+graph TD
+    subgraph Weak_Portfolio ["Shallow / Generic MVP (Red Flag for Recruiters)"]
+        W1["5 Half-Baked Features"] --> W2["Generic AI Chat + Broken Store + Dummy Auth"]
+        W2 --> W3["Signals beginner unable to finish or debug production code"]
+    end
+
+    subgraph Strong_Portfolio ["Specialized Core Flow (High-Signal for Internships)"]
+        S1["1 Specialized Critical Journey"] --> S2["Flawless Error Handling + Verified RLS + Polished UX"]
+        S2 --> S3["Signals genuine engineering competence & production readiness"]
+    end
+```
+
+A flawlessly executed, highly focused tool signals genuine competence for future internship applications, keeping your portfolio from looking like a *"jack of all trades but master of none"*.
+
+### The 3 Core Pillars of a Real MVP PRD
+1. **Target User**: Who specifically uses this in the first 60 seconds? (e.g., *"Undergraduate CSE students debugging C compiler errors"*).
+2. **Core Problem**: What single friction point does it resolve? (e.g., *"Translating cryptic GCC segmentation fault traces into annotated plain English explanations with memory diagrams"*).
+3. **"Done" Criteria (Acceptance Bounds)**: When is the prototype complete?
+   - [x] Accepts a pasted GCC error message.
+   - [x] Generates an annotated explanation using Gemini 2.0 Flash.
+   - [x] Persists history to Supabase database.
+   - [x] Runs on a live, public HTTPS Vercel URL with zero console errors.
+
+---
+
+## Part 4: Idea Selection & Feasibility Scoring
+
+Before jumping into code, review prospective app ideas through a **Technical Feasibility Filter**:
+
+| Criterion | High Feasibility (Green Light) | Low Feasibility (Red Flag / Scope Trap) |
+| :--- | :--- | :--- |
+| **Data Requirements** | Uses free public APIs or simple user-generated inputs | Requires proprietary datasets, web scraping, or paid subscriptions |
+| **State Complexity** | Single-user CRUD or clean relational database (Supabase) | Complex multi-tenant real-time websockets or blockchain ledgers |
+| **Model Interaction** | 1-2 structured prompt calls with clear JSON output | Multi-step unconstrained autonomous agent loops with unknown token costs |
+| **Time to First Demo** | Under 45 minutes to get a basic working prototype | Days of boilerplate before seeing the first screen |
+
+Debate feasibility with your peers, discard features that don't serve the core journey, and lock the project scope before Day 2 begins.
+
+---
+
+## Part 5: Spec-Driven Development (SDD)
 
 When developers prompt an AI to create an application without a specification, the AI makes ungrounded guesses: it invents the database schema in step 1, invents the API format in step 2, and contradicts itself by step 3.
 
@@ -97,9 +166,10 @@ Save this file in your project root before prompting:
 One-sentence summary of what problem this tool solves.
 
 ## 2. Technical Stack
-- Frontend: HTML5, CSS Variables, ES6 Modules
+- Frontend: HTML5, CSS Variables, ES6 Modules (or Next.js 14)
 - AI Model: Google Gemini 2.0 Flash (REST API)
-- Storage: Browser LocalStorage
+- Backend & DB: Supabase (PostgreSQL with RLS)
+- Hosting: Vercel (Production CI/CD)
 
 ## 3. Data Schema & Contracts
 ```typescript
@@ -108,7 +178,6 @@ interface ChatMessage {
   role: 'user' | 'model';  // Sender
   text: string;            // Content
   timestamp: number;       // Unix epoch ms
-  imageAttachment?: string;// Optional Base64 data URL
 }
 
 interface UserPreferences {
@@ -118,14 +187,15 @@ interface UserPreferences {
 ```
 
 ## 4. Acceptance Criteria
-- Response must stream smoothly.
-- Must persist conversation history across page refreshes.
-- Must render code blocks with a 1-click clipboard copy button.
+- Core user journey functions end-to-end without uncaught errors.
+- Supabase data persists across sessions.
+- Deployed on live Vercel HTTPS domain.
 ```
+
 
 ---
 
-## Part 3: Model Context Protocol (MCP) Masterclass
+## Part 6: Model Context Protocol (MCP) Masterclass
 
 ### The Problem MCP Solves: The $N \times M$ Integration Trap
 

@@ -102,3 +102,33 @@ Open your AI editor's Composer or Agent interface (`Ctrl+I` / `Cmd+I`) and enter
    - Sidebar opens and collapses smoothly.
    - Light/Dark mode toggles and persists across page reloads.
    - Typing a message creates a user card and simulates an AI response card.
+
+---
+
+## Engineering Principle: Component-Driven Generation vs. Monoliths
+
+A foundational mistake beginners make is asking the AI to build entire systems in one prompt:
+- ❌ *"Build the whole dashboard with charts, chat, database, authentication, and payment processing."*
+
+This invariably leads to incomplete code, syntax errors, and missing functions marked with `// TODO: implement later`.
+
+```mermaid
+graph TD
+    subgraph Anti_Pattern ["Anti-Pattern: Monolithic Generation"]
+        M1["One Giant Prompt: Build Full Dashboard"] --> M2["Model Exceeds Output Token Limit"]
+        M2 --> M3["Truncated Code, Missing Functions, Hallucinated CSS"]
+    end
+
+    subgraph Best_Practice ["Best Practice: Component-Driven Generation"]
+        C1["Step 1: Scaffolding and Base Grid"] --> C2["Step 2: Navigation Bar Component"]
+        C2 --> C3["Step 3: Message Card Component"]
+        C3 --> C4["Step 4: Input Dock Component"]
+        C4 --> C5["Composable, 100% Tested, Zero Missing Boilerplate"]
+    end
+```
+
+### Why Component-Driven Generation Wins:
+1. **Fits in Output Token Limits**: AI models typically have an output limit of 4,096 or 8,192 tokens per response. Asking for a full application in one shot guarantees truncated files.
+2. **Easy Visual Verification**: You can test each component in the browser the moment it is generated.
+3. **Isolated Bug Fixing**: If a component has an issue, you prompt the AI to fix only that isolated component rather than rewriting your entire application.
+

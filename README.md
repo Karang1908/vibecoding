@@ -11,11 +11,13 @@
 
 ## Workshop Curriculum (3-Day Zero-to-Hero Roadmap)
 
-| Day | Modules | Key Focus Areas | Hands-On Milestone |
+| Phase | Modules | Key Focus Areas | Key Deliverables |
 | :--- | :--- | :--- | :--- |
-| **Day 1** | **Modules 1.1 – 1.6** | Source code vs machine binary, compilers/runtimes, IDEs (VS Code vs Antigravity), LLM mechanics (tokens, embeddings, attention), Gemini 2.0 Flash (1M tokens free tier), `.cursorrules` / `AGENTS.md`, APIs/JSON, and Model Context Protocol (MCP). | **PromptVault Lite (20 Min)** |
-| **Day 2** | **Modules 2.1 – 2.6** | 120-minute live product build: "OmniVibe AI Studio". Spec-driven development (`SPEC.md`), Google Material 3 UI scaffolding, Gemini REST streaming integration, multimodal vision (Base64), and diagnostic error steering. | **Fullstack AI Studio** |
-| **Day 3** | **Modules 3.1 – 3.6** | Audience project review clinic, Git & GitHub mastery (commits, branches, PRs), zero-to-live Vercel edge deployment, `.env` secret protection, autonomous agent ReAct loops, multi-agent subagents, and self-healing test cycles. | **Vercel Live URL** |
+| **Pre-Workshop** | **Modules 0.1 – 0.3** | Stack setup (Cursor/VS Code, Node.js, Git), cloud account provisioning (GitHub, Vercel, Supabase), and API keys 101 with leak prevention. | **Verified Environment & Safe API Keys** |
+| **Day 1** | **Modules 1.1 – 1.6** | Foundations, Antigravity workflow (`prompt → build → inspect → iterate`), 3 prompt pillars (Context, Intent, Constraints), context windows (`@-mentions`), zero-shot vs few-shot, `SKILL.md` rules, version control essentials, and PRD/MVP framing. | **GitHub Repo, Defined PRD, Locked MVP Idea** |
+| **Day 2** | **Modules 2.1 – 2.6** | 120-minute live product build ("OmniVibe AI Studio"): component-driven generation, Gemini 2.0 Flash REST streaming, multimodal vision, taming AI hallucinations, micro-commits, reading stack traces, and feature freeze. | **Local Working App, Core UI/UX, Git Commits** |
+| **Day 3** | **Modules 3.1 – 3.6** | Database schema design with AI, Supabase integration, Row Level Security (RLS) policies, Git PR workflows, production Vercel edge deployment, `.env.local` secret hygiene, hydration error resolution, lightning demos, and open Q&A. | **Supabase Database, Live Vercel URL, Final Polish** |
+| **Post-Workshop** | **Modules 4.1 – 4.2** | How to read live official documentation with AI, defensive MVP scaling without breaking foundations, open-source contribution, and the 10 Commandments of Vibecoding. | **Long-Term Builder Roadmap** |
 
 ---
 
@@ -69,6 +71,7 @@ This repository includes a native [`vercel.json`](vercel.json) build configurati
 - **AI-Native Environments**: Google Antigravity, Cursor, and VS Code + Cline.
 - **Protocols & Standards**: Model Context Protocol (MCP & JSON-RPC 2.0), Spec-Driven Development (SDD).
 - **Web App Architecture**: Native HTML5, modern CSS3 variables, ES6 Modules (zero npm install required).
+- **Database & Auth**: Supabase (PostgreSQL with Row Level Security).
 - **Hosting & CI/CD**: Vercel Global Edge Network.
 
 ---
@@ -82,5 +85,5 @@ We welcome contributions, student project showcases, and improvements! Please re
 ## License & Credits
 
 - **Organized by**: Google Developer Groups (GDG) • BITS Pilani Dubai Campus
-- **Instructors**: **[Priyanshu](https://github.com/prxcode)** & **Armaan**
+- **Instructors**: **[Priyanshu](https://github.com/prxcode)** & **[Armaan](https://github.com/armaaxs)**
 - **Community Inquiries**: Post on [GitHub Discussions](https://github.com/prxcode/vibecoding101/discussions) or join the chapter Discord.

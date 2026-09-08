@@ -127,5 +127,5 @@ Check out the live application: [https://your-app.vercel.app](https://your-app.v
 - Hosting: Vercel Global Edge Network
 
 ## Workshop Credits
-Built with guidance from [Priyanshu](https://github.com/prxcode) and Armaan at GDG BITS Pilani Dubai Campus.
+Built with guidance from [Priyanshu](https://github.com/prxcode) and [Armaan](https://github.com/armaaxs) at GDG BITS Pilani Dubai Campus.
 ```

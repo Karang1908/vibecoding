@@ -1,28 +1,28 @@
 ---
-title: "3.6 Vibecoder's Handbook & Next Steps"
-description: "The 10 Commandments of Vibecoding, Google Solution Challenge, community roadmap, and workshop wrap-up."
+title: "The Vibecoder's Handbook & Next Steps"
+description: "The 10 Commandments of Vibecoding, Google Solution Challenge pathways, and portfolio guidelines."
 ---
 
-# 3.6 Vibecoder's Handbook & Next Steps
+# The Vibecoder's Handbook & Next Steps
 
 <div class="session-banner">
   <div class="banner-header">
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-    <strong class="banner-title">Workshop Conclusion: The Builder's Journey</strong>
+    <strong class="banner-title">Workshop Conclusion: The Builder's Manifesto</strong>
   </div>
-  Congratulations on completing Vibecoding 101! From token mechanics and context engineering on Day 1, to live product construction on Day 2, and cloud deployments on Day 3, you are now equipped to build and ship at the speed of thought.
+  Congratulations on completing Vibecoding 101! From token mechanics and context engineering on Day 1, to live product construction on Day 2, and cloud persistence with Vercel and Supabase on Day 3, you are now equipped to build and ship at the speed of thought.
 </div>
 
-## The 10 Commandments of Vibecoding
+## The 10 Commandments of Professional Vibecoding
 
-1. **Taste Over Syntax**: Your competitive edge is systems thinking, domain understanding, and product taste.
+1. **Taste Over Syntax**: Your competitive edge is systems thinking, domain understanding, and product taste. The AI types the code; you direct the architecture.
 2. **Never Code Without Git**: `git init` first, always. Version control is your instant undo against model regressions.
 3. **Spec Before Prompt**: Five minutes drafting `SPEC.md` saves 50 minutes of hallucination debugging.
 4. **Leverage Free High-Token Models**: Utilize Google AI Studio's Gemini 2.0 Flash 1M tokens free tier for full-codebase reasoning.
 5. **Pin Exact Symbols**: Use `@file`, `@docs`, and `@symbol` rather than letting the model guess file paths.
 6. **Ground in Compiler Truths**: Feed raw terminal stack traces and console errors directly into prompts instead of subjective descriptions.
 7. **Scrutinize Diffs**: Review AI-generated diffs with the same diligence as a senior lead reviewing a pull request.
-8. **Never Hardcode Secrets**: Keep API keys in `.env` or user-controlled `localStorage` to prevent credential scraping.
+8. **Never Hardcode Secrets**: Keep API keys in `.env.local` or user-controlled settings to prevent credential scraping.
 9. **Verify Hallucinated Packages**: Confirm unknown library packages on [npmjs.com](https://npmjs.com) or [pypi.org](https://pypi.org) before running install commands.
 10. **Ship to Live**: Software running solely on localhost has zero impact. Deliver live, public URLs in minutes.
 
@@ -63,7 +63,7 @@ This workshop was designed and conducted by:
 - **Priyanshu**  
   GitHub: [github.com/prxcode](https://github.com/prxcode) &bull; Lead Instructor & Curriculum Architect
 - **Armaan**  
-  Co-Instructor & Workshop Operations
+  GitHub: [github.com/armaaxs](https://github.com/armaaxs) &bull; Co-Instructor & Workshop Operations
 - **Host Organization**: GDG BITS Pilani Dubai Campus
 
 <div style="margin-top: 3rem; text-align: center; padding: 2rem; background: var(--gdg-blue-subtle); border-radius: 12px; border: 1px solid rgba(66, 133, 244, 0.2);">

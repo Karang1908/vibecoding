@@ -143,17 +143,54 @@ The practice of anchoring the model's output in verified, factual source documen
 
 ---
 
+---
+
+## The Vibecoding Workflow: The Antigravity Framework
+
+The modern AI-assisted engineering methodology is codified in the **Antigravity Framework**—an execution paradigm built around an iterative feedback loop:
+
+```mermaid
+graph LR
+    P["1. Prompt"] -->|Intent, Context, Constraints| B["2. Build"]
+    B -->|Agentic Code Diffs| I["3. Inspect"]
+    I -->|Runtime and DevTools| T["4. Iterate"]
+    T -->|Self-Correction and Refinement| P
+```
+
+### The 4 Core Stages of the Loop
+
+#### 1. Prompt (Context Engineering)
+- Define the **target deliverable** with surgical clarity.
+- Ground the request using `@-mentions` to supply exact data types, schema definitions, and system rules (`SKILL.md` or `.cursorrules`).
+- Establish strict **negative constraints** (e.g. *"Do not install new npm packages; use native browser APIs only"*).
+
+#### 2. Build (Autonomous Agent Generation)
+- The coding agent (Cursor Composer, Google Antigravity, or Cline) parses the request against the workspace index.
+- It calculates unified search-and-replace diffs across affected files.
+- In agentic mode, it creates new files, runs scaffolding commands, and builds the initial implementation.
+
+#### 3. Inspect (Verification & Grounding)
+- **Never blindly accept code!** Treat every AI output as a draft submitted by a junior intern.
+- Review the visual Git diff: check for deleted lines, missing error handling, and hallucinated imports.
+- Run the local application (`npm run dev` or local server) and test the feature live in your browser or terminal.
+
+#### 4. Iterate (Diagnostic Steering)
+- If the application works as intended, execute a **micro-commit** immediately to save your working state.
+- If a runtime error occurs, do not type *"it didn't work"*. Copy the **exact red error trace** from the terminal or browser console and feed it back to the agent for targeted self-correction.
+
+---
+
 ## The Vibecoder's Operating Cycle
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Specification: 1. Architect Data Models & Boundaries
-    Specification --> Context: 2. Feed Precise Rules (.cursorrules / AGENTS.md)
+    [*] --> Specification: 1. Architect Data Models and Boundaries
+    Specification --> Context: 2. Feed Precise Rules
     Context --> Generation: 3. Model Synthesizes Multi-File Diffs
     Generation --> Inspection: 4. Review Git Diff Line-by-Line
-    Inspection --> Verification: 5. Execute in Runtime / Test Suite
+    Inspection --> Verification: 5. Execute in Runtime or Test Suite
     Verification --> Context: Regression Found -> Supply Compiler Trace
-    Verification --> Production: Verified Green -> Commit & Ship
+    Verification --> Production: Verified Green -> Commit and Ship
     Production --> [*]
 ```
 
@@ -161,3 +198,4 @@ stateDiagram-v2
 2. **Context Hygiene**: Supply only the files the model needs; do not dump thousands of irrelevant lines into context.
 3. **Review the Diff**: Treat AI output like a pull request submitted by an intern. Inspect every modified line.
 4. **Compile & Ground**: Run the code immediately in your terminal. If an error appears, feed the exact compiler log back to the model.
+

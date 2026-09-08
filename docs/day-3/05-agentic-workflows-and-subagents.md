@@ -197,3 +197,32 @@ flowchart LR
 2. **Command Blacklisting**: Prohibit destructive shell commands such as `rm -rf`, `DROP DATABASE`, or commands that modify network firewall rules.
 3. **Secret Protection**: Ensure agents never echo `.env` contents or private authentication tokens into terminal logs.
 4. **Git Diff Audit Checkpoint**: Never allow an agent to push code directly to a remote production branch without an engineer reviewing the final `git diff`.
+
+---
+
+## Part 7: Lightning Demos: Presenting Your Live Build
+
+The culmination of the 3-day sprint is the **Lightning Demo Session**. Each team or builder presents their live, deployed application to the group.
+
+```mermaid
+graph LR
+    P1["1. The Problem and User (30s)"] --> P2["2. Live Vercel Demo (90s)"]
+    P2 --> P3["3. Tech Architecture and RLS (45s)"]
+    P3 --> P4["4. Lessons Learned (15s)"]
+```
+
+### The High-Impact 3-Minute Presentation Formula
+1. **The Hook & Problem (30s)**: Don't start with code. Explain who the user is and the exact pain point resolved.
+2. **The Live Core Journey (90s)**: Open the live `https://your-app.vercel.app` URL in a browser. Run the core flow end-to-end (e.g. submit input, receive Gemini streaming response, display Supabase persistence).
+3. **The Architecture (45s)**: Show your `SPEC.md`, explain your Supabase data model and Row Level Security rules.
+4. **Hurdles & AI Steering (15s)**: Share one tricky bug or hallucination you caught using DevTools and steered the AI to fix.
+
+---
+
+## Part 8: Open Q&A & Troubleshooting Clinic
+
+The workshop concludes with an open troubleshooting and advisory clinic:
+- **Prompting Strategy Clinic**: Refining real attendee prompts that produced unexpected outputs.
+- **Debugging Edge Cases**: Resolving stubborn CORS issues, hydration errors, or Supabase policy rejections.
+- **Next Steps for Portfolio Projects**: How to take your workshop MVP and turn it into a standout resume project for internships and hackathons.
+
