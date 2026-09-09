@@ -79,7 +79,7 @@ Explain each step in simple English before you do it.
 It gives you SQL. Copy it → Supabase → **SQL Editor** → paste → **Run**.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">📊 Go look</div>
+<div class="vc-title">Go look</div>
 
 **Table Editor** in the sidebar. Your tables are there. Empty, waiting.
 

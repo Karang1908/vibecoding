@@ -1,6 +1,6 @@
 ---
 title: "0.1 The Vibecoding Stack Setup"
-description: "Pre-workshop setup: installing Cursor, VS Code with AI extensions, Node.js LTS, and Git for seamless AI-assisted engineering."
+description: "Pre-workshop setup: installing Antigravity 2.0, Antigravity IDE, Antigravity CLI, Node.js LTS, and Git."
 ---
 
 # 0.1 The Vibecoding Stack Setup
@@ -17,37 +17,50 @@ description: "Pre-workshop setup: installing Cursor, VS Code with AI extensions,
 
 The vibecoding workflow combines modern AI agent capabilities with standard software engineering runtimes. Here is the minimum viable stack required on your laptop:
 
-```mermaid
-graph TD
-    A[Your Workstation] --> B[AI Code Editor: Cursor / VS Code]
-    A --> C[Runtime: Node.js LTS v20+]
-    A --> D[Version Control: Git CLI]
-    A --> E[Cloud Accounts: GitHub, Vercel, Supabase]
-```
+<div class="stack-map" aria-label="Your workstation contains Antigravity 2.0, Antigravity IDE, Antigravity CLI, Node.js, Git, and cloud accounts">
+  <div class="stack-map__root">Your workstation</div>
+  <div class="stack-map__items">
+    <div class="stack-map__item"><strong>Antigravity 2.0</strong><span>Agent command center</span></div>
+    <div class="stack-map__item"><strong>Antigravity IDE</strong><span>Code workspace</span></div>
+    <div class="stack-map__item"><strong>Antigravity CLI</strong><span>Terminal agent</span></div>
+    <div class="stack-map__item"><strong>Node.js LTS</strong><span>JavaScript runtime</span></div>
+    <div class="stack-map__item"><strong>Git + cloud</strong><span>Save, deploy, store data</span></div>
+  </div>
+</div>
 
 ---
 
-## 1. Code Editor: Cursor (Recommended) or VS Code
+## 1. Install the Antigravity suite
 
-Vibecoding requires an editor capable of workspace indexing, agentic search, and multi-file surgical diffs.
+We will teach all three Antigravity surfaces. They use the same agent harness and settings, but each one has a different job.
 
-=== "Option A: Cursor (Strongly Recommended)"
-    **Cursor** is an AI-native fork of VS Code with integrated workspace indexing, composer agents, and native `@-mention` context steering.
-    
-    1. Download Cursor from [cursor.com](https://www.cursor.com/).
-    2. Install the application for your operating system (macOS, Windows, or Linux).
-    3. Launch Cursor. You can import your existing VS Code keybindings, extensions, and themes with one click.
-    4. Verify that the Command Palette works: Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (macOS).
+=== "Antigravity 2.0"
+    Your agent command center. Use it to create projects, launch agents, monitor work, and review artifacts.
 
-=== "Option B: VS Code with AI Extensions"
-    If you prefer to stay in standard **Visual Studio Code**:
-    
-    1. Download and install VS Code from [code.visualstudio.com](https://code.visualstudio.com/).
-    2. Open the Extensions Marketplace (`Ctrl+Shift+X` or `Cmd+Shift+X`).
-    3. Install an agentic coding extension such as:
-        - **Google Antigravity**: Agentic IDE integration for Google ecosystem and Gemini frontier models.
-        - **Cline** or **Continue.dev**: Open-source extensions supporting API keys from Google AI Studio, Anthropic, or OpenAI.
-    4. Ensure the extension is granted workspace read/write permissions.
+    1. Open the official [Antigravity download page](https://antigravity.google/download).
+    2. Download **Antigravity 2.0** for your operating system.
+    3. Install it, open it, and sign in with your Google account.
+    4. Create a project that points to a folder on your laptop.
+
+=== "Antigravity IDE"
+    Your code workspace. Use it when you want to see the files, terminal, agent panel, and every proposed change.
+
+    1. In Antigravity 2.0, select **Install IDE**. You can also use the [Antigravity download page](https://antigravity.google/download).
+    2. Install the standalone **Antigravity IDE** and sign in with the same Google account.
+    3. Choose **Review-driven development** during setup.
+    4. Open the same project folder you created in Antigravity 2.0.
+
+=== "Antigravity CLI"
+    Your terminal agent. It is the fastest way to ask Antigravity to inspect files, run commands, and make changes without leaving the terminal.
+
+    1. Install **Antigravity CLI** from the [official download page](https://antigravity.google/download).
+    2. Open a fresh terminal in your project folder.
+    3. Confirm the command is available:
+
+       ```bash
+       agy --help
+       ```
+
 
 ---
 

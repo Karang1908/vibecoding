@@ -53,7 +53,7 @@ Watch the logs scroll. Feel fancy.
 </div>
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🎉 You're live</div>
+<div class="vc-title">You're live</div>
 
 `https://your-app.vercel.app`
 

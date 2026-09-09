@@ -76,7 +76,7 @@ Explain code in simple English, not jargon.
 ```
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🧠 That file is your project's brain</div>
+<div class="vc-title">That file is your project's brain</div>
 
 Every time the AI is confused, wrong, or off-style — the fix is usually **a line in this file**, not a longer prompt.
 

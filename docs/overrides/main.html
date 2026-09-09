@@ -1,16 +1,28 @@
 {% extends "base.html" %}
 
+{% block header %}
+<!--
+THESIS: A hands-on Google Codelab learning path that makes first-time builders feel capable.
+OWN-WORLD: The real GDG identity, Google Material color roles, a lesson rail, and lab-style steps form one system.
+STORY: Arrive with an idea, build it over three sessions, and leave with a live URL.
+FIRST VIEWPORT: GDG identity, the workshop promise, and one clear action to begin Day 1.
+FORM: Google learning path / Codelab hybrid, the seventh grounded direction from seed 77987fa4.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+{{ super() }}
+{% endblock %}
+
 {#
-  Story mode: workshop pages read like a story, not a reference doc.
-  Material renders `block content` inside .md-content__inner, which is too deep
-  to restyle the page shell, so we tag <html> instead. Every rule in
-  stylesheets/story.css is scoped under .story, leaving the reference material
-  (pre-workshop, post-workshop, archived day-1/2/3) on its original styling.
+  Story mode gives the overview and active workshop lessons a presentation
+  rhythm while the setup and handbook pages retain a denser reference layout.
 #}
 {% block extrahead %}
   {{ super() }}
   {% set p = page.file.src_uri if page else "" %}
-  {% if "day-1-new/" in p or "day-2-new/" in p or "day-3-new/" in p %}
+  {% if p == "index.md" or "day-1-new/" in p or "day-2-new/" in p or "day-3-new/" in p %}
     <script>document.documentElement.classList.add("story");</script>
+  {% endif %}
+  {% if p == "index.md" %}
+    <script>document.documentElement.classList.add("home");</script>
   {% endif %}
 {% endblock %}

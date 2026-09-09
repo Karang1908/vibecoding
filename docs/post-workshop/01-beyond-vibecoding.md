@@ -28,8 +28,7 @@ Instead of letting the model guess how a new library works:
 
 1. **Find the Canonical Docs Page**: Navigate to the official release page or documentation reference (e.g., `https://supabase.com/docs/guides/auth`).
 2. **Feed the URL Directly into Your AI**:
-   - In Cursor: Type `@Docs &rarr; Add new doc &rarr; paste URL`.
-   - In Antigravity / Claude Code / Cline: Pass the doc link in your prompt:
+   - In Antigravity 2.0, Antigravity IDE, or Antigravity CLI: pass the official documentation link in your prompt:
      ```text
      Context: Reference the official documentation at https://nextjs.org/docs/app/building-your-application/routing/middleware
      
@@ -45,16 +44,18 @@ Instead of letting the model guess how a new library works:
 Once your prototype is live on Vercel, the temptation is to immediately prompt for 10 new features. In an unstructured codebase, this leads to **regression cascades** where adding feature 5 breaks features 1 and 2.
 
 ```mermaid
-graph TD
-    subgraph Anti_Pattern ["Unstructured Scaling (Regression Cascade)"]
-        A1["Add New Feature Prompt"] --> A2["AI modifies multiple files simultaneously"]
-        A2 --> A3["Breaks existing working auth & database contracts"]
+flowchart TB
+    subgraph Anti_Pattern ["❌ Unstructured Scaling (Regression Cascade)"]
+        direction TB
+        A1["1. Add New Feature Prompt"] --> A2["2. AI modifies multiple files simultaneously"]
+        A2 --> A3["3. Breaks existing working auth & database contracts"]
     end
 
-    subgraph Best_Practice ["Defensive Scaling Strategy"]
-        B1["Git Feature Branch: feat/new-feature"] --> B2["Freeze Existing Contracts"]
-        B2 --> B3["Component-Driven Generation in Isolated Directory"]
-        B3 --> B4["Verify Tests -> Merge to Main"]
+    subgraph Best_Practice ["✅ Defensive Scaling Strategy"]
+        direction TB
+        B1["1. Git Feature Branch: feat/new-feature"] --> B2["2. Freeze Existing Contracts"]
+        B2 --> B3["3. Component-Driven Generation in Isolated Directory"]
+        B3 --> B4["4. Verify Tests -> Merge to Main"]
     end
 ```
 
@@ -75,7 +76,7 @@ You do not need to build everything from scratch. The open-source ecosystem prov
 
 ### Where to Find High-Quality AI Starters
 - **Vercel AI SDK Templates** ([vercel.com/templates](https://vercel.com/templates)): Pre-configured Next.js starters with streaming AI, chat interfaces, and Supabase database integrations.
-- **Awesome Cursor Rules** ([github.com/PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules)): Curated `.cursorrules` files optimized for dozens of tech stacks (Next.js, Python FastAPI, SvelteKit, Rust).
+- **Google Antigravity Docs** ([antigravity.google/docs](https://antigravity.google/docs)): Official guidance for Antigravity 2.0, Antigravity IDE, Antigravity CLI, skills, and MCP servers.
 - **Google AI Studio Cookbook** ([github.com/google-gemini/cookbook](https://github.com/google-gemini/cookbook)): Official code recipes for multimodal vision, function calling, audio processing, and long-context processing with Gemini 2.0.
 
 ### Contributing to AI-Assisted Projects

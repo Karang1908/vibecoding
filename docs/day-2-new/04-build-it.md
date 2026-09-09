@@ -35,7 +35,7 @@ Right-click `index.html` → **Open with Live Server**
 Now your browser updates the second the AI changes anything. Keep it open on half your screen.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">👀 Screen setup</div>
+<div class="vc-title">Screen setup</div>
 
 **Left half:** your editor and the chat.
 **Right half:** the browser.
@@ -118,7 +118,7 @@ Down the list. One at a time. Refresh, refresh, refresh.
 Ahead of everyone? Add something nobody asked for. Make it yours.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🎯 Where you should be</div>
+<div class="vc-title">Where you should be</div>
 
 Something on screen that **does a thing** when you click it. Not finished. Not perfect.
 

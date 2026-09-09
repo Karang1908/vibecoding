@@ -63,7 +63,7 @@ All free. All forever free.
 </ul>
 
 <div class="vibe-check" markdown>
-<div class="vc-title">⚡ Before we start</div>
+<div class="vc-title">Before we start</div>
 
 Editor open. Yesterday's folder open. Terminal works.
 

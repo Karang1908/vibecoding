@@ -12,7 +12,7 @@ hide:
 Stuck at any point? **Hand up.** Half the room will hit the same error.
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">✨</span><strong>Editor</strong><span>Where the magic happens</span></div>
+<div class="icon-card"><span class="ic">✨</span><strong>Antigravity</strong><span>2.0 + IDE + CLI</span></div>
 <div class="icon-card"><span class="ic">⚙️</span><strong>Node.js</strong><span>Makes apps run</span></div>
 <div class="icon-card"><span class="ic">⏪</span><strong>Git</strong><span>Undo, forever</span></div>
 <div class="icon-card"><span class="ic">☁️</span><strong>GitHub</strong><span>Cloud save</span></div>
@@ -20,15 +20,19 @@ Stuck at any point? **Hand up.** Half the room will hit the same error.
 
 <div class="step" data-step="1" markdown>
 
-### The AI editor
+### Google Antigravity
 
-=== "Cursor (pick this)"
+Install all three from **[antigravity.google/download](https://antigravity.google/download)**:
 
-    **[cursor.com](https://www.cursor.com/)** → Download → install → sign in with Google.
+1. **Antigravity 2.0** → install → sign in with Google → create your project.
+2. **Antigravity IDE** → click **Install IDE** inside Antigravity 2.0 → open the same project folder.
+3. **Antigravity CLI** → install → open a terminal and run:
 
-=== "VS Code"
+```bash
+agy --help
+```
 
-    **[code.visualstudio.com](https://code.visualstudio.com/)** → ++ctrl+shift+x++ → search **Cline** → Install.
+**Three tools, one Antigravity agent.** We will use all of them.
 
 </div>
 
@@ -79,11 +83,11 @@ node --version
 ```
 
 <div class="vibe-check" markdown>
-<div class="vc-title">✅ Vibe check</div>
+<div class="vc-title">Vibe check</div>
 
 **Two lines with numbers?** Done. Sit back.
 
-**`not recognized`?** Close the editor, reopen. Fixes it 80% of the time. Still broken → hand up.
+**`not recognized`?** Close the terminal and Antigravity IDE, then reopen both. Still broken → hand up.
 </div>
 
 ## Make your project folder

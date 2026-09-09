@@ -2,34 +2,19 @@ site_name: Vibecoding 101
 site_description: 3-Day Masterclass on AI-First Engineering, High-Token Free Models, Live Prototyping & Production Deployment
 site_author: Priyanshu & Armaan | GDG BITS Pilani Dubai Campus
 site_url: https://gdg-vibecoding101.vercel.app/
-repo_name: prxcode/vibecoding101
-repo_url: https://github.com/prxcode/vibecoding101
-copyright: Google Developer Groups &bull; BITS Pilani Dubai Campus
+copyright: Vibecoding 101
 
 theme:
   name: material
   custom_dir: docs/overrides
   language: en
-  logo: assets/images/gdg-brackets.svg
-  favicon: assets/images/favicon.svg
+  logo: assets/images/gdg-mark.png
+  favicon: assets/images/favicon.png
   palette:
-    # Light mode
-    - scheme: default
-      primary: white
-      accent: blue
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Dark mode
-    - scheme: slate
-      primary: black
-      accent: blue
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  font:
-    text: Outfit
-    code: JetBrains Mono
+    scheme: default
+    primary: white
+    accent: blue
+  font: false
   features:
     - navigation.instant
     - navigation.tracking
@@ -38,9 +23,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - search.suggest
-    - search.highlight
-    - search.share
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
@@ -51,16 +33,8 @@ extra_css:
 
 extra:
   generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/prxcode/vibecoding101
-      name: GitHub
-    - icon: fontawesome/brands/google
-      link: https://developers.google.com/community/gdg
-      name: Google
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/gdg-bpdc/
-      name: LinkedIn
+
+plugins: []
 
 markdown_extensions:
   - admonition
@@ -116,4 +90,3 @@ nav:
   - "Post-Workshop: Beyond Vibecoding 101":
       - "Beyond Vibecoding: Docs, Scaling & Open Source": post-workshop/01-beyond-vibecoding.md
       - "The Vibecoder's Handbook & Next Steps": post-workshop/02-handbook-and-roadmap.md
-

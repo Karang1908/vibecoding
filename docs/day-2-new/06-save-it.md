@@ -89,7 +89,7 @@ Asks for a login? Follow the browser popup.
 Refresh your GitHub page.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🎉 It's on the internet</div>
+<div class="vc-title">It's on the internet</div>
 
 Your code is safe. Your laptop could explode right now and you'd lose nothing.
 

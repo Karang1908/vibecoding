@@ -84,7 +84,7 @@ It'll give you a list. **That list is your plan for the next hour.**
 Never move on while something's broken. Never do two steps at once.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">📋 You should now have</div>
+<div class="vc-title">You should now have</div>
 
 A list of 5–10 small steps, in order, starting with something boring and simple.
 

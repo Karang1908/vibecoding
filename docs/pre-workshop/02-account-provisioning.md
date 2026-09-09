@@ -16,11 +16,22 @@ description: "Creating and configuring free-tier developer accounts for GitHub, 
 ## The Zero-Cost Cloud Ecosystem
 
 ```mermaid
-graph LR
-    A[Local Workstation] -->|git push| B[GitHub Repo]
-    B -->|Automatic CI/CD Build| C[Vercel Serverless Hosting]
-    C -->|Reads/Writes Data| D[Supabase Postgres & Auth]
-    A -.->|Model API Requests| E[Google AI Studio / Gemini]
+flowchart TD
+    subgraph Local ["💻 Local Environment"]
+        A["Local Workstation"]
+        E["Google AI Studio / Gemini"]
+        A -.->|"Model API Requests"| E
+    end
+
+    subgraph Cloud ["☁️ Cloud Services & Deployment"]
+        B["GitHub Repo"]
+        C["Vercel Serverless Hosting"]
+        D["Supabase Postgres & Auth"]
+        B -->|"Automatic CI/CD"| C
+        C -->|"Reads / Writes"| D
+    end
+
+    A -->|"git push"| B
 ```
 
 ---

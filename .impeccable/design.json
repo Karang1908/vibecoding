@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-09T20:00:00+04:00",
+  "title": "Design System: Vibecoding 101",
+  "extensions": {
+    "colorMeta": {
+      "google-action-blue": {
+        "role": "primary",
+        "displayName": "Google Action Blue",
+        "canonical": "#0b57d0",
+        "tonalRamp": ["#041e49", "#062e6f", "#0842a0", "#0b57d0", "#4c8df6", "#a8c7fa", "#d3e3fd", "#ecf3fe"]
+      },
+      "green-success": {
+        "role": "secondary",
+        "displayName": "Workshop Success Green",
+        "canonical": "#137333",
+        "tonalRamp": ["#072711", "#0d5226", "#137333", "#1e8e3e", "#57bb72", "#8ed69e", "#c4eed0", "#e6f4ea"]
+      },
+      "red-error": {
+        "role": "tertiary",
+        "displayName": "Workshop Error Red",
+        "canonical": "#b3261e",
+        "tonalRamp": ["#410e0b", "#601410", "#8c1d18", "#b3261e", "#dc362e", "#f2b8b5", "#f9dedc", "#fce8e6"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Learning Canvas",
+        "canonical": "#ffffff",
+        "tonalRamp": ["#202124", "#444746", "#5f6368", "#9aa0a6", "#c4c7c5", "#e1e3e1", "#f0f4f9", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Lesson Display",
+        "purpose": "Short page promises and lesson titles."
+      },
+      "body": {
+        "displayName": "Workshop Reading",
+        "purpose": "Instructions that remain legible on a laptop, phone, or projector."
+      },
+      "label": {
+        "displayName": "Action Label",
+        "purpose": "Navigation, chips, time markers, and prompt cues."
+      },
+      "code": {
+        "displayName": "Code Sample",
+        "purpose": "Commands and source code in a compact technical face."
+      }
+    },
+    "shadows": [
+      {
+        "name": "scrolled-header",
+        "value": "0 1px 3px rgb(60 64 67 / 0.16)",
+        "purpose": "Separates sticky navigation from scrolling content."
+      },
+      {
+        "name": "primary-action-hover",
+        "value": "0 1px 2px rgb(60 64 67 / 0.3)",
+        "purpose": "Confirms hover on the primary action."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-change",
+        "value": "150ms ease",
+        "purpose": "Button color, border, and shadow transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-phone",
+        "value": "368px"
+      },
+      {
+        "name": "mobile",
+        "value": "720px"
+      },
+      {
+        "name": "desktop-navigation",
+        "value": "1220px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The clear next action at the start or end of a lesson.",
+      "html": "<button class=\"ds-btn-primary\">Start Day 1 →</button>",
+      "css": ".ds-btn-primary { min-height: 48px; padding: 11px 23px; border: 1px solid #0b57d0; border-radius: 999px; background: #0b57d0; color: #fff; font: 600 14px/24px Arial, sans-serif; transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease; } .ds-btn-primary:hover { border-color: #0842a0; background: #0842a0; box-shadow: 0 1px 2px rgb(60 64 67 / .3); } .ds-btn-primary:focus-visible { outline: 3px solid #a8c7fa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A lower-emphasis alternative beside the primary action.",
+      "html": "<button class=\"ds-btn-secondary\">Set up first</button>",
+      "css": ".ds-btn-secondary { min-height: 48px; padding: 11px 23px; border: 1px solid #c4c7c5; border-radius: 999px; background: #fff; color: #0b57d0; font: 600 14px/24px Arial, sans-serif; transition: background-color 150ms ease, border-color 150ms ease; } .ds-btn-secondary:hover { border-color: #0b57d0; background: #ecf3fe; color: #0842a0; } .ds-btn-secondary:focus-visible { outline: 3px solid #a8c7fa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Active Navigation Item",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "Shows the exact lesson a student is reading.",
+      "html": "<a class=\"ds-nav-active\" href=\"#\">1.1 What Even Is Vibecoding?</a>",
+      "css": ".ds-nav-active { display: block; max-width: 220px; padding: 8px 13px; border-radius: 11px; background: #d3e3fd; color: #041e49; font: 600 14px/1.35 Arial, sans-serif; text-decoration: none; } .ds-nav-active:hover { background: #a8c7fa; } .ds-nav-active:focus-visible { outline: 3px solid #a8c7fa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Prompt Container",
+      "kind": "custom",
+      "refersTo": "prompt-container",
+      "description": "Exact language a student should type into the AI editor.",
+      "html": "<section class=\"ds-prompt\"><strong>TYPE THIS. RIGHT NOW.</strong><p>Create a file called AGENTS.md that explains this project.</p></section>",
+      "css": ".ds-prompt { max-width: 640px; padding: 24px 22px 19px; border: 1px solid #a8c7fa; border-radius: 20px; background: #ecf3fe; color: #041e49; font: 400 16px/1.62 Arial, sans-serif; } .ds-prompt strong { display: block; margin-bottom: 10px; color: #0b57d0; font-size: 12px; letter-spacing: .065em; } .ds-prompt p { margin: 0; }"
+    },
+    {
+      "name": "Learning Step",
+      "kind": "custom",
+      "description": "A numbered stage in the hands-on Codelab path.",
+      "html": "<section class=\"ds-step\"><span>2</span><div><strong>Build your idea</strong><p>Break it into pieces, then make one piece work.</p></div></section>",
+      "css": ".ds-step { display: grid; grid-template-columns: 38px 1fr; gap: 16px; color: #1f1f1f; font: 400 16px/1.6 Arial, sans-serif; } .ds-step > span { display: grid; width: 38px; height: 38px; border-radius: 50%; place-items: center; background: #0b57d0; color: #fff; font-weight: 700; } .ds-step strong { color: #041e49; font-size: 18px; } .ds-step p { margin: 4px 0 0; color: #444746; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Codelab Path",
+    "overview": "Vibecoding 101 uses the clarity of a Google Codelab with the identity of a campus GDG event. White space, a strong blue action color, restrained tonal containers, and a visible lesson rail make the site feel familiar before a beginner understands the technical material. The interface stays quiet around the lesson. Branding establishes trust in the header and footer, while the content area uses short sections, plain language, and purposeful progress patterns.",
+    "keyCharacteristics": [
+      "Google Sans Flex throughout the learning interface.",
+      "White and cool-neutral surfaces with one dominant action blue.",
+      "A persistent lesson hierarchy on desktop and a compact drawer on mobile.",
+      "Step rails, prompt containers, and completion states tied to real workshop actions.",
+      "Flat surfaces separated by tone and fine outlines."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Google Action Blue is the only general interactive accent; green, red, and yellow communicate status rather than decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tonal Teaching Rule",
+        "body": "A colored container must explain a state or an action: blue for instruction, green for success, red for risk, and yellow for caution.",
+        "section": "colors"
+      },
+      {
+        "name": "The Projector Test",
+        "body": "Every page must preserve clear weight and color contrast when projected, while browser zoom and narrow screens reduce line length before reducing comprehension.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-at-Rest Rule",
+        "body": "Reading containers remain flat; shadow indicates a real layer or state change.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the supplied GDG mark in the header and the supplied horizontal lockup in branded surfaces.",
+      "Do keep one obvious next action at the end of each active lesson.",
+      "Do use semantic tonal containers only when they improve comprehension.",
+      "Do test at desktop, phone, and zoom-equivalent widths.",
+      "Do keep lesson copy short enough to scan during a live build."
+    ],
+    "donts": [
+      "Don't redraw, stretch, recolor, or place new effects behind the GDG identity.",
+      "Don't add decorative Google-color rails or use all four brand colors as competing accents.",
+      "Don't turn every section into a floating card or introduce strong shadows at rest.",
+      "Don't reintroduce search, repository, social, or footer links unless the information architecture changes.",
+      "Don't center the header or footer identity; preserve the shared shell edge."
+    ]
+  }
+}

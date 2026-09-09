@@ -108,7 +108,7 @@ Stuck in a loop? AI apologising over and over, making it worse?
 It's got itself confused. Fresh chat, fresh start — and it still has `AGENTS.md`, so it hasn't lost the project.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🧰 Your toolkit</div>
+<div class="vc-title">Your toolkit</div>
 
 **Red text** → copy it, paste it, ask
 **Says something weird** → "that doesn't exist, use plain HTML"

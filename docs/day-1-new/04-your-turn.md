@@ -43,7 +43,7 @@ Right-click `index.html` → **Open with Live Server**
 No Live Server? Double-click the file on your Desktop.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🎉 You made a website</div>
+<div class="vc-title">You made a website</div>
 
 By typing one paragraph. Ninety seconds ago.
 

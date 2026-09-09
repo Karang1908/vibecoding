@@ -1,354 +1,514 @@
-/* ==========================================================================
-   STORY MODE — Day 1 beginner track
-   Goal: make a page feel like something you *read*, not something you *study*.
-   Big type, lots of air, one idea at a time.
-   ========================================================================== */
+/* Story pages — workshop overview and active three-day learning path */
 
-/* --- 1. BREATHE ---------------------------------------------------------
-   The single biggest fix. Documentation feels heavy because it is dense.
-   Bigger text + more line spacing + narrower column = story.            */
+.story .md-sidebar--secondary {
+  display: none;
+}
 
 .story .md-content__inner {
-  max-width: 42rem;          /* ~68 characters — the reading-comfort sweet spot */
-  margin: 0 auto;
-  padding-bottom: 4rem;
+  max-width: 54rem;
+}
+
+.home .md-sidebar--primary {
+  display: none;
+}
+
+.home .md-content__inner {
+  max-width: 50rem;
+  margin-right: auto;
+  margin-left: 0;
 }
 
 .story .md-typeset {
-  font-size: 1.06rem;
-  line-height: 1.85;
-}
-
-.story .md-typeset p {
-  margin: 1.4em 0;
-}
-
-/* --- 2. HEADINGS THAT FEEL LIKE CHAPTERS -------------------------------- */
-
-.story .md-typeset h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  margin: 0 0 1.6rem;
-}
-
-.story .md-typeset h2 {
-  font-size: 1.7rem;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  margin: 3.5rem 0 1rem;
-  padding-top: 0;
-  border: none;
-}
-
-.story .md-typeset h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 2.2rem 0 .6rem;
-}
-
-/* Kill the heavy horizontal rules — use whitespace as the separator instead */
-.story .md-typeset hr {
-  border: none;
-  height: 0;
-  margin: 3rem 0;
-}
-
-/* --- 3. THE BEAT --------------------------------------------------------
-   A single oversized line used as a story beat / punchline.
-   Usage:  <p class="beat">That's it. That's the skill.</p>              */
-
-.story .md-typeset .beat {
-  font-size: 1.6rem;
-  line-height: 1.4;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 2.6rem 0;
-  color: var(--md-default-fg-color);
-}
-
-/* --- 4. PULL QUOTE (the metaphors) -------------------------------------- */
-
-.story .md-typeset blockquote {
-  border: none;
-  border-left: 3px solid #4285F4;
-  background: none;
-  padding: .2rem 0 .2rem 1.4rem;
-  margin: 2.4rem 0;
-  color: var(--md-default-fg-color);
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 500;
-}
-
-.story .md-typeset blockquote p { margin: .4em 0; }
-
-/* --- 5. STEP CARDS ------------------------------------------------------
-   Numbered setup steps that look like progress, not like a manual.
-   Usage:
-     <div class="step" data-step="1" markdown>
-     ### Title
-     body
-     </div>                                                              */
-
-.story .md-typeset .step {
-  position: relative;
-  padding: 1.4rem 1.4rem 1.4rem 3.6rem;
-  margin: 1.2rem 0;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 14px;
-  background: var(--md-default-bg-color);
-  transition: border-color .2s ease, transform .2s ease;
-}
-
-.story .md-typeset .step:hover {
-  border-color: #4285F4;
-  transform: translateX(3px);
-}
-
-.story .md-typeset .step::before {
-  content: attr(data-step);
-  position: absolute;
-  left: 1rem;
-  top: 1.35rem;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 50%;
-  background: #4285F4;
-  color: #fff;
-  font-size: .85rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.story .md-typeset .step > :first-child { margin-top: 0; }
-.story .md-typeset .step > :last-child  { margin-bottom: 0; }
-.story .md-typeset .step h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
-
-/* --- 6. THE PROMPT SLAB -------------------------------------------------
-   The thing they actually type. Should look like a trophy, not a code block. */
-
-.story .md-typeset .prompt-slab {
-  border: 2px dashed #4285F4;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(66,133,244,.06), rgba(52,168,83,.06));
-  padding: 1.6rem 1.8rem;
-  margin: 2rem 0;
-  font-size: 1.1rem;
+  font-size: 0.84rem;
   line-height: 1.7;
 }
 
-.story .md-typeset .prompt-slab .slab-label {
+.story .md-typeset > h1 + p {
+  max-width: 46rem;
+  color: var(--gdg-text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
+.story .md-typeset h1 {
+  max-width: 18ch;
+}
+
+.story .md-typeset h2 {
+  position: relative;
+}
+
+/* Overview hero */
+.home-lockup {
   display: block;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: #4285F4;
-  margin-bottom: .7rem;
+  width: min(19rem, 76vw);
+  height: auto;
+  margin: 0 0 clamp(2.1rem, 6vw, 4rem);
+  border-radius: 0 !important;
 }
 
-/* --- 7. VIBE CHECK — the end-of-page "did it work?" gut check ----------- */
-
-.story .md-typeset .vibe-check {
-  border-radius: 16px;
-  padding: 1.5rem 1.7rem;
-  margin: 2.6rem 0;
-  background: rgba(52,168,83,.08);
-  border: 1px solid rgba(52,168,83,.3);
-}
-
-.story .md-typeset .vibe-check .vc-title {
-  font-weight: 700;
-  font-size: 1.05rem;
-  margin-bottom: .5rem;
-  color: #137333;
-}
-
-[data-md-color-scheme="slate"] .story .md-typeset .vibe-check .vc-title { color: #6ee7a0; }
-
-/* --- 8. NEXT BUTTON ----------------------------------------------------- */
-
-.story .md-typeset .nav-next {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--md-default-fg-color--lightest);
-}
-
-/* --- 9. QUIETER TABLES & CODE ------------------------------------------- */
-
-.story .md-typeset table:not([class]) {
-  border: none;
-  font-size: .95rem;
-}
-
-.story .md-typeset table:not([class]) th {
-  background: none;
-  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+.home-eyebrow {
+  display: inline-flex;
+  min-height: 1.65rem;
+  margin: 0 0 0.8rem !important;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  align-items: center;
+  background: var(--gdg-blue-container);
+  color: var(--gdg-on-blue-container);
+  font-size: 0.63rem;
   font-weight: 650;
-}
-
-.story .md-typeset table:not([class]) td {
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
-}
-
-.story .md-typeset pre > code { border-radius: 12px; }
-
-/* --- 10. NO SIDEBAR CLUTTER --------------------------------------------
-   A story does not need a table of contents. Hide it, reclaim the space. */
-
-.story .md-sidebar--secondary { display: none; }
-
-/* --- 11. MOBILE --------------------------------------------------------- */
-
-@media screen and (max-width: 76.1875em) {
-  .story .md-content__inner { max-width: 100%; }
-}
-
-@media screen and (max-width: 44.9375em) {
-  .story .md-typeset { font-size: 1rem; line-height: 1.75; }
-  .story .md-typeset h1 { font-size: 1.95rem; }
-  .story .md-typeset h2 { font-size: 1.4rem; margin-top: 2.6rem; }
-  .story .md-typeset .beat { font-size: 1.25rem; }
-  .story .md-typeset blockquote { font-size: 1.1rem; }
-  .story .md-typeset .step { padding: 1.2rem 1rem 1.2rem 3rem; }
-  .story .md-typeset .step::before { left: .7rem; }
-}
-
-/* ==========================================================================
-   VISUAL MODE — less reading, more looking
-   Big blocks, icons, comparisons. Text earns its place or it goes.
-   ========================================================================== */
-
-/* --- BIG STAT / NUMBER ---------------------------------------------------
-   Usage: <div class="big-stat"><span class="num">11</span><span class="cap">minutes</span></div> */
-
-.story .md-typeset .stat-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
-  margin: 2.2rem 0;
-}
-
-.story .md-typeset .big-stat {
-  text-align: center;
-  padding: 1.6rem 1rem;
-  border-radius: 16px;
-  background: var(--md-code-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-}
-
-.story .md-typeset .big-stat .num {
-  display: block;
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -.04em;
-  background: linear-gradient(135deg, #4285F4, #34A853);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.story .md-typeset .big-stat .cap {
-  display: block;
-  margin-top: .5rem;
-  font-size: .8rem;
+  letter-spacing: 0.035em;
   text-transform: uppercase;
-  letter-spacing: .08em;
-  opacity: .7;
+}
+
+.home-actions {
+  display: flex;
+  margin: 1.6rem 0 clamp(3rem, 7vw, 5rem);
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+/* Editorial statements */
+.beat {
+  max-width: 30ch;
+  margin: 2rem 0 2.3rem !important;
+  color: var(--gdg-blue);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.24;
+  text-wrap: balance;
 }
 
-/* --- VERSUS BLOCK --------------------------------------------------------
-   Two columns, one clearly worse. Reads instantly, no paragraph needed. */
-
-.story .md-typeset .versus {
+.stat-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  margin: 1.7rem 0 2.8rem;
+  border-block: 1px solid var(--gdg-outline-soft);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.big-stat {
+  display: flex;
+  min-width: 0;
+  min-height: 7.6rem;
+  padding: 1.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.big-stat + .big-stat {
+  border-left: 1px solid var(--gdg-outline-soft);
+}
+
+.big-stat .num {
+  color: var(--gdg-blue);
+  font-size: clamp(1.65rem, 4.5vw, 2.6rem);
+  font-weight: 650;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.big-stat .cap {
+  color: var(--gdg-text-secondary);
+  font-size: 0.67rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Meaningful two-state comparison */
+.versus {
+  display: grid;
+  overflow: hidden;
+  margin: 1.35rem 0 2.5rem;
+  border: 1px solid var(--gdg-outline-soft);
+  border-radius: var(--gdg-radius-lg);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.versus > div {
+  min-width: 0;
+  padding: clamp(1.05rem, 3vw, 1.5rem);
+}
+
+.versus > div + div {
+  border-left: 1px solid var(--gdg-outline-soft);
+}
+
+.versus .vs-bad {
+  background: color-mix(in srgb, var(--gdg-red-container) 56%, white);
+}
+
+.versus .vs-good {
+  background: color-mix(in srgb, var(--gdg-green-container) 52%, white);
+}
+
+.versus h4 {
+  margin: 0 0 0.7rem;
+  font-size: 0.84rem;
+}
+
+.versus ul {
+  margin: 0;
+  padding-left: 1.05rem;
+}
+
+.versus li {
+  margin: 0.32rem 0;
+}
+
+.versus p:last-child,
+.versus ul:last-child {
+  margin-bottom: 0;
+}
+
+/* Concept icon grid */
+.icon-row {
+  display: grid;
+  margin: 1.3rem 0 2.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(8.4rem, 1fr));
+  gap: 0.7rem;
+}
+
+.icon-card {
+  display: grid;
+  min-width: 0;
+  min-height: 8.5rem;
+  padding: 1rem;
+  border: 1px solid var(--gdg-outline-soft);
+  border-radius: var(--gdg-radius-md);
+  background: var(--gdg-surface);
+  align-content: start;
+  gap: 0.25rem;
+}
+
+.icon-card .ic {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.45rem;
+  border-radius: 0.7rem;
+  place-items: center;
+  background: var(--gdg-blue-container);
+  color: var(--gdg-on-blue-container);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.icon-card strong {
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.icon-card > span:last-child {
+  color: var(--gdg-text-secondary);
+  font-size: 0.64rem;
+  line-height: 1.4;
+}
+
+/* Session agenda */
+.timeline {
+  position: relative;
+  margin: 1.3rem 0 2.6rem !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 1.1rem;
+  bottom: 1.1rem;
+  left: 3.25rem;
+  width: 2px;
+  background: var(--gdg-blue-container);
+  content: "";
+}
+
+.timeline li {
+  position: relative;
+  display: grid;
+  min-height: 2.65rem;
+  margin: 0;
+  grid-template-columns: 2.65rem minmax(0, 1fr);
+  align-items: center;
   gap: 1rem;
-  margin: 2.2rem 0;
 }
 
-.story .md-typeset .versus > div {
-  border-radius: 16px;
-  padding: 1.4rem;
-  border: 1px solid var(--md-default-fg-color--lightest);
+.timeline .t {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  min-height: 1.5rem;
+  padding: 0.2rem 0.42rem;
+  border: 2px solid white;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: var(--gdg-blue);
+  color: white;
+  font-size: 0.55rem;
+  font-weight: 650;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.story .md-typeset .vs-bad  { background: rgba(234,67,53,.07);  border-color: rgba(234,67,53,.25) !important; }
-.story .md-typeset .vs-good { background: rgba(52,168,83,.08);  border-color: rgba(52,168,83,.3)  !important; }
+.timeline li > span:last-child {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--gdg-outline-soft);
+}
 
-.story .md-typeset .versus h4 {
-  margin: 0 0 .8rem;
-  font-size: 1rem;
+.timeline li:last-child > span:last-child {
+  border-bottom: 0;
+}
+
+/* Hands-on Codelab steps */
+.step {
+  position: relative;
+  margin: 1rem 0 1rem 1.25rem;
+  padding: 0.35rem 0 1.6rem 2rem;
+  border-left: 2px solid var(--gdg-blue-container);
+}
+
+.step::before {
+  position: absolute;
+  top: 0.25rem;
+  left: -1rem;
+  display: grid;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 3px solid white;
+  border-radius: 50%;
+  place-items: center;
+  background: var(--gdg-blue);
+  box-shadow: 0 0 0 1px var(--gdg-blue);
+  color: white;
+  content: attr(data-step);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.step > h3:first-child {
+  margin-top: 0.25rem;
+  color: var(--gdg-on-blue-container);
+}
+
+.step > :last-child {
+  margin-bottom: 0;
+}
+
+.step:last-of-type {
+  border-left-color: transparent;
+}
+
+/* Copyable prompt */
+.prompt-slab {
+  position: relative;
+  margin: 1.35rem 0 2.1rem;
+  padding: 1.45rem 1.35rem 1.2rem;
+  border: 1px solid #a8c7fa;
+  border-radius: var(--gdg-radius-lg);
+  background: var(--gdg-blue-container-soft);
+  color: var(--gdg-on-blue-container);
+  font-size: 0.82rem;
+  line-height: 1.62;
+}
+
+.prompt-slab::before {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0 0 0.75rem;
+  background-color: var(--gdg-blue);
+  content: "";
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 1.01 7 1c-1.1 0-2 .9-2 2v14h2V3h10V1.01ZM20 5H11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-9V7h9v14Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 1.01 7 1c-1.1 0-2 .9-2 2v14h2V3h10V1.01ZM20 5H11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-9V7h9v14Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.prompt-slab .slab-label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--gdg-blue);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.prompt-slab > :last-child {
+  margin-bottom: 0;
+}
+
+/* Completion state */
+.vibe-check {
+  position: relative;
+  margin: 1.5rem 0 2.2rem;
+  padding: 1.15rem 1.25rem 1.15rem 3.6rem;
+  border-radius: var(--gdg-radius-lg);
+  background: color-mix(in srgb, var(--gdg-green-container) 65%, white);
+  color: #0d5226;
+}
+
+.vibe-check::before {
+  position: absolute;
+  top: 1.15rem;
+  left: 1.2rem;
+  width: 1.55rem;
+  height: 1.55rem;
+  background-color: var(--gdg-green);
+  content: "";
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.vibe-check .vc-title {
+  margin-bottom: 0.28rem;
+  color: #0d5226;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
-.story .md-typeset .versus ul { margin: 0; padding-left: 1.1rem; }
-.story .md-typeset .versus li { margin: .35em 0; font-size: .93rem; line-height: 1.5; }
-
-/* --- ICON ROW — four things, no prose ------------------------------------ */
-
-.story .md-typeset .icon-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: .9rem;
-  margin: 2rem 0;
+.vibe-check p,
+.vibe-check ul {
+  margin-bottom: 0.45rem;
 }
 
-.story .md-typeset .icon-card {
-  padding: 1.3rem 1rem;
-  border-radius: 14px;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  text-align: center;
+.vibe-check > :last-child {
+  margin-bottom: 0;
 }
 
-.story .md-typeset .icon-card .ic {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: .5rem;
-  line-height: 1;
+.vibe-check code {
+  background: rgb(255 255 255 / 0.7);
+  color: #0d5226;
 }
 
-.story .md-typeset .icon-card strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
-.story .md-typeset .icon-card span   { font-size: .82rem; opacity: .72; line-height: 1.4; display: block; }
+/* End-of-page continuation */
+.nav-next {
+  display: flex;
+  margin-top: 3.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--gdg-outline-soft);
+  justify-content: flex-end;
+}
 
-/* --- TIMELINE — the run of the session ----------------------------------- */
-
-.story .md-typeset .timeline { margin: 2rem 0; padding: 0; list-style: none; }
-
-.story .md-typeset .timeline li {
-  display: grid;
-  grid-template-columns: 4.5rem 1fr;
-  gap: 1rem;
-  align-items: baseline;
-  padding: .8rem 0;
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+.nav-next .md-button {
   margin: 0;
 }
 
-.story .md-typeset .timeline li:last-child { border-bottom: none; }
-
-.story .md-typeset .timeline .t {
-  font-weight: 700;
-  font-size: .8rem;
-  color: #4285F4;
-  letter-spacing: .04em;
+/* Story page particulars */
+.story .md-typeset > blockquote:first-of-type {
+  margin-top: 1.5rem;
 }
 
-/* --- MOBILE -------------------------------------------------------------- */
-
-@media screen and (max-width: 44.9375em) {
-  .story .md-typeset .versus { grid-template-columns: 1fr; }
-  .story .md-typeset .big-stat .num { font-size: 2.2rem; }
-  .story .md-typeset .timeline li { grid-template-columns: 3.6rem 1fr; gap: .7rem; }
+.story .md-typeset .admonition {
+  margin-block: 1.35rem;
 }
 
-/* Card headings are labels, not sections — no permalink anchors on them. */
-.story .md-typeset .versus h4 .headerlink,
-.story .md-typeset .step h3 .headerlink { display: none; }
+@media screen and (min-width: 76.25em) {
+  .story .md-content {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .story .md-typeset {
+    font-size: 0.77rem;
+  }
+
+  .story .md-typeset > h1 + p {
+    font-size: 0.86rem;
+  }
+
+  .home-lockup {
+    margin-bottom: 2.6rem;
+  }
+
+  .home-actions {
+    margin-bottom: 3.4rem;
+  }
+
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .big-stat {
+    min-height: 5.5rem;
+    padding: 1rem 0.2rem;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 0.7rem;
+  }
+
+  .big-stat + .big-stat {
+    border-top: 1px solid var(--gdg-outline-soft);
+    border-left: 0;
+  }
+
+  .big-stat .num {
+    min-width: 4rem;
+  }
+
+  .versus {
+    grid-template-columns: 1fr;
+  }
+
+  .versus > div + div {
+    border-top: 1px solid var(--gdg-outline-soft);
+    border-left: 0;
+  }
+
+  .icon-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .icon-card {
+    min-height: 7.8rem;
+  }
+
+  .step {
+    margin-left: 0.8rem;
+    padding-left: 1.5rem;
+  }
+
+  .prompt-slab {
+    padding: 1.1rem;
+  }
+
+  .vibe-check {
+    padding: 3.2rem 1.05rem 1.05rem;
+  }
+
+  .vibe-check::before {
+    top: 1rem;
+    left: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 23rem) {
+  .icon-row {
+    grid-template-columns: 1fr;
+  }
+
+  .home-actions {
+    display: grid;
+  }
+
+  .nav-next {
+    display: block;
+  }
+}
+
+@media print {
+  .step,
+  .stat-row,
+  .versus,
+  .icon-card,
+  .prompt-slab,
+  .vibe-check {
+    break-inside: avoid;
+  }
+}

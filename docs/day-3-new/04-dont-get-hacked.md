@@ -107,7 +107,7 @@ Move all my API keys out of the code into a .env file, add a .gitignore so it's 
     Deleting it from GitHub isn't enough. It's in the history. Kill the key itself.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">🔐 You're safe now</div>
+<div class="vc-title">You're safe now</div>
 
 Live site works. Keys hidden. Repo clean.
 
