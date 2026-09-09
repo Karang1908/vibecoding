@@ -59,8 +59,9 @@ This repository includes a native [`vercel.json`](vercel.json) build configurati
 1. Import this repository into [Vercel](https://vercel.com/new).
 2. Framework Preset: **Other**.
 3. Build & Output Settings are automatically handled via [`vercel.json`](vercel.json):
-   - **Build Command**: `mkdocs build`
+   - **Build Command**: `python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && mkdocs build`
    - **Output Directory**: `site`
+   - **Install Command**: Leave empty / disabled (handled automatically in the build command)
 4. Click **Deploy**. Your documentation will be live on a global edge CDN with automated HTTPS and instant deployments on every `git push`.
 
 ---

@@ -1,0 +1,9 @@
+{
+  "name": "vibecoding101",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VibeCoding 101 - Zero to Production with AI",
+  "scripts": {
+    "build": "python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && mkdocs build"
+  }
+}
