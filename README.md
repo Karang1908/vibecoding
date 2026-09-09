@@ -25,8 +25,8 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/prxcode/vibecoding101.git
-cd vibecoding101
+git clone https://github.com/Karang1908/vibecoding.git
+cd vibecoding
 ```
 
 ### 2. Install Dependencies
