@@ -47,6 +47,7 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/story.css
 
 extra:
   generator: false
@@ -74,6 +75,7 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.keys
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
@@ -92,27 +94,25 @@ nav:
       - "0.1 The Vibecoding Stack Setup": pre-workshop/01-stack-setup.md
       - "0.2 Account Provisioning: Free Cloud Tiers": pre-workshop/02-account-provisioning.md
       - "0.3 API Keys 101: Generation & Secret Safety": pre-workshop/03-api-keys-101.md
-  - "Day 1: Fundamentals & Tech Ecosystem":
-      - "1.1 Foundations & The Vibecoding Workflow": day-1/01-what-is-vibecoding.md
-      - "1.2 LLMs & Free High-Token Models": day-1/02-tools-and-environment.md
-      - "1.3 Prompt Anatomy, Context & Rules": day-1/03-prompting-and-context-engineering.md
-      - "1.4 Version Control, PRD & MVP Basics": day-1/04-architecture-spec-and-mcp.md
-      - "1.5 Hands-On: Rapid Prototyping (20 Min)": day-1/05-hands-on-rapid-prototyping.md
-      - "1.6 Day 1 Checkpoint: Locked PRD & Repo Setup": day-1/06-day1-prep-and-readiness.md
-  - "Day 2: The Build Sprint":
-      - "2.1 The Free Tech Stack & Project Blueprint": day-2/01-live-build-overview.md
-      - "2.2 Phase 1: Scaffolding & Component-Driven Gen": day-2/02-phase-1-spec-and-scaffolding.md
-      - "2.3 Phase 2: Live Gemini 2.0 Integration": day-2/03-phase-2-live-gemini-integration.md
-      - "2.4 Phase 3: Multimodal Vision & UI Polish": day-2/04-phase-3-multimodal-and-polish.md
-      - "2.5 Taming Hallucinations, Micro-Commits & Reading the Red": day-2/05-debugging-and-steering-models.md
-      - "2.6 Feature Freeze & Overnight Challenge": day-2/06-phase-4-wrapup-and-overnight-challenge.md
-  - "Day 3: Backend, Shipping & Production":
-      - "3.1 Database Schema Design & Supabase (RLS)": day-3/01-database-schema-and-supabase.md
-      - "3.2 Audience Project Review & Pitfalls Clinic": day-3/01-audience-project-review-clinic.md
-      - "3.3 Git & GitHub Mastery for Builders": day-3/02-git-and-github-mastery.md
-      - "3.4 Zero-to-Live on Vercel & Production CI/CD": day-3/03-shipping-to-vercel-and-cloud.md
-      - "3.5 Environment Variables, Hydration & QA": day-3/04-environment-variables-and-secrets.md
-      - "3.6 Lightning Demos, Autonomous Agents & Q&A": day-3/05-agentic-workflows-and-subagents.md
+  - "Day 1: Your First App":
+      - "1.1 What Even Is Vibecoding?": day-1-new/01-what-is-vibecoding.md
+      - "1.2 So What Actually Is AI?": day-1-new/02-what-is-ai.md
+      - "1.3 Set Up Your Workshop": day-1-new/03-setup.md
+      - "1.4 Your Turn": day-1-new/04-your-turn.md
+      - "1.5 What Do You Want To Build?": day-1-new/05-what-next.md
+  - "Day 2: Build Your Idea":
+      - "2.1 Today We Build Your Idea": day-2-new/01-the-plan.md
+      - "2.2 The Memory Trick": day-2-new/02-the-memory-trick.md
+      - "2.3 Break It Into Pieces": day-2-new/03-break-it-down.md
+      - "2.4 Build It": day-2-new/04-build-it.md
+      - "2.5 When It Breaks": day-2-new/05-when-it-breaks.md
+      - "2.6 Save It Forever": day-2-new/06-save-it.md
+  - "Day 3: Make It Real":
+      - "3.1 Show & Tell": day-3-new/01-show-and-tell.md
+      - "3.2 A Real Database": day-3-new/02-database.md
+      - "3.3 Put It On The Internet": day-3-new/03-ship-it.md
+      - "3.4 Don't Get Hacked": day-3-new/04-dont-get-hacked.md
+      - "3.5 One Last Trick": day-3-new/05-whats-next.md
   - "Post-Workshop: Beyond Vibecoding 101":
       - "Beyond Vibecoding: Docs, Scaling & Open Source": post-workshop/01-beyond-vibecoding.md
       - "The Vibecoder's Handbook & Next Steps": post-workshop/02-handbook-and-roadmap.md

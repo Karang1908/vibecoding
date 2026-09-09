@@ -1,0 +1,354 @@
+/* ==========================================================================
+   STORY MODE — Day 1 beginner track
+   Goal: make a page feel like something you *read*, not something you *study*.
+   Big type, lots of air, one idea at a time.
+   ========================================================================== */
+
+/* --- 1. BREATHE ---------------------------------------------------------
+   The single biggest fix. Documentation feels heavy because it is dense.
+   Bigger text + more line spacing + narrower column = story.            */
+
+.story .md-content__inner {
+  max-width: 42rem;          /* ~68 characters — the reading-comfort sweet spot */
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.story .md-typeset {
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.story .md-typeset p {
+  margin: 1.4em 0;
+}
+
+/* --- 2. HEADINGS THAT FEEL LIKE CHAPTERS -------------------------------- */
+
+.story .md-typeset h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.6rem;
+}
+
+.story .md-typeset h2 {
+  font-size: 1.7rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin: 3.5rem 0 1rem;
+  padding-top: 0;
+  border: none;
+}
+
+.story .md-typeset h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2.2rem 0 .6rem;
+}
+
+/* Kill the heavy horizontal rules — use whitespace as the separator instead */
+.story .md-typeset hr {
+  border: none;
+  height: 0;
+  margin: 3rem 0;
+}
+
+/* --- 3. THE BEAT --------------------------------------------------------
+   A single oversized line used as a story beat / punchline.
+   Usage:  <p class="beat">That's it. That's the skill.</p>              */
+
+.story .md-typeset .beat {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 2.6rem 0;
+  color: var(--md-default-fg-color);
+}
+
+/* --- 4. PULL QUOTE (the metaphors) -------------------------------------- */
+
+.story .md-typeset blockquote {
+  border: none;
+  border-left: 3px solid #4285F4;
+  background: none;
+  padding: .2rem 0 .2rem 1.4rem;
+  margin: 2.4rem 0;
+  color: var(--md-default-fg-color);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.story .md-typeset blockquote p { margin: .4em 0; }
+
+/* --- 5. STEP CARDS ------------------------------------------------------
+   Numbered setup steps that look like progress, not like a manual.
+   Usage:
+     <div class="step" data-step="1" markdown>
+     ### Title
+     body
+     </div>                                                              */
+
+.story .md-typeset .step {
+  position: relative;
+  padding: 1.4rem 1.4rem 1.4rem 3.6rem;
+  margin: 1.2rem 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 14px;
+  background: var(--md-default-bg-color);
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.story .md-typeset .step:hover {
+  border-color: #4285F4;
+  transform: translateX(3px);
+}
+
+.story .md-typeset .step::before {
+  content: attr(data-step);
+  position: absolute;
+  left: 1rem;
+  top: 1.35rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: #4285F4;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.story .md-typeset .step > :first-child { margin-top: 0; }
+.story .md-typeset .step > :last-child  { margin-bottom: 0; }
+.story .md-typeset .step h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+
+/* --- 6. THE PROMPT SLAB -------------------------------------------------
+   The thing they actually type. Should look like a trophy, not a code block. */
+
+.story .md-typeset .prompt-slab {
+  border: 2px dashed #4285F4;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(66,133,244,.06), rgba(52,168,83,.06));
+  padding: 1.6rem 1.8rem;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.story .md-typeset .prompt-slab .slab-label {
+  display: block;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #4285F4;
+  margin-bottom: .7rem;
+}
+
+/* --- 7. VIBE CHECK — the end-of-page "did it work?" gut check ----------- */
+
+.story .md-typeset .vibe-check {
+  border-radius: 16px;
+  padding: 1.5rem 1.7rem;
+  margin: 2.6rem 0;
+  background: rgba(52,168,83,.08);
+  border: 1px solid rgba(52,168,83,.3);
+}
+
+.story .md-typeset .vibe-check .vc-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: .5rem;
+  color: #137333;
+}
+
+[data-md-color-scheme="slate"] .story .md-typeset .vibe-check .vc-title { color: #6ee7a0; }
+
+/* --- 8. NEXT BUTTON ----------------------------------------------------- */
+
+.story .md-typeset .nav-next {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* --- 9. QUIETER TABLES & CODE ------------------------------------------- */
+
+.story .md-typeset table:not([class]) {
+  border: none;
+  font-size: .95rem;
+}
+
+.story .md-typeset table:not([class]) th {
+  background: none;
+  border-bottom: 2px solid var(--md-default-fg-color--lightest);
+  font-weight: 650;
+}
+
+.story .md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.story .md-typeset pre > code { border-radius: 12px; }
+
+/* --- 10. NO SIDEBAR CLUTTER --------------------------------------------
+   A story does not need a table of contents. Hide it, reclaim the space. */
+
+.story .md-sidebar--secondary { display: none; }
+
+/* --- 11. MOBILE --------------------------------------------------------- */
+
+@media screen and (max-width: 76.1875em) {
+  .story .md-content__inner { max-width: 100%; }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .story .md-typeset { font-size: 1rem; line-height: 1.75; }
+  .story .md-typeset h1 { font-size: 1.95rem; }
+  .story .md-typeset h2 { font-size: 1.4rem; margin-top: 2.6rem; }
+  .story .md-typeset .beat { font-size: 1.25rem; }
+  .story .md-typeset blockquote { font-size: 1.1rem; }
+  .story .md-typeset .step { padding: 1.2rem 1rem 1.2rem 3rem; }
+  .story .md-typeset .step::before { left: .7rem; }
+}
+
+/* ==========================================================================
+   VISUAL MODE — less reading, more looking
+   Big blocks, icons, comparisons. Text earns its place or it goes.
+   ========================================================================== */
+
+/* --- BIG STAT / NUMBER ---------------------------------------------------
+   Usage: <div class="big-stat"><span class="num">11</span><span class="cap">minutes</span></div> */
+
+.story .md-typeset .stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 2.2rem 0;
+}
+
+.story .md-typeset .big-stat {
+  text-align: center;
+  padding: 1.6rem 1rem;
+  border-radius: 16px;
+  background: var(--md-code-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.story .md-typeset .big-stat .num {
+  display: block;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.04em;
+  background: linear-gradient(135deg, #4285F4, #34A853);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.story .md-typeset .big-stat .cap {
+  display: block;
+  margin-top: .5rem;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  opacity: .7;
+  font-weight: 600;
+}
+
+/* --- VERSUS BLOCK --------------------------------------------------------
+   Two columns, one clearly worse. Reads instantly, no paragraph needed. */
+
+.story .md-typeset .versus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2.2rem 0;
+}
+
+.story .md-typeset .versus > div {
+  border-radius: 16px;
+  padding: 1.4rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.story .md-typeset .vs-bad  { background: rgba(234,67,53,.07);  border-color: rgba(234,67,53,.25) !important; }
+.story .md-typeset .vs-good { background: rgba(52,168,83,.08);  border-color: rgba(52,168,83,.3)  !important; }
+
+.story .md-typeset .versus h4 {
+  margin: 0 0 .8rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.story .md-typeset .versus ul { margin: 0; padding-left: 1.1rem; }
+.story .md-typeset .versus li { margin: .35em 0; font-size: .93rem; line-height: 1.5; }
+
+/* --- ICON ROW — four things, no prose ------------------------------------ */
+
+.story .md-typeset .icon-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .9rem;
+  margin: 2rem 0;
+}
+
+.story .md-typeset .icon-card {
+  padding: 1.3rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  text-align: center;
+}
+
+.story .md-typeset .icon-card .ic {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: .5rem;
+  line-height: 1;
+}
+
+.story .md-typeset .icon-card strong { display: block; font-size: .95rem; margin-bottom: .2rem; }
+.story .md-typeset .icon-card span   { font-size: .82rem; opacity: .72; line-height: 1.4; display: block; }
+
+/* --- TIMELINE — the run of the session ----------------------------------- */
+
+.story .md-typeset .timeline { margin: 2rem 0; padding: 0; list-style: none; }
+
+.story .md-typeset .timeline li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  margin: 0;
+}
+
+.story .md-typeset .timeline li:last-child { border-bottom: none; }
+
+.story .md-typeset .timeline .t {
+  font-weight: 700;
+  font-size: .8rem;
+  color: #4285F4;
+  letter-spacing: .04em;
+}
+
+/* --- MOBILE -------------------------------------------------------------- */
+
+@media screen and (max-width: 44.9375em) {
+  .story .md-typeset .versus { grid-template-columns: 1fr; }
+  .story .md-typeset .big-stat .num { font-size: 2.2rem; }
+  .story .md-typeset .timeline li { grid-template-columns: 3.6rem 1fr; gap: .7rem; }
+}
+
+/* Card headings are labels, not sections — no permalink anchors on them. */
+.story .md-typeset .versus h4 .headerlink,
+.story .md-typeset .step h3 .headerlink { display: none; }

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{#
+  Story mode: workshop pages read like a story, not a reference doc.
+  Material renders `block content` inside .md-content__inner, which is too deep
+  to restyle the page shell, so we tag <html> instead. Every rule in
+  stylesheets/story.css is scoped under .story, leaving the reference material
+  (pre-workshop, post-workshop, archived day-1/2/3) on its original styling.
+#}
+{% block extrahead %}
+  {{ super() }}
+  {% set p = page.file.src_uri if page else "" %}
+  {% if "day-1-new/" in p or "day-2-new/" in p or "day-3-new/" in p %}
+    <script>document.documentElement.classList.add("story");</script>
+  {% endif %}
+{% endblock %}
