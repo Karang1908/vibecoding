@@ -1,15 +1,12 @@
 /* Story pages — workshop overview and active three-day learning path */
 
-.story .md-sidebar--secondary {
+.home .md-sidebar--primary,
+.home .md-sidebar--secondary {
   display: none;
 }
 
 .story .md-content__inner {
   max-width: 54rem;
-}
-
-.home .md-sidebar--primary {
-  display: none;
 }
 
 .home .md-content__inner {

@@ -19,10 +19,57 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 {% block extrahead %}
   {{ super() }}
   {% set p = page.file.src_uri if page else "" %}
-  {% if p == "index.md" or "day-1-new/" in p or "day-2-new/" in p or "day-3-new/" in p %}
-    <script>document.documentElement.classList.add("story");</script>
-  {% endif %}
-  {% if p == "index.md" %}
-    <script>document.documentElement.classList.add("home");</script>
-  {% endif %}
+  <script>
+    (function() {
+      var isHome = {{ 'true' if p == 'index.md' else 'false' }};
+      var isStory = {{ 'true' if (p == 'index.md' or 'day-1-new/' in p or 'day-2-new/' in p or 'day-3-new/' in p) else 'false' }};
+      if (isHome) {
+        document.documentElement.classList.add("home");
+      } else {
+        document.documentElement.classList.remove("home");
+      }
+      if (isStory) {
+        document.documentElement.classList.add("story");
+      } else {
+        document.documentElement.classList.remove("story");
+      }
+    })();
+  </script>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    (function() {
+      function syncPageShell() {
+        var path = window.location.pathname || "";
+        var clean = path.replace(/\/index\.html$/, "").replace(/\/+$/, "");
+        var isHome = clean === "" || clean === "/vibecoding101" || clean === "/vibecoding";
+        var isLesson = path.indexOf("/day-1-new/") !== -1 ||
+                       path.indexOf("/day-2-new/") !== -1 ||
+                       path.indexOf("/day-3-new/") !== -1;
+        var isStory = isHome || isLesson;
+
+        if (isHome) {
+          document.documentElement.classList.add("home");
+        } else {
+          document.documentElement.classList.remove("home");
+        }
+
+        if (isStory) {
+          document.documentElement.classList.add("story");
+        } else {
+          document.documentElement.classList.remove("story");
+        }
+      }
+
+      if (typeof document$ !== "undefined") {
+        document$.subscribe(function() {
+          syncPageShell();
+        });
+      } else {
+        syncPageShell();
+      }
+    })();
+  </script>
 {% endblock %}
