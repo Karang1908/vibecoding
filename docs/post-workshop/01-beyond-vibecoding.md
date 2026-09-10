@@ -83,3 +83,7 @@ You do not need to build everything from scratch. The open-source ecosystem prov
 - When contributing to open-source repos using AI, **disclose your AI usage transparently** in your pull request.
 - Ensure every generated line has been reviewed and passes the repository's continuous integration (CI) tests.
 - Write human-quality PR descriptions explaining the *why* behind architectural decisions.
+
+<div class="nav-next" markdown>
+[Continue to the Vibecoder's Handbook →](02-handbook-and-roadmap.md){ .md-button .md-button--primary }
+</div>

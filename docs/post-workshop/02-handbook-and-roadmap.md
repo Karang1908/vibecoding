@@ -54,21 +54,9 @@ The completion of this workshop is the beginning of your journey as an AI-first 
 
 </div>
 
----
-
-## Workshop Leadership & Credits
-
-This workshop was designed and conducted by:
-
-- **Priyanshu**  
-  GitHub: [github.com/prxcode](https://github.com/prxcode) &bull; Lead Instructor & Curriculum Architect
-- **Armaan**  
-  GitHub: [github.com/armaaxs](https://github.com/armaaxs) &bull; Co-Instructor & Workshop Operations
-- **Host Organization**: GDG BITS Pilani Dubai Campus
-
 <div style="margin-top: 3rem; text-align: center; padding: 2rem; background: var(--gdg-blue-subtle); border-radius: 12px; border: 1px solid rgba(66, 133, 244, 0.2);">
   <h3 style="margin-bottom: 0.5rem; color: var(--gdg-blue);">Keep Building at the Speed of Thought</h3>
   <p style="font-size: 0.95rem; color: var(--md-default-fg-color--light); max-width: 600px; margin: auto;">
-    Review the notes, clone the starter templates, and share what you build with our community.
+    Review the notes, keep experimenting, and share what you build with our community.
   </p>
 </div>
