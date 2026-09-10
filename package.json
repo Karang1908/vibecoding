@@ -2,8 +2,14 @@
   "name": "vibecoding101",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "VibeCoding 101 - Zero to Production with AI",
   "scripts": {
-    "build": "python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && mkdocs build"
+    "build": "python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && mkdocs build",
+    "dev": "npm run build && node scripts/dev-server.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@vercel/functions": "^3.9.7"
   }
 }

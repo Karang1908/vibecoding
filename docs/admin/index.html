@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Workshop access · Vibecoding 101</title>
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <script defer src="/javascripts/admin.js"></script>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="portal-header">
+      <div class="portal-shell portal-header__inner">
+        <a class="portal-brand" href="/" aria-label="Vibecoding 101 home">
+          <img src="/assets/images/gdg-mark.png" alt="" width="40" height="40">
+          <span class="portal-brand__divider" aria-hidden="true"></span>
+          <span>Vibecoding 101</span>
+        </a>
+        <span class="secure-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8h-1V6a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2Zm-7-2a2 2 0 1 1 4 0v2h-4V6Zm3 9.73V17h-2v-1.27a2 2 0 1 1 2 0Z"/></svg>
+          Admin
+        </span>
+      </div>
+    </header>
+
+    <main id="main-content" class="portal-shell portal-main">
+      <section id="loading-view" class="loading-view" aria-live="polite">
+        <div class="brand-loader" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p>Opening workshop controls…</p>
+      </section>
+
+      <section id="login-view" class="login-layout" hidden>
+        <div class="login-copy">
+          <p class="eyebrow">Workshop controls</p>
+          <h1>Admin portal</h1>
+          <p>Sign in to open or pause each part of the workshop for participants.</p>
+        </div>
+
+        <form id="login-form" class="login-card" autocomplete="on">
+          <div class="login-card__heading">
+            <div class="login-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 5a3 3 0 0 1 6 0v3H9V7Zm3 6a2 2 0 0 1 1 3.73V19h-2v-2.27A2 2 0 0 1 12 13Z"/></svg>
+            </div>
+            <div>
+              <h2>Administrator sign in</h2>
+              <p>Your session stays active for eight hours.</p>
+            </div>
+          </div>
+
+          <label class="field-label" for="admin-password">Password</label>
+          <div class="password-field">
+            <input
+              id="admin-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              autofocus
+            >
+            <button id="password-visibility" class="icon-button" type="button" aria-label="Show password" aria-pressed="false">
+              <svg class="eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C6.5 5 2.31 8.36 1 12c1.31 3.64 5.5 7 11 7s9.69-3.36 11-7c-1.31-3.64-5.5-7-11-7Zm0 11a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-6.4a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8Z"/></svg>
+              <svg class="eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="m3.27 2 18.73 18.73-1.27 1.27-3.08-3.08A11.9 11.9 0 0 1 12 20C6.5 20 2.31 16.64 1 13a11.4 11.4 0 0 1 3.26-4.66L2 6.08 3.27 4.8 5.7 7.23A11.9 11.9 0 0 1 12 5c5.5 0 9.69 3.36 11 7a11.1 11.1 0 0 1-3.08 4.47l-1.43-1.43A9.1 9.1 0 0 0 20.82 12C19.43 9.3 16.08 7 12 7a9.9 9.9 0 0 0-4.8 1.2l1.57 1.57A4 4 0 0 1 14.23 15l1.57 1.57L3.27 4.04V2Zm7.07 9.14 2.52 2.52a2 2 0 0 1-2.52-2.52ZM3.18 13c1.39 2.7 4.74 5 8.82 5 1.46 0 2.8-.3 4-.8l-1.55-1.55A4 4 0 0 1 8.35 9.55L5.7 6.9l-.02.02A9.5 9.5 0 0 0 3.18 13Z"/></svg>
+            </button>
+          </div>
+
+          <p id="login-error" class="form-message" role="alert" hidden></p>
+          <button id="login-button" class="button button--primary button--wide" type="submit">
+            <span>Continue</span>
+            <span class="button-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+      </section>
+
+      <section id="portal-view" class="dashboard" hidden>
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">Workshop controls</p>
+            <h1>Manage access</h1>
+            <p>Changes apply to participant links across the website.</p>
+          </div>
+          <button id="logout-button" class="button button--text" type="button">
+            Sign out
+          </button>
+        </div>
+
+        <div id="configuration-message" class="configuration-message" role="status" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 21h22L12 2 1 21Zm12-3h-2v-2h2v2Zm0-4h-2v-4h2v4Z"/></svg>
+          <div>
+            <strong>Controls temporarily unavailable</strong>
+            <p>Vercel’s runtime cache could not be reached. Refresh and try again.</p>
+          </div>
+        </div>
+
+        <section class="access-card" aria-labelledby="access-heading">
+          <div class="access-card__header">
+            <div>
+              <h2 id="access-heading">Workshop sections</h2>
+              <p id="access-summary" aria-live="polite">Loading access…</p>
+            </div>
+            <div class="bulk-actions" aria-label="Bulk access controls">
+              <button id="enable-all" class="button button--secondary" type="button">Enable all</button>
+              <button id="block-all" class="button button--secondary button--danger" type="button">Block all</button>
+            </div>
+          </div>
+
+          <div id="sections-loading" class="sections-loading" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <ul id="section-list" class="section-list" hidden></ul>
+        </section>
+
+        <div class="dashboard-meta">
+          <p id="operation-status" role="status" aria-live="polite"></p>
+          <p id="last-updated"></p>
+        </div>
+      </section>
+
+      <noscript>
+        <p class="noscript-message">JavaScript is required to use the admin portal.</p>
+      </noscript>
+    </main>
+  </body>
+</html>
