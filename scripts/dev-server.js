@@ -5,6 +5,7 @@ import { extname, join, normalize } from "node:path";
 
 import sectionsHandler from "../api/admin/sections.js";
 import sessionHandler from "../api/admin/session.js";
+import accessStateHandler from "../api/access-state.js";
 import middleware from "../middleware.js";
 
 const siteDirectory = join(process.cwd(), "site");
@@ -113,6 +114,10 @@ const server = createServer(async (request, response) => {
     }
     if (url.pathname === "/api/admin/sections") {
       await runApiHandler(sectionsHandler, request, response);
+      return;
+    }
+    if (url.pathname === "/api/access-state") {
+      await runApiHandler(accessStateHandler, request, response);
       return;
     }
 
