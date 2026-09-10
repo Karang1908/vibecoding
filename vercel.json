@@ -5,17 +5,7 @@
   "outputDirectory": "site",
   "cleanUrls": true,
   "proxy": {
-    "entrypoint": "middleware.js",
-    "matcher": [
-      "/pre-workshop/:path*",
-      "/day-1/:path*",
-      "/day-1-new/:path*",
-      "/day-2/:path*",
-      "/day-2-new/:path*",
-      "/day-3/:path*",
-      "/day-3-new/:path*",
-      "/post-workshop/:path*"
-    ]
+    "entrypoint": "middleware.js"
   },
   "headers": [
     {
