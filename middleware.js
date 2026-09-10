@@ -1,26 +1,19 @@
+import { next } from "@vercel/functions";
 import { readAccessState, sectionForPath } from "./server/access-control.js";
 
-export const config = {
-  matcher: [
-    "/pre-workshop/:path*",
-    "/day-1/:path*",
-    "/day-1-new/:path*",
-    "/day-2/:path*",
-    "/day-2-new/:path*",
-    "/day-3/:path*",
-    "/day-3-new/:path*",
-    "/post-workshop/:path*",
-  ],
-  runtime: "nodejs",
-};
+function continueRequest() {
+  // The local server treats undefined as "continue". Vercel's proxy needs
+  // the explicit middleware-next response so the static page is served.
+  return process.env.VERCEL === "1" ? next() : undefined;
+}
 
 export default async function middleware(request) {
   const url = new URL(request.url);
   const section = sectionForPath(url.pathname);
-  if (!section) return;
+  if (!section) return continueRequest();
 
   const { sections } = await readAccessState();
-  if (sections[section.id] !== false) return;
+  if (sections[section.id] !== false) return continueRequest();
 
   const blockedUrl = new URL("/access-closed/", request.url);
   blockedUrl.searchParams.set("section", section.id);
