@@ -1,84 +1,125 @@
 ---
 title: "2.3 Put It On The Internet"
-description: "A real URL. In about two minutes."
+description: "Deploying your Next.js application to Vercel in 2 minutes."
 hide:
   - toc
 ---
 
-# Put it on the internet
+# Put It On The Internet: Vercel
 
-This is the bit everyone thinks is hard.
+Up until this moment, your application has only existed on your computer at `http://localhost:3000`.
 
-<p class="beat">It takes about two minutes.</p>
+If you send that link to your friend on WhatsApp, they will see an error. "Localhost" literally means *"this machine only"*.
 
-## How it works
+<p class="beat">Now, we turn localhost into a real public URL that anyone on Earth can visit.</p>
 
-Your code is already on GitHub. We just point a hosting service at it.
+---
+
+## 1. How Modern Cloud Deployment Works
+
+Deploying a website used to require manually renting a server, configuring Linux command lines, setting up Apache or Nginx, and uploading files over FTP.
+
+Today, modern tools have simplified this down to a single automated pipeline:
 
 <div class="icon-row" markdown>
-<div class="icon-card" markdown="span"><span class="ic">:material-laptop:</span><strong>You push</strong><span>git push</span></div>
-<div class="icon-card" markdown="span"><span class="ic">:material-package-variant-closed:</span><strong>GitHub gets it</strong><span>Automatically</span></div>
-<div class="icon-card" markdown="span"><span class="ic">:material-earth:</span><strong>Vercel builds it</strong><span>Automatically</span></div>
-<div class="icon-card" markdown="span"><span class="ic">:material-link:</span><strong>Live URL</strong><span>~15 seconds</span></div>
+
+<div class="icon-card" markdown>
+:material-laptop:
+
+**1. You Push Code**
+
+`git push origin main`
 </div>
 
-Set it up once. After that, `git push` **is** publishing.
+<div class="icon-card" markdown>
+:material-github:
 
-## Do it
+**2. GitHub Receives It**
+
+Stores your latest commits
+</div>
+
+<div class="icon-card" markdown>
+:material-cloud-sync:
+
+**3. Vercel Builds It**
+
+Runs `npm install` & `npm run build` in the cloud
+</div>
+
+<div class="icon-card" markdown>
+:material-earth:
+
+**4. Instant Public URL**
+
+Live worldwide in ~30 seconds
+</div>
+
+</div>
+
+Once you connect Vercel to your GitHub repository, **every single time you `git push`, your live website updates automatically.**
+
+---
+
+## 2. Deploy To Vercel in 3 Steps
 
 <div class="step" data-step="1" markdown>
-
-### Sign up
-
-**[vercel.com/new](https://vercel.com/new)** → **Continue with GitHub**.
-
+### Sign In to Vercel
+Go to **[vercel.com/new](https://vercel.com/new)** and choose **Continue with GitHub**.
 </div>
 
 <div class="step" data-step="2" markdown>
-
-### Import your repo
-
-Find your project in the list → **Import**.
-
+### Import Your GitHub Repository
+1. In the list of repositories, find your **`survive-uni`** project.
+2. Click the blue **Import** button next to it.
 </div>
 
 <div class="step" data-step="3" markdown>
+### Hit Deploy
+1. Vercel will automatically detect that you are using **Next.js**.
+2. Leave the build settings as default.
+3. Click the **Deploy** button.
+</div>
 
-### Deploy
+Watch the build logs scroll across your screen. Vercel is setting up the cloud containers, compiling your TypeScript, optimizing your Tailwind CSS styles, and packaging your application.
 
-Don't change any settings. Just hit **Deploy**.
+---
 
-Watch the logs scroll. Feel fancy.
+## 3. You're Live!
 
+When the confetti shoots across your screen, Vercel will present your live public URL:
+
+<div class="url-banner" markdown>
+`https://survive-uni-[yourname].vercel.app`
 </div>
 
 <div class="vibe-check" markdown>
-<div class="vc-title">You're live</div>
+<div class="vc-title">Test It On Your Phone Right Now</div>
 
-`https://your-app.vercel.app`
-
-Open it on your phone. Send it to someone. That's a real website that anyone on Earth can visit.
-
-**You made that.**
+1. Open your phone's browser.
+2. Type in your new `.vercel.app` URL.
+3. Play a round of Survive Uni right on your mobile screen!
+4. Send the link to a friend or classmate.
 </div>
 
-## From now on
+<p class="beat">You built a full-stack game with a database, hosted on global cloud infrastructure.</p>
+
+---
+
+## 4. The Golden Rule of Git & Deployments
+
+From this point forward, whenever you want to update your live app:
 
 ```bash
 git add .
-git commit -m "new feature"
+git commit -m "feat: added new scenario and improved button colors"
 git push
 ```
 
-Fifteen seconds later, the live site has updated.
+Within 30 seconds, Vercel sees the push, rebuilds your project, and updates your live URL. No FTP, no server rebooting, no manual uploads.
 
-<p class="beat">No uploading. No FTP. No server. Just push.</p>
-
-!!! warning "Site loads but nothing works?"
-    Almost always your keys — the live site doesn't have them yet.
-
-    That's the next page.
+*(Wait... why is the leaderboard showing an error on the live Vercel site? Because Vercel doesn't have your Supabase keys yet! Let's lock that down safely.)*
 
 <div class="nav-next" markdown>
-[Don't get hacked →](04-dont-get-hacked.md){ .md-button .md-button--primary }
+[Don't Get Hacked: Securing Keys →](04-dont-get-hacked.md){ .md-button .md-button--primary }
 </div>

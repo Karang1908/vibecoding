@@ -482,6 +482,24 @@
     border-left: 0;
   }
 
+  .traffic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .traffic-col + .traffic-col {
+    border-top: 1px solid var(--gdg-outline-soft);
+    border-left: 0;
+  }
+
+  .tri-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tri-grid > div + div {
+    border-top: 1px solid var(--gdg-outline-soft);
+    border-left: 0;
+  }
+
   .icon-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -520,6 +538,264 @@
 
   .nav-next {
     display: block;
+  }
+}
+
+/* Process Flow Diagram */
+.process-flow {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  margin: 1.35rem 0 2rem;
+  padding: 0.9rem 1.15rem;
+  background: var(--gdg-surface);
+  border: 1px solid var(--gdg-outline-soft);
+  border-radius: var(--gdg-radius-lg);
+  scrollbar-width: thin;
+  scrollbar-color: var(--gdg-outline-soft) transparent;
+}
+
+.process-flow::-webkit-scrollbar {
+  height: 4px;
+}
+
+.process-flow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.process-flow::-webkit-scrollbar-thumb {
+  background: var(--gdg-outline-soft);
+  border-radius: 4px;
+}
+
+.process-flow .flow-item {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0.35rem 0.8rem;
+  background: var(--gdg-blue-container);
+  color: var(--gdg-on-blue-container);
+  font-weight: 600;
+  font-size: 0.78rem;
+  border-radius: var(--gdg-radius-sm);
+  white-space: nowrap;
+}
+
+.process-flow .flow-item.highlight {
+  background: var(--gdg-blue);
+  color: white;
+}
+
+.process-flow .flow-arrow {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--gdg-blue);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  user-select: none;
+}
+
+.process-flow .flow-arrow .twemoji {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.url-banner {
+  margin: 1.5rem 0 2rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--gdg-surface);
+  border: 2px dashed var(--gdg-blue);
+  border-radius: var(--gdg-radius-md);
+  text-align: center;
+  font-family: var(--md-code-font-family);
+  font-size: clamp(0.95rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: var(--gdg-blue);
+  word-break: break-all;
+}
+
+/* Traffic Light 1x3 System */
+.traffic-grid {
+  display: grid;
+  overflow: hidden;
+  margin: 1.35rem 0 2rem;
+  border: 1px solid var(--gdg-outline-soft);
+  border-radius: var(--gdg-radius-lg);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.traffic-col {
+  min-width: 0;
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.traffic-col + .traffic-col {
+  border-left: 1px solid var(--gdg-outline-soft);
+}
+
+.traffic-col.traffic-green {
+  background: color-mix(in srgb, var(--gdg-green-container) 55%, white);
+}
+
+.traffic-col.traffic-yellow {
+  background: color-mix(in srgb, var(--gdg-yellow-container) 85%, white);
+}
+
+.traffic-col.traffic-red {
+  background: color-mix(in srgb, var(--gdg-red-container) 55%, white);
+}
+
+.traffic-col h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.traffic-col.traffic-green h4 {
+  color: #0d5226;
+}
+
+.traffic-col.traffic-yellow h4 {
+  color: #8c5300;
+}
+
+.traffic-col.traffic-red h4 {
+  color: #b3261e;
+}
+
+.traffic-col .traffic-subtitle {
+  margin: 0 0 0.75rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.traffic-col.traffic-green .traffic-subtitle {
+  color: #0d5226;
+}
+
+.traffic-col.traffic-yellow .traffic-subtitle {
+  color: #8c5300;
+}
+
+.traffic-col.traffic-red .traffic-subtitle {
+  color: #b3261e;
+}
+
+.traffic-col ul {
+  margin: 0;
+  padding-left: 1.05rem;
+}
+
+.traffic-col li {
+  margin: 0.35rem 0;
+  font-size: 0.81rem;
+  line-height: 1.45;
+}
+
+.traffic-col p:last-child,
+.traffic-col ul:last-child {
+  margin-bottom: 0;
+}
+
+/* Tri-Grid (1x3 Grid) */
+.tri-grid {
+  display: grid;
+  overflow: hidden;
+  margin: 1.35rem 0 2.5rem;
+  border: 1px solid var(--gdg-outline-soft);
+  border-radius: var(--gdg-radius-lg);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tri-grid > div {
+  min-width: 0;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  background: color-mix(in srgb, var(--gdg-green-container) 45%, white);
+  display: flex;
+  flex-direction: column;
+}
+
+.tri-grid > div + div {
+  border-left: 1px solid var(--gdg-outline-soft);
+}
+
+.tri-grid .tri-blue {
+  background: color-mix(in srgb, var(--gdg-blue-container-soft) 85%, white);
+}
+
+.tri-grid .tri-blue h4 {
+  color: var(--gdg-blue);
+}
+
+.tri-grid .tri-yellow {
+  background: color-mix(in srgb, var(--gdg-yellow-container) 85%, white);
+}
+
+.tri-grid .tri-yellow h4 {
+  color: #8c5300;
+}
+
+.tri-grid .tri-green {
+  background: color-mix(in srgb, var(--gdg-green-container) 55%, white);
+}
+
+.tri-grid .tri-green h4 {
+  color: #0d5226;
+}
+
+.tri-grid h4 {
+  margin: 0 0 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.tri-grid p {
+  margin: 0 0 0.6rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.tri-grid p:last-child {
+  margin-bottom: 0;
+}
+
+/* Phone width responsive layout: convert 1x3 into 3x1 vertical stack */
+@media screen and (max-width: 48em) {
+  .traffic-grid,
+  .tri-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .traffic-col + .traffic-col,
+  .tri-grid > div + div {
+    border-top: 1px solid var(--gdg-outline-soft) !important;
+    border-left: 0 !important;
+  }
+
+  .process-flow {
+    padding: 0.75rem 0.9rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .process-flow .flow-item {
+    font-size: 0.73rem !important;
+    padding: 0.3rem 0.65rem !important;
+  }
+
+  .process-flow .flow-arrow {
+    font-size: 0.85rem !important;
   }
 }
 

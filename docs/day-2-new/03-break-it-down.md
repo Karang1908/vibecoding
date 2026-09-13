@@ -1,93 +1,193 @@
 ---
-title: "1.3 The Game Data"
-description: "Give the UI something to read."
+title: "1.3 Break It Into Pieces"
+description: "Why prompting isn't magic, how to inspect code without reading 300 lines, and creating the data layer."
 hide:
   - toc
 ---
 
-# Generate the data
+# Break It Into Pieces: The Data Layer
 
-You have the rules. Now you need content.
+You have your workshop set up. You have `PRD.md` and `AGENT.md` in place.
 
-<p class="beat">We build the data layer so the UI has something to consume.</p>
+Now comes the big question: **How do we actually start building?**
 
-## One step at a time
+<p class="beat">We don't ask the AI to build the entire application in one giant prompt.</p>
 
-We don't ask for the whole game at once. We build the data first. Then the UI. Then the ending.
+<p class="beat">We break the application down into pieces: Data first, then Interface, then Logic.</p>
 
-Right now, we just want the 10 university-life scenarios.
+---
 
-<div class="prompt-slab" markdown>
-<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> ASK FOR THE DATA LAYER', 2000)"><span class="copy-icon"></span> ASK FOR THE DATA LAYER</button>
+## 1. Prompting Is Not Magic
 
-Following the guidelines in `AGENT.md`, create a file at `src/data/scenarios.ts`. 
+Many beginners think great vibe coders have memorized secret prompt incantations. 
 
-Export a strongly-typed TypeScript array containing 10 university-life scenarios. 
+They haven't. They just know how to communicate clearly.
 
-Each object must include: an ID, a scenario description, and two choice objects. Each choice must have a label and an impact object containing exact positive or negative integer adjustments for money, time, and sanity. Include the TypeScript interfaces at the top of the file.
+<div class="versus" markdown>
+<div class="vs-bad" markdown>
+#### :material-close-circle: Bad Prompt (Vague & Fragile)
+*"Make me a game."*  
+or  
+*"Make me a leaderboard."*
+
+**What happens:**  
+The AI guesses your game rules, imports 12 random libraries, breaks existing styles, and rewires your project into a confusing mess.
+</div>
+<div class="vs-good" markdown>
+#### :material-check-circle: Architect Prompt (Clear Context & Boundaries)
+*"Add 10 university survival scenarios to our project in `src/data/scenarios.ts`. Follow the guidelines in `AGENT.md`. Use mock data with TypeScript interfaces. Don't install any new packages. First inspect the project structure and show me the data shape."*
+
+**What happens:**  
+The AI does exactly what you asked, adheres to your stack, and doesn't touch anything else.
+</div>
 </div>
 
-## Look at the code
+<div class="vibe-check" markdown>
+<div class="vc-title">The Big Takeaway</div>
 
-Open `src/data/scenarios.ts`. 
+The lesson isn't *"memorize this prompt."*  
+**The lesson is: Give the AI enough context and constraints to make a good decision.**
+</div>
 
-You'll see a structured array. This is JSON-style data. It looks something like this:
+---
 
-```typescript
-{
-  id: 1,
-  description: "Your alarm didn't go off. 8AM lecture starts in 10 minutes.",
-  choices: [
-    { label: "Run to class", impact: { money: 0, time: -10, sanity: -5 } },
-    { label: "Go back to sleep", impact: { money: 0, time: +20, sanity: +10 } }
-  ]
-}
-```
+## 2. Don't Read 300 Lines Of Code
+
+When the AI creates or edits a file, it might output 200 or 300 lines of code.
+
+Here is the truth: **We are not expecting you to understand or audit every single semicolon.**
+
+Professional developers don't read every line of code their tools generate either. Instead, learn to answer these **5 orientation questions**:
 
 <div class="icon-row" markdown>
 
 <div class="icon-card" markdown>
-:material-note-edit-outline:
+:material-briefcase-check:
 
-**Scenarios**
+**1. Responsibility**
 
-The text you read
+What is this piece responsible for?
 </div>
 
 <div class="icon-card" markdown>
-:material-scale-balance:
+:material-arrow-right-bold-box:
 
-**Choices**
+**2. Inputs**
 
-What you click
+What information does it receive?
 </div>
 
 <div class="icon-card" markdown>
-:material-chart-bar:
+:material-package-down:
 
-**Impacts**
+**3. Outputs**
 
-How your stats change
+What does it produce?
 </div>
 
 <div class="icon-card" markdown>
-:material-shield-check:
+:material-map-marker:
 
-**TypeScript**
+**4. Location**
 
-Keeps the data strict
+Where is it used in the app?
+</div>
+
+<div class="icon-card" markdown>
+:material-alert-circle:
+
+**5. Failure**
+
+What happens if this piece fails?
 </div>
 
 </div>
+
+If you can answer those 5 questions, you are 100% in control of your project, even as a beginner.
+
+---
+
+## 3. The Mental Model: Build The Data First
+
+<div class="process-flow" markdown>
+<span class="flow-item">Interface</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">Logic</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item highlight">Data Layer</span>
+</div>
+
+Before we build buttons and screens, we need something for the screen to show. We will create our **Data Layer** in a separate file: `src/data/scenarios.ts`.
+
+Let's give the AI a precise prompt:
+
+<div class="prompt-slab" markdown>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY PROMPT', 2000)"><span class="copy-icon"></span> COPY PROMPT</button>
+
+Following the guidelines in `AGENT.md`, create a new data file at `src/data/scenarios.ts`.
+
+Export a strongly-typed TypeScript array containing 10 realistic university-life scenarios for 'Survive Uni'.
+
+Each scenario object must have:
+- `id`: unique number (1 to 10)
+- `description`: a short, relatable college scenario (e.g. 8AM lecture vs sleep, unexpected quiz, broken laptop)
+- `choices`: an array of 2 choice objects. Each choice must have a `label` and an `impact` object containing integer adjustments for `money`, `time`, and `sanity` (e.g. money: -15, time: +10, sanity: -5).
+
+Include the TypeScript `Scenario` and `Choice` interfaces at the top of the file. Do not touch any other files yet.
+</div>
+
+---
+
+## 4. Inspect The Data (Answer the 5 Questions)
+
+Open `src/data/scenarios.ts` in your IDE.
+
+You should see something like this:
+
+```typescript
+export interface Choice {
+  label: string;
+  impact: {
+    money: number;
+    time: number;
+    sanity: number;
+  };
+}
+
+export interface Scenario {
+  id: number;
+  description: string;
+  choices: Choice[];
+}
+
+export const scenarios: Scenario[] = [
+  {
+    id: 1,
+    description: "Your alarm didn't go off. 8:00 AM lecture starts in 10 minutes.",
+    choices: [
+      { label: "Sprint across campus", impact: { money: 0, time: -10, sanity: -10 } },
+      { label: "Go back to sleep", impact: { money: 0, time: +20, sanity: +15 } }
+    ]
+  },
+  // ... 9 more scenarios
+];
+```
+
+Now ask your 5 questions:
+- **Responsibility:** Holds the game's scenarios and numerical stat changes.
+- **Inputs:** None (it's static data).
+- **Outputs:** An array of 10 scenario objects.
+- **Location:** Will be imported by our main page (`src/app/page.tsx`).
+- **Failure:** If this file is missing or corrupted, the game has no questions to show.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">Check the file</div>
+<div class="vc-title">Data Layer Verified</div>
 
-Does `src/data/scenarios.ts` exist? Does it have 10 items? Are there impacts for money, time, and sanity?
+Does `src/data/scenarios.ts` exist? Does it contain 10 scenarios? Does each choice adjust money, time, and sanity?
 
-If yes, your data is ready.
+If yes, your Data layer is rock solid. Now we give it an Interface.
 </div>
 
 <div class="nav-next" markdown>
-[Build the UI →](04-build-it.md){ .md-button .md-button--primary }
+[Build It: Interface & State →](04-build-it.md){ .md-button .md-button--primary }
 </div>
