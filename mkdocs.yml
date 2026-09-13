@@ -32,6 +32,13 @@ extra_css:
 
 extra:
   generator: false
+  locks:
+    day_1: true
+    day_2: true
+    post_workshop: true
+
+hooks:
+  - scripts/lock_content.py
 
 plugins: []
 
