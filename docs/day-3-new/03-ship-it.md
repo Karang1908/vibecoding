@@ -1,5 +1,5 @@
 ---
-title: "3.3 Put It On The Internet"
+title: "2.3 Put It On The Internet"
 description: "A real URL. In about two minutes."
 hide:
   - toc
@@ -16,10 +16,10 @@ This is the bit everyone thinks is hard.
 Your code is already on GitHub. We just point a hosting service at it.
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">💻</span><strong>You push</strong><span>git push</span></div>
-<div class="icon-card"><span class="ic">📦</span><strong>GitHub gets it</strong><span>Automatically</span></div>
-<div class="icon-card"><span class="ic">🌍</span><strong>Vercel builds it</strong><span>Automatically</span></div>
-<div class="icon-card"><span class="ic">🔗</span><strong>Live URL</strong><span>~15 seconds</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-laptop:</span><strong>You push</strong><span>git push</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-package-variant-closed:</span><strong>GitHub gets it</strong><span>Automatically</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-earth:</span><strong>Vercel builds it</strong><span>Automatically</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-link:</span><strong>Live URL</strong><span>~15 seconds</span></div>
 </div>
 
 Set it up once. After that, `git push` **is** publishing.

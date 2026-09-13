@@ -1,5 +1,5 @@
 ---
-title: "3.5 One Last Trick"
+title: "2.5 One Last Trick"
 description: "You've been writing skills all along."
 hide:
   - toc
@@ -7,7 +7,7 @@ hide:
 
 # One last trick
 
-Remember `AGENTS.md`? The notebook you gave your intern on Day 2?
+Remember `AGENTS.md`? The notebook you gave your intern on Day 1?
 
 Here's what nobody told you at the time.
 
@@ -17,7 +17,7 @@ Here's what nobody told you at the time.
 
 <div class="versus" markdown>
 <div class="vs-good" markdown>
-#### 📓 AGENTS.md
+#### :material-notebook: AGENTS.md
 
 One note.
 
@@ -26,7 +26,7 @@ For **one** project.
 "Here's what we're building."
 </div>
 <div class="vs-good" markdown>
-#### ⚡ A skill
+#### :material-lightning-bolt: A skill
 
 A reusable note.
 
@@ -41,10 +41,10 @@ Same idea. Same markdown file. Just saved somewhere the AI can always reach it.
 ## What people actually make
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🎨</span><strong>My style</strong><span>Colours and layout, every project</span></div>
-<div class="icon-card"><span class="ic">🚀</span><strong>My setup</strong><span>How I start a new app</span></div>
-<div class="icon-card"><span class="ic">🔍</span><strong>My checklist</strong><span>Check before pushing</span></div>
-<div class="icon-card"><span class="ic">📝</span><strong>My explainer</strong><span>Explain code the way I like</span></div>
+<div class="icon-card"><span class="ic">:material-palette:</span><strong>My style</strong><span>Colours and layout, every project</span></div>
+<div class="icon-card"><span class="ic">:material-rocket-launch:</span><strong>My setup</strong><span>How I start a new app</span></div>
+<div class="icon-card"><span class="ic">:material-magnify:</span><strong>My checklist</strong><span>Check before pushing</span></div>
+<div class="icon-card"><span class="ic">:material-note-edit:</span><strong>My explainer</strong><span>Explain code the way I like</span></div>
 </div>
 
 Write it once. Never explain it again.
@@ -52,7 +52,7 @@ Write it once. Never explain it again.
 ## Make one now
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> TYPE THIS', 2000)"><span class="copy-icon"></span> TYPE THIS</button>
 
 Turn everything you've learned about how I like to build things into a reusable skill file I can drop into any future project.
 
@@ -66,18 +66,18 @@ Save that file. Drop it into your next project.
 ## What you actually did this week
 
 <div class="stat-row" markdown>
-<div class="big-stat"><span class="num">3</span><span class="cap">sessions</span></div>
-<div class="big-stat"><span class="num">1</span><span class="cap">live app</span></div>
-<div class="big-stat"><span class="num">0</span><span class="cap">syntax memorised</span></div>
+<div class="big-stat" markdown="span"><span class="num">3</span><span class="cap">sessions</span></div>
+<div class="big-stat" markdown="span"><span class="num">1</span><span class="cap">live app</span></div>
+<div class="big-stat" markdown="span"><span class="num">0</span><span class="cap">syntax memorised</span></div>
 </div>
 
 Look at what you're walking out with:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🎨</span><strong>Frontend</strong><span>An app people can use</span></div>
-<div class="icon-card"><span class="ic">🗄️</span><strong>Database</strong><span>Real data, real Postgres</span></div>
-<div class="icon-card"><span class="ic">🌍</span><strong>Deployed</strong><span>Live URL, real internet</span></div>
-<div class="icon-card"><span class="ic">🔐</span><strong>Secure</strong><span>Keys handled properly</span></div>
+<div class="icon-card"><span class="ic">:material-palette:</span><strong>Frontend</strong><span>An app people can use</span></div>
+<div class="icon-card"><span class="ic">:material-database:</span><strong>Database</strong><span>Real data, real Postgres</span></div>
+<div class="icon-card"><span class="ic">:material-earth:</span><strong>Deployed</strong><span>Live URL, real internet</span></div>
+<div class="icon-card"><span class="ic">:material-lock:</span><strong>Secure</strong><span>Keys handled properly</span></div>
 </div>
 
 <p class="beat">That's full-stack. You're a full-stack developer.</p>
@@ -138,5 +138,5 @@ Ship something? **Show us.** Tag GDG BPDC.
 Genuinely — we want to see it.
 
 <div class="stat-row" markdown>
-<div class="big-stat"><span class="num">🚀</span><span class="cap">now go build</span></div>
+<div class="big-stat" markdown="span"><span class="num">:material-rocket-launch:</span><span class="cap">now go build</span></div>
 </div>

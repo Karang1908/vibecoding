@@ -1,5 +1,5 @@
 ---
-title: "3.1 Show & Tell"
+title: "2.1 Show & Tell"
 description: "Four days. Let's see what you did."
 hide:
   - toc
@@ -16,9 +16,9 @@ Four days ago you'd never made a website.
 Screen share. Two minutes each. Show us:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🎨</span><strong>What it does</strong><span>Click something</span></div>
-<div class="icon-card"><span class="ic">😤</span><strong>What broke</strong><span>The bit that made you angry</span></div>
-<div class="icon-card"><span class="ic">✨</span><strong>Your favourite bit</strong><span>The thing you're proud of</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-palette:</span><strong>What it does</strong><span>Click something</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-emoticon-angry:</span><strong>What broke</strong><span>The bit that made you angry</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-star-four-points:</span><strong>Your favourite bit</strong><span>The thing you're proud of</span></div>
 </div>
 
 !!! tip "It's half-finished. That's fine."
@@ -30,7 +30,7 @@ Your app works. But it lives on **your laptop** and nobody else can touch it.
 
 <div class="versus" markdown>
 <div class="vs-bad" markdown>
-#### 📦 Right now
+#### :material-package-variant-closed: Right now
 
 - Only on your machine
 - Data dies if you clear the browser
@@ -38,7 +38,7 @@ Your app works. But it lives on **your laptop** and nobody else can touch it.
 - Key sitting somewhere unsafe
 </div>
 <div class="vs-good" markdown>
-#### 🌍 In 45 minutes
+#### :material-earth: In 45 minutes
 
 - Live on the internet
 - Real database behind it
@@ -54,7 +54,7 @@ Your app works. But it lives on **your laptop** and nobody else can touch it.
 <li><span class="t">8 min</span><span>The skills trick + what's next</span></li>
 </ul>
 
-<p class="beat">By the end you'll have a URL you can send your parents.</p>
+<p class="beat">By the end you'll have a URL you can send your friends.</p>
 
 <div class="nav-next" markdown>
 [Give it a real database →](02-database.md){ .md-button .md-button--primary }

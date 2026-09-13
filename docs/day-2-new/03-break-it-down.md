@@ -1,96 +1,93 @@
 ---
-title: "2.3 Break It Into Pieces"
-description: "The one skill that separates people who ship from people who get mush."
+title: "1.3 The Game Data"
+description: "Give the UI something to read."
 hide:
   - toc
 ---
 
-# Don't ask for the whole app
+# Generate the data
 
-Here's where most people fail. Watch:
+You have the rules. Now you need content.
 
-<div class="versus" markdown>
-<div class="vs-bad" markdown>
-#### 💀 One giant ask
+<p class="beat">We build the data layer so the UI has something to consume.</p>
 
-*"Build me a full app with login, database, dark mode, notifications and payments"*
+## One step at a time
 
-- Half-finished everything
-- Nothing actually works
-- Too broken to fix
-- You start over
-</div>
-<div class="vs-good" markdown>
-#### ✅ One piece at a time
+We don't ask for the whole game at once. We build the data first. Then the UI. Then the ending.
 
-*"Add a button that adds a task to a list"*
-
-- Works immediately
-- You can see it
-- Easy to fix
-- Then the next piece
-</div>
-</div>
-
-<p class="beat">Same app. Same AI. Completely different outcome.</p>
-
-## Why the big ask fails
-
-Your intern is brilliant and has no memory.
-
-Give it twenty instructions at once and it does what you'd do — remembers the first three, panics, guesses the rest.
-
-Give it one instruction and it nails it. Every time.
-
-## The smallest version that still works
-
-Before building anything, ask yourself one question:
-
-> If I could only build **one** thing and it still counted as this app — what is it?
-
-<div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">📝</span><strong>To-do app</strong><span>Add a task. Not login, tags, reminders.</span></div>
-<div class="icon-card"><span class="ic">💸</span><strong>Bill splitter</strong><span>Split one bill. Not history or payments.</span></div>
-<div class="icon-card"><span class="ic">🤖</span><strong>Chat app</strong><span>One message, one reply. Not voice or images.</span></div>
-</div>
-
-That's your first build. Everything else is later.
-
-!!! tip "Pros call this an MVP"
-    Minimum Viable Product. Fancy name, simple idea: **the smallest thing that still works.**
-
-    Build that first. Always.
-
-## Make your list
-
-Take today's app and write it as small steps — each one a thing you could *see* on screen.
+Right now, we just want the 10 university-life scenarios.
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> ASK FOR THE DATA LAYER', 2000)"><span class="copy-icon"></span> ASK FOR THE DATA LAYER</button>
 
-Here's what I want to build: [DESCRIBE THE APP IN 2 LINES]
+Following the guidelines in `AGENT.md`, create a file at `src/data/scenarios.ts`. 
 
-Don't build it yet. First, break this into the smallest possible steps, in the order we should build them. Start with the simplest version that still works.
+Export a strongly-typed TypeScript array containing 10 university-life scenarios. 
 
-Keep it short and in plain English.
+Each object must include: an ID, a scenario description, and two choice objects. Each choice must have a label and an impact object containing exact positive or negative integer adjustments for money, time, and sanity. Include the TypeScript interfaces at the top of the file.
 </div>
 
-It'll give you a list. **That list is your plan for the next hour.**
+## Look at the code
 
-## The rule
+Open `src/data/scenarios.ts`. 
 
-<p class="beat">One step. Look at it. Next step.</p>
+You'll see a structured array. This is JSON-style data. It looks something like this:
 
-Never move on while something's broken. Never do two steps at once.
+```typescript
+{
+  id: 1,
+  description: "Your alarm didn't go off. 8AM lecture starts in 10 minutes.",
+  choices: [
+    { label: "Run to class", impact: { money: 0, time: -10, sanity: -5 } },
+    { label: "Go back to sleep", impact: { money: 0, time: +20, sanity: +10 } }
+  ]
+}
+```
+
+<div class="icon-row" markdown>
+
+<div class="icon-card" markdown>
+:material-note-edit-outline:
+
+**Scenarios**
+
+The text you read
+</div>
+
+<div class="icon-card" markdown>
+:material-scale-balance:
+
+**Choices**
+
+What you click
+</div>
+
+<div class="icon-card" markdown>
+:material-chart-bar:
+
+**Impacts**
+
+How your stats change
+</div>
+
+<div class="icon-card" markdown>
+:material-shield-check:
+
+**TypeScript**
+
+Keeps the data strict
+</div>
+
+</div>
 
 <div class="vibe-check" markdown>
-<div class="vc-title">You should now have</div>
+<div class="vc-title">Check the file</div>
 
-A list of 5–10 small steps, in order, starting with something boring and simple.
+Does `src/data/scenarios.ts` exist? Does it have 10 items? Are there impacts for money, time, and sanity?
 
-**Boring and simple is correct.** That's what shipping looks like.
+If yes, your data is ready.
 </div>
 
 <div class="nav-next" markdown>
-[Now build it →](04-build-it.md){ .md-button .md-button--primary }
+[Build the UI →](04-build-it.md){ .md-button .md-button--primary }
 </div>

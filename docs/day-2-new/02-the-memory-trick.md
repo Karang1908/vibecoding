@@ -1,88 +1,100 @@
 ---
-title: "2.2 The Memory Trick"
-description: "One sentence that changes everything."
+title: "1.2 The Blueprint"
+description: "Vibecoding 101. Define the rules before you build."
 hide:
   - toc
 ---
 
-# The trick nobody tells you
+# The rules of Vibecoding
 
 Remember your intern?
 
 > Read the entire internet. Zero memory.
 
-Yesterday that was just a funny line. Today it's a real problem.
+Vibecoding means writing software by prompting AI. But if you just say "build me a game," it will hallucinate, forget your stack, and make a mess.
 
 <div class="versus" markdown>
 <div class="vs-bad" markdown>
-#### 😩 Without memory
-
-- New chat = starts from zero
-- "What app? What colours?"
-- You re-explain everything
-- It undoes yesterday's work
+#### :material-emoticon-sad-outline: The Amateur
+- Massive, scattered prompts
+- Blindly trusts the AI
+- Hopes for the best
+- Gets a broken, outdated React app
 </div>
 <div class="vs-good" markdown>
-#### 😌 With memory
-
-- Opens, reads its notes
-- Already knows your project
-- Picks up where you left off
-- Stays consistent
+#### :material-emoticon-happy-outline: The Architect
+- Defines exact components and data
+- Questions weird imports
+- Builds one step at a time
+- Gives the intern a notebook
 </div>
 </div>
 
-## So give it a notebook
+!!! tip "Generate a Polished Prompt"
+    Building your own idea? You can use [Vibe-Gen](https://vibecode-prompt.vercel.app/) to instantly generate a professional, highly polished architecture prompt tailored specifically to your project.
 
-You don't need software for this. You just **ask**.
+## Step 1: Give it a notebook
+
+Before writing any application code, we define our system boundaries. 
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Type this. Right now.</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY', 2000)"><span class="copy-icon"></span> COPY</button>
 
-Create a file called AGENTS.md that explains this project — what we're building, what tech we're using, the colours and style, and the rules you should follow.
+I am building 'Survive Uni', a resource-management web game using Next.js (App Router), TypeScript, and Tailwind CSS. I want this project to demonstrate deep, specialized mastery of this specific stack.
 
-Write it for yourself, so that next time you open this project you instantly know what's going on.
+Please generate two markdown files:
+1. `PRD.md`: Outline the core game loop (10 scenarios, state tracking for Money/Time/Sanity, and a final Report Card).
+2. `AGENT.md`: Define strict coding guidelines. Enforce functional components, strict TypeScript interfaces, mobile-first Tailwind design, and prohibit unnecessary external libraries.
 </div>
 
-Watch it write its own instruction manual.
+Watch it write its own instruction manual. 
 
 <p class="beat">You just gave an amnesiac a notebook.</p>
 
 ## Why this works
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">📖</span><strong>It reads it first</strong><span>Every single time</span></div>
-<div class="icon-card"><span class="ic">🎨</span><strong>Stays consistent</strong><span>Same colours, same style</span></div>
-<div class="icon-card"><span class="ic">🤝</span><strong>Works for humans too</strong><span>Anyone can join in</span></div>
-<div class="icon-card"><span class="ic">♻️</span><strong>You can edit it</strong><span>It's just a text file</span></div>
+
+<div class="icon-card" markdown>
+:material-book-open-variant:
+
+**It reads it first**
+
+Every single time
 </div>
 
-## Open it. Read it.
+<div class="icon-card" markdown>
+:material-traffic-cone:
 
-Seriously — click `AGENTS.md` and read what it wrote about your project.
+**Strict Rules**
 
-Wrong about something? **Fix it by typing.** It's a plain text file. Change a colour, add a rule, delete a line.
+No random libraries
+</div>
 
-Try adding a rule of your own:
+<div class="icon-card" markdown>
+:material-target:
 
-```
-Never use the colour orange.
-```
-```
-Keep everything in one HTML file.
-```
-```
-Explain code in simple English, not jargon.
-```
+**Clear Scope**
+
+It knows exactly what to build
+</div>
+
+<div class="icon-card" markdown>
+:material-recycle:
+
+**You can edit it**
+
+It's just a text file
+</div>
+
+</div>
 
 <div class="vibe-check" markdown>
-<div class="vc-title">That file is your project's brain</div>
+<div class="vc-title">Verify, don't trust</div>
 
-Every time the AI is confused, wrong, or off-style — the fix is usually **a line in this file**, not a longer prompt.
-
-Pros call this a spec. You can call it the notebook.
+Read what it wrote in `AGENT.md` and `PRD.md`. If it suggests switching to an older version of React, stop and question it. You are the lead engineer.
 </div>
 
 <div class="nav-next" markdown>
-[Break it into pieces →](03-break-it-down.md){ .md-button .md-button--primary }
+[Build the data →](03-break-it-down.md){ .md-button .md-button--primary }
 </div>

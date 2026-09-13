@@ -1,149 +1,87 @@
 ---
-title: "2.6 Save It Forever"
-description: "GitHub. Your work, permanent."
+title: "1.6 Save It Forever"
+description: "Lock it in. Push it to the cloud."
 hide:
   - toc
 ---
 
-# Save it forever
+# Save it to GitHub
 
-Right now your app exists in **one place** — a folder on your laptop.
+Right now, this masterpiece only exists on your laptop. If you spill coffee on your keyboard, the game is gone.
 
-<div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">💧</span><strong>Spill coffee</strong><span>Gone</span></div>
-<div class="icon-card"><span class="ic">🗑️</span><strong>Delete the folder</strong><span>Gone</span></div>
-<div class="icon-card"><span class="ic">💀</span><strong>Laptop dies</strong><span>Gone</span></div>
-</div>
+<p class="beat">We use Git to save our code to the cloud.</p>
 
-<p class="beat">Let's fix that in five minutes.</p>
+## Create the repository
 
-## Git vs GitHub
+1. Go to **[github.com](https://github.com/)** and log in (or create your free account).
+2. Click the **+** icon top right → **New repository**.
+3. Name it `survive-uni`.
+4. Leave it Public. Click **Create repository**.
 
-People mix these up constantly:
+## Push your code
 
-<div class="versus" markdown>
-<div class="vs-good" markdown>
-#### 💾 Git
+GitHub will give you a list of commands. Open your terminal in VS Code (where your Next.js app is running). 
 
-On **your laptop**.
+Press `++ctrl+c++` to stop the server, then run these exact commands:
 
-Saves snapshots you can jump back to.
-
-You've been using it already.
-</div>
-<div class="vs-good" markdown>
-#### ☁️ GitHub
-
-On the **internet**.
-
-Where those snapshots go to be safe.
-
-Also: your public portfolio.
-</div>
-</div>
-
-Git saves. GitHub stores.
-
-## Put it online
-
-<div class="step" data-step="1" markdown>
-
-### Make an empty repo
-
-**[github.com/new](https://github.com/new)**
-
-Name it. Leave everything else alone. **Create repository.**
-
-Don't tick any boxes on that page.
-
-</div>
-
-<div class="step" data-step="2" markdown>
-
-### Copy the link
-
-GitHub shows you a URL like:
-
-```
-https://github.com/yourname/your-app.git
-```
-
-</div>
-
-<div class="step" data-step="3" markdown>
-
-### Push it up
+<div class="prompt-slab" markdown>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> RUN IN YOUR TERMINAL', 2000)"><span class="copy-icon"></span> RUN IN YOUR TERMINAL</button>
 
 ```bash
-git add .
-git commit -m "day 2 build"
-git branch -M main
-git remote add origin [PASTE YOUR URL]
+git add . 
+git commit -m "feat: built survive uni using next.js and vibecoding" 
+git branch -M main 
+git remote add origin YOUR_GITHUB_REPO_URL_HERE 
 git push -u origin main
 ```
-
-Asks for a login? Follow the browser popup.
-
 </div>
 
-Refresh your GitHub page.
-
-<div class="vibe-check" markdown>
-<div class="vc-title">It's on the internet</div>
-
-Your code is safe. Your laptop could explode right now and you'd lose nothing.
-
-Send that link to someone. It's real.
-</div>
-
-## From now on
-
-Whenever you want to save your work:
-
-```bash
-git add .
-git commit -m "what I changed"
-git push
-```
-
-Three lines. That's your save button forever.
-
-!!! tip "Forget the commands?"
-    Ask the AI. *"push my changes to github"* — it'll give you the commands.
-
-    Nobody memorises these. Not even people who've done it for ten years.
-
-## What you did today
-
-<div class="stat-row" markdown>
-<div class="big-stat"><span class="num">1</span><span class="cap">real app</span></div>
-<div class="big-stat"><span class="num">0</span><span class="cap">tutorials watched</span></div>
-<div class="big-stat"><span class="num">∞</span><span class="cap">backups</span></div>
-</div>
-
-You took an idea, broke it into pieces, built it, broke it, fixed it, and put it on the internet.
-
-<p class="beat">That's what software engineers do. That's the actual job.</p>
-
-## Before Thursday
-
-**Keep building.** You've got four days. Add the stuff we didn't get to. Break it. Fix it. `git push` when it works.
-
-!!! warning "One rule"
-    Never put your API key in the code. Ever. Bots find it in about 90 seconds.
-
-    On Day 3 we do it properly.
-
-## Thursday
-
-Your app still only lives on *your* laptop. Nobody else can use it.
-
-Day 3 we fix that:
+*Note: Replace the URL in that fourth line with the actual link GitHub gave you.*
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🗄️</span><strong>A real database</strong><span>Data that survives anything</span></div>
-<div class="icon-card"><span class="ic">🌍</span><strong>A live URL</strong><span>Send it to anyone</span></div>
-<div class="icon-card"><span class="ic">🔐</span><strong>Keys done right</strong><span>Don't get hacked</span></div>
+
+<div class="icon-card" markdown>
+:material-package-variant-closed:
+
+**git add**
+
+Bundles your changes
 </div>
 
-<p class="beat">See you Thursday.</p>
+<div class="icon-card" markdown>
+:material-fountain-pen-tip:
+
+**git commit**
+
+Labels your bundle
+</div>
+
+<div class="icon-card" markdown>
+:material-rocket-launch:
+
+**git push**
+
+Sends it to the cloud
+</div>
+
+<div class="icon-card" markdown>
+:material-earth:
+
+**Safe forever**
+
+Your code is now on GitHub
+</div>
+
+</div>
+
+## Day 1 Complete
+
+<div class="vibe-check" markdown>
+<div class="vc-title">What's next?</div>
+
+Today you built an app that only you can see. Tomorrow, we go live. 
+
+On Day 2, we will deploy this game to Vercel so anyone in the world can play it. We'll learn how to read build logs, secure environment variables, and debug errors in production. 
+
+Take a breath. You're a React developer now.
+</div>

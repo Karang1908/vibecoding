@@ -1,127 +1,90 @@
 ---
-title: "2.5 When It Breaks"
-description: "It will. Here's what to do instead of panicking."
+title: "1.5 The Final Report Card"
+description: "End the loop. Give them a rank."
 hide:
   - toc
 ---
 
-# It's going to break
+# The Grand Finale
 
-Blank screen. Red text. Button does nothing.
+Right now, after 10 scenarios, the game probably just breaks or goes blank. 
 
-<p class="beat">This is not you failing. This is Tuesday.</p>
+<p class="beat">We need a conditional end-state. The Report Card.</p>
 
-Everyone in this room will hit this. Professionals hit this all day. The only difference is they don't panic.
+## Add the final logic
 
-## The two reactions
-
-<div class="versus" markdown>
-<div class="vs-bad" markdown>
-#### 😱 Panic
-
-- Types *"fix it"*
-- Gets a worse version
-- Types *"no fix it properly"*
-- AI apologises, rewrites everything
-- Working stuff is now also broken
-</div>
-<div class="vs-good" markdown>
-#### 😎 Calm
-
-- Reads the red text
-- Copies it
-- Pastes it to the AI
-- Fixed in one go
-</div>
-</div>
-
-## Rule 1 — read the red
-
-That scary red text isn't an insult. It's the AI's **best clue.**
-
-Find it: right-click the page → **Inspect** → **Console** tab.
-
-Copy the red. Paste it in:
+When `currentScenarioIndex` reaches 10, we stop showing the game UI and show the results instead.
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">The magic move</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> ASK FOR THE ENDING SCREEN', 2000)"><span class="copy-icon"></span> ASK FOR THE ENDING SCREEN</button>
 
-I'm getting this error:
+Update `src/app/page.tsx`. 
 
-[PASTE THE RED TEXT]
+Add a condition: if `currentScenarioIndex` reaches 10, hide the main game UI and instead render a 'Report Card' component. 
 
-What's causing it and how do we fix it?
+This view should display the player's final Money, Time, and Sanity scores. Based on their lowest stat, calculate and display a funny 'Survival Rank' (e.g., if Money is lowest, rank them 'Financially Ruined Scholar'). 
+
+Add a 'Play Again' button that resets all state to the default values.
 </div>
 
-<p class="beat">"Fix it" = mush. The error text = fixed.</p>
+## Play it through
 
-## Rule 2 — it makes things up
-
-Sometimes the AI invents things that don't exist. Confidently.
+Refresh your browser and click through all 10 scenarios again.
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">👻</span><strong>Fake packages</strong><span>Tells you to install something imaginary</span></div>
-<div class="icon-card"><span class="ic">🪄</span><strong>Fake functions</strong><span>Calls code that was never written</span></div>
-<div class="icon-card"><span class="ic">📞</span><strong>Fake links</strong><span>Invents web addresses</span></div>
+
+<div class="icon-card" markdown>
+:material-trophy:
+
+**The Reveal**
+
+It hides the game, shows the score
 </div>
 
-It's called **hallucinating**. Remember why: it's guessing what an answer *looks like*. Sometimes the shape is right and the facts are wrong.
+<div class="icon-card" markdown>
+:material-emoticon-lol:
 
-Just tell it:
+**Survival Rank**
 
-```
-that doesn't exist — do it with plain HTML and JavaScript instead
-```
+Logic based on your lowest stat
+</div>
 
-## Rule 3 — save before you experiment
+<div class="icon-card" markdown>
+:material-refresh:
 
-This is the one that saves you.
+**Play Again**
 
-When something **works**, freeze it:
+Resets state back to 50
+</div>
 
-```bash
-git add .
-git commit -m "list works"
-```
+<div class="icon-card" markdown>
+:material-fire:
 
-Now you have a checkpoint. Try anything you like.
+**Finished Game**
 
-Ruined it?
+You built a complete Next.js app
+</div>
 
-```bash
-git checkout .
-```
+</div>
 
-<p class="beat">Everything goes back to when it worked. Like it never happened.</p>
+## When things go wrong
 
-!!! tip "Do this constantly"
-    Every time something works — commit. Takes three seconds.
+Sometimes, the AI writes bad code. You'll see a giant red error on your screen.
 
-    Ten commits an hour is normal. Pros do it more.
+Don't panic. You are the engineer now.
 
-## Rule 4 — restart the conversation
-
-Stuck in a loop? AI apologising over and over, making it worse?
-
-**Close the chat. Open a new one.**
-
-It's got itself confused. Fresh chat, fresh start — and it still has `AGENTS.md`, so it hasn't lost the project.
+1. **Read the red:** The error message usually tells you exactly what line is broken.
+2. **Talk to the intern:** Copy the error text and paste it into the chat. 
+3. **Say:** *"I got this error when trying to show the Report Card. Fix it."*
 
 <div class="vibe-check" markdown>
-<div class="vc-title">Your toolkit</div>
+<div class="vc-title">The loop is complete</div>
 
-**Red text** → copy it, paste it, ask
-**Says something weird** → "that doesn't exist, use plain HTML"
-**Made it worse** → `git checkout .`
-**Stuck in a loop** → new chat
+You started with a static page. Now you have a fully functional Next.js application with a core loop, state management, and a conditional win screen.
+
+You built an industry-standard app in under an hour.
 </div>
 
-## The real lesson
-
-You're not fixing code. You're **describing a problem to someone who can fix it.**
-
-<p class="beat">The words are the whole job.</p>
-
 <div class="nav-next" markdown>
-[Save it forever →](06-save-it.md){ .md-button .md-button--primary }
+[Save it to the cloud →](06-save-it.md){ .md-button .md-button--primary }
 </div>

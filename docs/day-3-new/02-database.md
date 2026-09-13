@@ -1,5 +1,5 @@
 ---
-title: "3.2 A Real Database"
+title: "2.2 A Real Database"
 description: "Data that survives everything. One signup."
 hide:
   - toc
@@ -10,9 +10,9 @@ hide:
 Right now your app saves things in the browser. Which means:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🧹</span><strong>Clear history</strong><span>Data gone</span></div>
-<div class="icon-card"><span class="ic">📱</span><strong>Open on phone</strong><span>Empty. Nothing there.</span></div>
-<div class="icon-card"><span class="ic">👥</span><strong>Friend opens it</strong><span>Can't see yours</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-broom:</span><strong>Clear history</strong><span>Data gone</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-cellphone:</span><strong>Open on phone</strong><span>Empty. Nothing there.</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-account-group:</span><strong>Friend opens it</strong><span>Can't see yours</span></div>
 </div>
 
 <p class="beat">That's not a database. That's a sticky note.</p>
@@ -65,7 +65,7 @@ Paste both into a notes app for a second.
 You're not writing database code. You're asking for it.
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY', 2000)"><span class="copy-icon"></span> COPY</button>
 
 I want to move my app's data from the browser to a Supabase database.
 
@@ -99,7 +99,7 @@ Open your app on your phone. Same data. That's the whole point.
 !!! tip "Broken? Normal."
     Copy the red error → paste to the AI → *"this is my Supabase error, what's wrong?"*
 
-    Same move as Day 2. Always the same move.
+    Same move as Day 1. Always the same move.
 
 <div class="nav-next" markdown>
 [Put it on the internet →](03-ship-it.md){ .md-button .md-button--primary }

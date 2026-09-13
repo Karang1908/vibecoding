@@ -1,13 +1,13 @@
 ---
-title: "1.5 What Do You Want To Build?"
-description: "Your idea. Built live on Day 2."
+title: "0.5 What Do You Want To Build?"
+description: "Your idea. Built live on Day 1."
 hide:
   - toc
 ---
 
 # Before you go
 
-## Day 2 is *your* idea
+## Day 1 is *your* idea
 
 No tutorial to-do app nobody cares about.
 
@@ -20,10 +20,10 @@ No tutorial to-do app nobody cares about.
 ## Steal an idea
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">😤</span><strong>Uni annoyances</strong><span>Attendance tracker · mess food ratings · printer queue</span></div>
-<div class="icon-card"><span class="ic">🤪</span><strong>Stupid but fun</strong><span>Excuse generator · rate your friends · dinner spinner</span></div>
-<div class="icon-card"><span class="ic">🙋</span><strong>You'd actually use it</strong><span>Split the bill · habit tracker · your portfolio</span></div>
-<div class="icon-card"><span class="ic">🤖</span><strong>AI inside</strong><span>Notes summariser · chatbot · photo identifier</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-emoticon-angry:</span><strong>Uni annoyances</strong><span>Attendance tracker · mess food ratings · printer queue</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-emoticon-excited:</span><strong>Stupid but fun</strong><span>Excuse generator · rate your friends · dinner spinner</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-hand-wave:</span><strong>You'd actually use it</strong><span>Split the bill · habit tracker · your portfolio</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-robot:</span><strong>AI inside</strong><span>Notes summariser · chatbot · photo identifier</span></div>
 </div>
 
 !!! tip "Only rule"
@@ -32,9 +32,9 @@ No tutorial to-do app nobody cares about.
 ## Bring tomorrow
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">💻</span><strong>Your laptop</strong><span>Don't uninstall anything</span></div>
-<div class="icon-card"><span class="ic">📁</span><strong>Your folder</strong><span>Leave it on the Desktop</span></div>
-<div class="icon-card"><span class="ic">🛌</span><strong>Nothing else</strong><span>No homework</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-laptop:</span><strong>Your laptop</strong><span>Don't uninstall anything</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-folder:</span><strong>Your folder</strong><span>Leave it on the Desktop</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-bed:</span><strong>Nothing else</strong><span>No homework</span></div>
 </div>
 
 ## Tomorrow

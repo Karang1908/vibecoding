@@ -627,6 +627,11 @@ pre {
   font-weight: 600;
 }
 
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  top: 0.72rem;
+}
+
 .md-typeset .tabbed-labels {
   gap: 0.2rem;
   border-bottom: 1px solid var(--gdg-outline-soft);

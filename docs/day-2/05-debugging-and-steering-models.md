@@ -86,9 +86,9 @@ You are instantly back to your last verified working save state. You lose zero h
 ## 3. Reading the Red: Stack Traces as First-Class Context
 
 Never summarize an error to an AI with vague language like:
-- ❌ *"The button isn't working."*
-- ❌ *"It gave an error."*
-- ❌ *"Fix the app, it's blank."*
+- :material-close: *"The button isn't working."*
+- :material-close: *"It gave an error."*
+- :material-close: *"Fix the app, it's blank."*
 
 These vague prompts cause the AI to guess wildly, often rewriting unrelated functions and introducing new regressions.
 

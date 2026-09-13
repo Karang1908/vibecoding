@@ -182,8 +182,9 @@
   gap: 0.25rem;
 }
 
-.icon-card .ic {
-  display: grid;
+.icon-card .ic,
+.icon-card .twemoji {
+  display: inline-grid;
   width: 2.25rem;
   height: 2.25rem;
   margin-bottom: 0.45rem;
@@ -195,11 +196,23 @@
   line-height: 1;
 }
 
+.icon-card .twemoji svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+.icon-card p {
+  margin: 0 !important;
+}
+
 .icon-card strong {
+  display: block;
   font-size: 0.72rem;
   line-height: 1.35;
 }
 
+.icon-card p:last-child,
 .icon-card > span:last-child {
   color: var(--gdg-text-secondary);
   font-size: 0.64rem;
@@ -314,25 +327,34 @@
   line-height: 1.62;
 }
 
-.prompt-slab::before {
-  display: block;
-  width: 1.35rem;
-  height: 1.35rem;
-  margin: 0 0 0.75rem;
-  background-color: var(--gdg-blue);
-  content: "";
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 1.01 7 1c-1.1 0-2 .9-2 2v14h2V3h10V1.01ZM20 5H11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-9V7h9v14Z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 1.01 7 1c-1.1 0-2 .9-2 2v14h2V3h10V1.01ZM20 5H11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-9V7h9v14Z'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-
-.prompt-slab .slab-label {
-  display: block;
-  margin-bottom: 0.55rem;
+.prompt-slab .copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
   color: var(--gdg-blue);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.065em;
   text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.prompt-slab .copy-btn:hover {
+  opacity: 0.7;
+}
+
+.prompt-slab .copy-icon {
+  display: inline-block;
+  width: 1.15rem;
+  height: 1.15rem;
+  background-color: var(--gdg-blue);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 1.01 7 1c-1.1 0-2 .9-2 2v14h2V3h10V1.01ZM20 5H11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-9V7h9v14Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M17 1.01 7 1c-1.1 0-2 .9-2 2v14h2V3h10V1.01ZM20 5H11c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2Zm0 16h-9V7h9v14Z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .prompt-slab > :last-child {

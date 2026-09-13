@@ -1,5 +1,5 @@
 ---
-title: "3.4 Don't Get Hacked"
+title: "2.4 Don't Get Hacked"
 description: "Five minutes that save you a very bad week."
 hide:
   - toc
@@ -7,7 +7,7 @@ hide:
 
 # Don't get hacked
 
-Remember the rule from Day 2?
+Remember the rule from Day 1?
 
 > **Never put your API key in the code.**
 
@@ -18,9 +18,9 @@ Here's why, and here's the proper fix.
 Bots scan every public GitHub repo, constantly, looking for keys.
 
 <div class="stat-row" markdown>
-<div class="big-stat"><span class="num">90</span><span class="cap">seconds to find it</span></div>
-<div class="big-stat"><span class="num">24/7</span><span class="cap">bots scanning</span></div>
-<div class="big-stat"><span class="num">₹₹₹</span><span class="cap">on your card</span></div>
+<div class="big-stat" markdown="span"><span class="num">90</span><span class="cap">seconds to find it</span></div>
+<div class="big-stat" markdown="span"><span class="num">24/7</span><span class="cap">bots scanning</span></div>
+<div class="big-stat" markdown="span"><span class="num">₹₹₹</span><span class="cap">on your card</span></div>
 </div>
 
 Real people have woken up to thousand-dollar bills. Students. This month.
@@ -75,7 +75,7 @@ Now the live site has the keys — but GitHub never saw them.
 Stuck? Ask:
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY', 2000)"><span class="copy-icon"></span> COPY</button>
 
 Move all my API keys out of the code into a .env file, add a .gitignore so it's never pushed to GitHub, and tell me exactly what to add in Vercel's environment variables.
 </div>
@@ -84,7 +84,7 @@ Move all my API keys out of the code into a .env file, add a .gitignore so it's 
 
 <div class="versus" markdown>
 <div class="vs-bad" markdown>
-#### 🚨 Never
+#### :material-alert: Never
 
 - Key typed into your code
 - Key in a screenshot
@@ -92,7 +92,7 @@ Move all my API keys out of the code into a .env file, add a .gitignore so it's 
 - `.env` pushed to GitHub
 </div>
 <div class="vs-good" markdown>
-#### ✅ Always
+#### :material-check: Always
 
 - Keys in `.env`
 - `.env` in `.gitignore`
