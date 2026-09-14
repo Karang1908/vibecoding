@@ -30,10 +30,10 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/story.css
 
-extra:
+extra:                # just change true/false to lock that particular page
   generator: false
   locks:
-    day_1: true
+    day_1: false
     day_2: true
     post_workshop: true
 
