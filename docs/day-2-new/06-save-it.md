@@ -1,149 +1,163 @@
 ---
-title: "2.6 Save It Forever"
-description: "GitHub. Your work, permanent."
+title: "1.6 Save It Forever"
+description: "Why Git & GitHub exist, pushing your code, and wrapping up Day 1."
 hide:
   - toc
 ---
 
-# Save it forever
+# Save It Forever: Git & GitHub
 
-Right now your app exists in **one place** — a folder on your laptop.
+Right now, your game only lives on your laptop.
 
-<div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">💧</span><strong>Spill coffee</strong><span>Gone</span></div>
-<div class="icon-card"><span class="ic">🗑️</span><strong>Delete the folder</strong><span>Gone</span></div>
-<div class="icon-card"><span class="ic">💀</span><strong>Laptop dies</strong><span>Gone</span></div>
-</div>
+If your laptop runs out of battery, if your hard drive crashes, or if you accidentally delete a folder—your code is gone.
 
-<p class="beat">Let's fix that in five minutes.</p>
+Even worse: **What happens if you try to add a new feature tomorrow and everything breaks so badly you can't get back to where you were?**
 
-## Git vs GitHub
+<p class="beat">That is why we use Git and GitHub.</p>
 
-People mix these up constantly:
+---
+
+## 1. Why Git & GitHub?
+
+Remember our golden rule: *Every tool should have a reason.*
 
 <div class="versus" markdown>
 <div class="vs-good" markdown>
-#### 💾 Git
+#### :material-source-branch: Git = History
+Git runs locally on your computer. It creates snapshots (checkpoints) of your project over time. 
 
-On **your laptop**.
-
-Saves snapshots you can jump back to.
-
-You've been using it already.
+If you make a change that breaks everything, Git lets you jump backwards in time to when the code was working.
 </div>
 <div class="vs-good" markdown>
-#### ☁️ GitHub
+#### :material-github: GitHub = Cloud Storage & Sharing
+GitHub is a platform in the cloud where you store your Git snapshots. 
 
-On the **internet**.
-
-Where those snapshots go to be safe.
-
-Also: your public portfolio.
+It keeps your code backed up safely, lets team members collaborate on the same project, and links directly to cloud hosting platforms.
 </div>
 </div>
 
-Git saves. GitHub stores.
+*(And yes, you can follow your workshop leads on GitHub. It's cool. We are legally required to tell you that.* 😎*)*
 
-## Put it online
+---
+
+## 2. Push Your Project to GitHub
+
+Follow these steps to lock in your work today:
 
 <div class="step" data-step="1" markdown>
-
-### Make an empty repo
-
-**[github.com/new](https://github.com/new)**
-
-Name it. Leave everything else alone. **Create repository.**
-
-Don't tick any boxes on that page.
-
+### Create a Repository on GitHub
+1. Open **[github.com](https://github.com/)** and log in.
+2. Click the **`+`** icon in the top right corner → **New repository**.
+3. Name your repository: `survive-uni`.
+4. Keep it **Public** and leave all checkboxes (README, .gitignore) unchecked.
+5. Click **Create repository**.
 </div>
 
 <div class="step" data-step="2" markdown>
+### Stop the Server & Save Your Work
+In your VS Code terminal, press `++ctrl+c++` to temporarily pause `npm run dev`.
 
-### Copy the link
+Run these commands in order:
 
-GitHub shows you a URL like:
-
-```
-https://github.com/yourname/your-app.git
-```
-
-</div>
-
-<div class="step" data-step="3" markdown>
-
-### Push it up
+<div class="prompt-slab" markdown>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY COMMANDS', 2000)"><span class="copy-icon"></span> COPY COMMANDS</button>
 
 ```bash
 git add .
-git commit -m "day 2 build"
+git commit -m "feat: built survive uni game with nextjs and vibecoding"
 git branch -M main
-git remote add origin [PASTE YOUR URL]
+git remote add origin YOUR_GITHUB_REPO_URL_HERE
 git push -u origin main
 ```
-
-Asks for a login? Follow the browser popup.
-
 </div>
 
-Refresh your GitHub page.
-
-<div class="vibe-check" markdown>
-<div class="vc-title">It's on the internet</div>
-
-Your code is safe. Your laptop could explode right now and you'd lose nothing.
-
-Send that link to someone. It's real.
+*(Make sure to replace `YOUR_GITHUB_REPO_URL_HERE` with the actual URL from your GitHub page, e.g. `https://github.com/your-username/survive-uni.git`)*
 </div>
-
-## From now on
-
-Whenever you want to save your work:
-
-```bash
-git add .
-git commit -m "what I changed"
-git push
-```
-
-Three lines. That's your save button forever.
-
-!!! tip "Forget the commands?"
-    Ask the AI. *"push my changes to github"* — it'll give you the commands.
-
-    Nobody memorises these. Not even people who've done it for ten years.
-
-## What you did today
-
-<div class="stat-row" markdown>
-<div class="big-stat"><span class="num">1</span><span class="cap">real app</span></div>
-<div class="big-stat"><span class="num">0</span><span class="cap">tutorials watched</span></div>
-<div class="big-stat"><span class="num">∞</span><span class="cap">backups</span></div>
-</div>
-
-You took an idea, broke it into pieces, built it, broke it, fixed it, and put it on the internet.
-
-<p class="beat">That's what software engineers do. That's the actual job.</p>
-
-## Before Thursday
-
-**Keep building.** You've got four days. Add the stuff we didn't get to. Break it. Fix it. `git push` when it works.
-
-!!! warning "One rule"
-    Never put your API key in the code. Ever. Bots find it in about 90 seconds.
-
-    On Day 3 we do it properly.
-
-## Thursday
-
-Your app still only lives on *your* laptop. Nobody else can use it.
-
-Day 3 we fix that:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🗄️</span><strong>A real database</strong><span>Data that survives anything</span></div>
-<div class="icon-card"><span class="ic">🌍</span><strong>A live URL</strong><span>Send it to anyone</span></div>
-<div class="icon-card"><span class="ic">🔐</span><strong>Keys done right</strong><span>Don't get hacked</span></div>
+
+<div class="icon-card" markdown>
+:material-archive-plus:
+
+**`git add .`**
+
+Packs all modified files into a staging box
 </div>
 
-<p class="beat">See you Thursday.</p>
+<div class="icon-card" markdown>
+:material-tag:
+
+**`git commit`**
+
+Seals the box and writes a message on top
+</div>
+
+<div class="icon-card" markdown>
+:material-cloud-upload:
+
+**`git push`**
+
+Uploads the sealed box safely to GitHub
+</div>
+
+<div class="icon-card" markdown>
+:material-lock-check:
+
+**Saved Forever**
+
+Safe in the cloud. Accessible from anywhere.
+</div>
+
+</div>
+
+---
+
+## 3. Day 1: Build — Mission Accomplished!
+
+Take a look at the journey you just completed today:
+
+<div class="process-flow" markdown>
+<span class="flow-item">Idea</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">Mental Map</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">PRD & AGENT</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">Data Layer</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">Interface & State</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">Debug Loop</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item highlight">GitHub</span>
+</div>
+
+You started with a blank folder. You now have a working Next.js application built with an AI pair programmer, structured cleanly, and stored safely in the cloud.
+
+You should leave today knowing:
+1. **"I can build something real."**
+2. **"I know roughly what I'm looking at when I inspect an app."**
+
+---
+
+## 4. What's Next: Day 2 (Make It Real)
+
+Today our app only exists on your computer.
+On Day 2, we give it **permanent memory** and a **public home on the internet**:
+
+<div class="versus" markdown>
+<div class="vs-good" markdown>
+#### :material-database: 1. Supabase (A Real Database)
+We will connect our game to a real Postgres database so players can submit high scores, view a live global leaderboard, and share stats across devices.
+</div>
+<div class="vs-good" markdown>
+#### :material-rocket-launch: 2. Vercel (Live Deployment)
+We will take `http://localhost:3000` and turn it into a real public URL (like `https://survive-uni.vercel.app`) that you can open on your phone and send to your friends.
+</div>
+</div>
+
+Rest up, architect. Today was huge. Tomorrow, we ship!
+
+<div class="nav-next" markdown>
+[Day 2: Show & Tell →](../day-3-new/01-show-and-tell.md){ .md-button .md-button--primary }
+</div>

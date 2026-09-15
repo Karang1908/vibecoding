@@ -18,7 +18,7 @@ You don't need to know how to code. You don't need to memorise syntax. You need 
 <p class="beat">By the end, your app will be live on the internet.</p>
 
 <div class="home-actions">
-<a href="day-1-new/01-what-is-vibecoding/" class="md-button md-button--primary">Start Day 1 →</a>
+<a href="day-1-new/01-what-is-vibecoding/" class="md-button md-button--primary">Start Day 0 →</a>
 <a href="pre-workshop/01-stack-setup/" class="md-button">Set up first</a>
 </div>
 
@@ -32,7 +32,7 @@ You don't need to know how to code. You don't need to memorise syntax. You need 
 
 Meet your AI intern, set up your machine, and turn one paragraph into a working webpage.
 
-[Open Day 1 →](day-1-new/01-what-is-vibecoding.md)
+[Open Day 0 →](day-1-new/01-what-is-vibecoding.md)
 
 </div>
 
@@ -44,7 +44,7 @@ Meet your AI intern, set up your machine, and turn one paragraph into a working 
 
 Give the AI a memory, break the winning idea into pieces, build it, debug it, and save it to GitHub.
 
-[Open Day 2 →](day-2-new/01-the-plan.md)
+[Open Day 1 →](day-2-new/01-the-plan.md)
 
 </div>
 
@@ -56,7 +56,7 @@ Give the AI a memory, break the winning idea into pieces, build it, debug it, an
 
 Connect a real database, publish your app, protect your keys, and take home one last trick.
 
-[Open Day 3 →](day-3-new/01-show-and-tell.md)
+[Open Day 2 →](day-3-new/01-show-and-tell.md)
 
 </div>
 
@@ -91,7 +91,7 @@ The AI can write code fast. You decide what it should build, check what it made,
 <div class="vibe-check" markdown>
 <div class="vc-title">Ready?</div>
 
-Start with **Day 1**. Every page gives you something to type and something to see on screen.
+Start with **Day 0**. Every page gives you something to type and something to see on screen.
 
 [Build your first app →](day-1-new/01-what-is-vibecoding.md){ .md-button .md-button--primary }
 </div>

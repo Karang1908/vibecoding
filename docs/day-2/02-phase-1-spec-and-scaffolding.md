@@ -108,7 +108,7 @@ Open your AI editor's Composer or Agent interface (`Ctrl+I` / `Cmd+I`) and enter
 ## Engineering Principle: Component-Driven Generation vs. Monoliths
 
 A foundational mistake beginners make is asking the AI to build entire systems in one prompt:
-- ❌ *"Build the whole dashboard with charts, chat, database, authentication, and payment processing."*
+- :material-close: *"Build the whole dashboard with charts, chat, database, authentication, and payment processing."*
 
 This invariably leads to incomplete code, syntax errors, and missing functions marked with `// TODO: implement later`.
 

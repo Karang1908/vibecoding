@@ -17,13 +17,13 @@ description: "Creating and configuring free-tier developer accounts for GitHub, 
 
 ```mermaid
 flowchart TD
-    subgraph Local ["💻 Local Environment"]
+    subgraph Local [":material-laptop: Local Environment"]
         A["Local Workstation"]
         E["Google AI Studio / Gemini"]
         A -.->|"Model API Requests"| E
     end
 
-    subgraph Cloud ["☁️ Cloud Services & Deployment"]
+    subgraph Cloud [":material-cloud: Cloud Services & Deployment"]
         B["GitHub Repo"]
         C["Vercel Serverless Hosting"]
         D["Supabase Postgres & Auth"]

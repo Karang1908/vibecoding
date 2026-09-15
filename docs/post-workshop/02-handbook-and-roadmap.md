@@ -10,7 +10,7 @@ description: "The 10 Commandments of Vibecoding, Google Solution Challenge pathw
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
     <strong class="banner-title">Workshop Conclusion: The Builder's Manifesto</strong>
   </div>
-  Congratulations on completing Vibecoding 101! From token mechanics and context engineering on Day 1, to live product construction on Day 2, and cloud persistence with Vercel and Supabase on Day 3, you are now equipped to build and ship at the speed of thought.
+  Congratulations on completing Vibecoding 101! From token mechanics and context engineering on Day 0, to live product construction on Day 1, and cloud persistence with Vercel and Supabase on Day 2, you are now equipped to build and ship at the speed of thought.
 </div>
 
 ## The 10 Commandments of Professional Vibecoding

@@ -1,127 +1,176 @@
 ---
-title: "2.5 When It Breaks"
-description: "It will. Here's what to do instead of panicking."
+title: "1.5 When It Breaks"
+description: "The 6-step debugging loop, the traffic-light system, and the grand finale report card."
 hide:
   - toc
 ---
 
-# It's going to break
+# When It Breaks: The Debugging Loop
 
-Blank screen. Red text. Button does nothing.
+Click through all 10 scenarios in your game right now.
 
-<p class="beat">This is not you failing. This is Tuesday.</p>
+What happens on question 10? 
 
-Everyone in this room will hit this. Professionals hit this all day. The only difference is they don't panic.
+The screen probably freezes, turns completely blank, or throws a bright red error in your console.
 
-## The two reactions
+<p class="beat">Something broke. Perfect. That is literally the best part of the workshop.</p>
 
-<div class="versus" markdown>
-<div class="vs-bad" markdown>
-#### 😱 Panic
+<p class="beat">Software isn't about never breaking. It's about knowing what to do when it does.</p>
 
-- Types *"fix it"*
-- Gets a worse version
-- Types *"no fix it properly"*
-- AI apologises, rewrites everything
-- Working stuff is now also broken
+---
+
+## 1. Our Debugging Loop
+
+When an error strikes, beginners panic and spam: *"Fix it! It's broken!"*
+
+That turns your project into an unpredictable black box. Instead, follow our 6-step loop:
+
+<div class="process-flow" markdown>
+<span class="flow-item">BUILD</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">TEST</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item" style="background: var(--gdg-red-container); color: #ba1a1a;">BREAK</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">INVESTIGATE</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">FIX</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item highlight">TEST</span>
 </div>
-<div class="vs-good" markdown>
-#### 😎 Calm
-
-- Reads the red text
-- Copies it
-- Pastes it to the AI
-- Fixed in one go
-</div>
-</div>
-
-## Rule 1 — read the red
-
-That scary red text isn't an insult. It's the AI's **best clue.**
-
-Find it: right-click the page → **Inspect** → **Console** tab.
-
-Copy the red. Paste it in:
-
-<div class="prompt-slab" markdown>
-<span class="slab-label">The magic move</span>
-
-I'm getting this error:
-
-[PASTE THE RED TEXT]
-
-What's causing it and how do we fix it?
-</div>
-
-<p class="beat">"Fix it" = mush. The error text = fixed.</p>
-
-## Rule 2 — it makes things up
-
-Sometimes the AI invents things that don't exist. Confidently.
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">👻</span><strong>Fake packages</strong><span>Tells you to install something imaginary</span></div>
-<div class="icon-card"><span class="ic">🪄</span><strong>Fake functions</strong><span>Calls code that was never written</span></div>
-<div class="icon-card"><span class="ic">📞</span><strong>Fake links</strong><span>Invents web addresses</span></div>
+
+<div class="icon-card" markdown>
+:material-magnify:
+
+**Step 1: Investigate**
+
+Don't change anything yet. Ask the AI: *"Explain what went wrong in plain English."*
 </div>
 
-It's called **hallucinating**. Remember why: it's guessing what an answer *looks like*. Sometimes the shape is right and the facts are wrong.
+<div class="icon-card" markdown>
+:material-lightbulb-on:
 
-Just tell it:
+**Step 2: Propose**
 
-```
-that doesn't exist — do it with plain HTML and JavaScript instead
-```
+Ask: *"Propose a solution and tell me which files you will modify."*
+</div>
 
-## Rule 3 — save before you experiment
+<div class="icon-card" markdown>
+:material-wrench:
 
-This is the one that saves you.
+**Step 3: Apply & Verify**
 
-When something **works**, freeze it:
+Apply the code change, re-test in the browser, and verify that the fix actually worked.
+</div>
 
-```bash
-git add .
-git commit -m "list works"
-```
-
-Now you have a checkpoint. Try anything you like.
-
-Ruined it?
-
-```bash
-git checkout .
-```
-
-<p class="beat">Everything goes back to when it worked. Like it never happened.</p>
-
-!!! tip "Do this constantly"
-    Every time something works — commit. Takes three seconds.
-
-    Ten commits an hour is normal. Pros do it more.
-
-## Rule 4 — restart the conversation
-
-Stuck in a loop? AI apologising over and over, making it worse?
-
-**Close the chat. Open a new one.**
-
-It's got itself confused. Fresh chat, fresh start — and it still has `AGENTS.md`, so it hasn't lost the project.
+</div>
 
 <div class="vibe-check" markdown>
-<div class="vc-title">Your toolkit</div>
+<div class="vc-title">The Big Rule of Debugging</div>
 
-**Red text** → copy it, paste it, ask
-**Says something weird** → "that doesn't exist, use plain HTML"
-**Made it worse** → `git checkout .`
-**Stuck in a loop** → new chat
+**AI isn't only your builder. It is also your debugging partner.**  
+Never let it blindly rewrite files until you understand *why* it broke.
 </div>
 
-## The real lesson
+---
 
-You're not fixing code. You're **describing a problem to someone who can fix it.**
+## 2. When Should I Let AI Do Something? (The Traffic Light System)
 
-<p class="beat">The words are the whole job.</p>
+You don't need to understand every line of technical code to stay safe. Just use this traffic light system:
+
+<div class="traffic-grid" markdown>
+
+<div class="traffic-col traffic-green" markdown>
+#### 🟢 Usually Fine
+<div class="traffic-subtitle">Let AI Run</div>
+
+- Creating UI components and cards
+- Styling, colors, fonts, and responsiveness
+- Refactoring and cleaning up messy code
+- Fixing simple typos and visual bugs
+- Creating boilerplate files
+- Writing repetitive mock data
+</div>
+
+<div class="traffic-col traffic-yellow" markdown>
+#### 🟡 Pause & Ask
+<div class="traffic-subtitle">"What are you changing, and why?"</div>
+
+- Installing unfamiliar npm packages
+- Deleting or renaming existing files
+- Changing folder structure or architecture
+- Modifying authentication or routing
+- Altering database schema or table names
+- Modifying environment configs (`package.json`, `tsconfig.json`)
+</div>
+
+<div class="traffic-col traffic-red" markdown>
+#### 🔴 Stop & Understand
+<div class="traffic-subtitle">Never Proceed Blindly</div>
+
+- **Passwords, secrets, or API keys**
+- **Permissions and access control rules**
+- **Production databases and live cloud systems**
+- **Sensitive user data**
+- **Destructive terminal commands (`rm -rf`, dropping tables)**
+- **Financial or payment settings**
+</div>
+
+</div>
+
+> **AI can execute instructions faster than you can understand them. Slow down when the consequences are high.**
+
+---
+
+## 3. Build The Final Report Card
+
+Why did the game break on question 10? 
+
+Because `currentIndex` reached `10`, but our scenarios array only has items indexed `0` through `9`. The code tried to read an item that doesn't exist!
+
+Let's use our debugging loop to propose and apply the clean fix: render a **Final Report Card** when all scenarios are completed.
+
+<div class="prompt-slab" markdown>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY PROMPT', 2000)"><span class="copy-icon"></span> COPY PROMPT</button>
+
+Update `src/app/page.tsx` to handle the end of the game gracefully:
+
+1. In the component render logic, check if `currentIndex >= scenarios.length` or if any stat (`money`, `time`, `sanity`) hits `0`.
+2. When the game ends, hide the scenario card and choices, and instead render a celebratory 'Report Card' screen.
+3. The Report Card must show:
+   - Final scores for Money, Time, and Sanity.
+   - A funny 'Survival Rank' calculated based on their lowest stat:
+     - If Money is lowest: "Financially Ruined Scholar"
+     - If Time is lowest: "Chronically Tardy Sleeper"
+     - If Sanity is lowest: "Caffeine-Powered Phantom"
+     - If all stats > 50: "Dean's List Legend"
+   - A prominent 'Play Again' button that resets `money: 50`, `time: 50`, `sanity: 50`, and `currentIndex: 0`.
+4. Ensure the layout is responsive, polished with Tailwind CSS, and matches our existing dark-mode design.
+</div>
+
+---
+
+## 4. Test The Full Loop
+
+Go back to your browser:
+
+1. Click through scenarios 1 through 10.
+2. Watch the game seamlessly switch to the **Final Report Card** screen upon completion.
+3. Check your Survival Rank.
+4. Click **Play Again**—the stats reset to 50 and Scenario #1 reappears!
+
+<div class="stat-row" markdown>
+<div class="big-stat" markdown="span"><span class="num">10</span><span class="cap">scenarios</span></div>
+<div class="big-stat" markdown="span"><span class="num">1</span><span class="cap">complete loop</span></div>
+<div class="big-stat" markdown="span"><span class="num">0</span><span class="cap">bugs remaining</span></div>
+</div>
+
+You just took an idea from your head, broke it into pieces, prompted an AI agent to build it, investigated and fixed a runtime bug, and created a complete, playable game.
+
+Now let's make sure you never lose this code.
 
 <div class="nav-next" markdown>
-[Save it forever →](06-save-it.md){ .md-button .md-button--primary }
+[Save It Forever with Git & GitHub →](06-save-it.md){ .md-button .md-button--primary }
 </div>

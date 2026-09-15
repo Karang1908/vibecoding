@@ -1,119 +1,128 @@
 ---
-title: "3.4 Don't Get Hacked"
-description: "Five minutes that save you a very bad week."
+title: "2.4 Don't Get Hacked"
+description: "Why automated bots scan GitHub 24/7, how environment variables work, and protecting your secrets."
 hide:
   - toc
 ---
 
-# Don't get hacked
+# Don't Get Hacked: Secrets & API Keys
 
-Remember the rule from Day 2?
+Remember our Traffic Light rule from Day 1?
 
-> **Never put your API key in the code.**
+<div class="vibe-check" markdown>
+<div class="vc-title">🔴 Stop & Understand</div>
 
-Here's why, and here's the proper fix.
-
-## What actually happens
-
-Bots scan every public GitHub repo, constantly, looking for keys.
-
-<div class="stat-row" markdown>
-<div class="big-stat"><span class="num">90</span><span class="cap">seconds to find it</span></div>
-<div class="big-stat"><span class="num">24/7</span><span class="cap">bots scanning</span></div>
-<div class="big-stat"><span class="num">₹₹₹</span><span class="cap">on your card</span></div>
+**Never hardcode passwords, secret keys, or API credentials into your code files.**
 </div>
 
-Real people have woken up to thousand-dollar bills. Students. This month.
+<p class="beat">A secret key pasted directly into your code is your house key taped to your front door.</p>
 
-<p class="beat">A key in your code is your house key taped to the front door.</p>
+---
 
-## The fix — three moves
+## 1. What Actually Happens If You Push A Key?
+
+Beginners often think: *"My GitHub repo is tiny. Nobody knows who I am. Who would find my key?"*
+
+Here is the harsh reality: **Human beings aren't looking for your keys. Automated bots are.**
+
+<div class="stat-row" markdown>
+<div class="big-stat" markdown="span"><span class="num">&lt; 90s</span><span class="cap">to detect a leaked key</span></div>
+<div class="big-stat" markdown="span"><span class="num">24/7</span><span class="cap">bots scanning GitHub</span></div>
+<div class="big-stat" markdown="span"><span class="num">$1,000+</span><span class="cap">bills run up overnight</span></div>
+</div>
+
+There are millions of scripts listening to the public GitHub stream every second. The instant a file containing an OpenAI, AWS, or database secret is committed, scrapers grab it and begin running expensive queries on your card.
+
+Students wake up to thousand-dollar invoices every single month because of this.
+
+---
+
+## 2. The 3-Step Defense
+
+Modern web frameworks solve this problem completely using **Environment Variables**.
 
 <div class="step" data-step="1" markdown>
-
-### Keys go in a .env file
-
-Make a file called `.env` next to your code:
-
+### 1. Store Secrets in `.env.local`
+In your project root, create a file named `.env.local`:
 ```bash
-VITE_SUPABASE_URL=https://xxxx.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJhbGc...
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOi...
 ```
-
-Your code reads from here instead of having the key typed in.
-
+Your application reads these values through `process.env` instead of hardcoding them into components.
 </div>
 
 <div class="step" data-step="2" markdown>
-
-### Tell Git to ignore it
-
-Make a file called `.gitignore`:
-
+### 2. Guard It with `.gitignore`
+Open your `.gitignore` file. Ensure it includes:
 ```bash
 .env
 .env.local
-node_modules
+.env*.local
+node_modules/
 ```
-
-Now Git pretends `.env` doesn't exist. It never leaves your laptop.
-
+Now Git will completely ignore `.env.local`. When you run `git add .` and `git push`, your keys **never leave your personal machine**.
 </div>
 
 <div class="step" data-step="3" markdown>
-
-### Give Vercel the keys separately
-
-Vercel → your project → **Settings** → **Environment Variables**
-
-Add the same names and values. Hit **Redeploy**.
-
-Now the live site has the keys — but GitHub never saw them.
-
+### 3. Add Them to Vercel Separately
+Because GitHub never sees `.env.local`, Vercel doesn't have your keys yet! That's why your live leaderboard might be blank.
+1. Go to your **[Vercel Dashboard](https://vercel.com/)** → select your `survive-uni` project.
+2. Click **Settings** → **Environment Variables**.
+3. Add:
+   - Key: `NEXT_PUBLIC_SUPABASE_URL` | Value: `(your Supabase URL)`
+   - Key: `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Value: `(your Supabase anon key)`
+4. Click **Save**, then go to **Deployments** → click the three dots on your latest deployment → **Redeploy**.
 </div>
 
-Stuck? Ask:
+Your live website now has full access to the database, but your public GitHub repo is 100% clean and secure!
 
-<div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
+---
 
-Move all my API keys out of the code into a .env file, add a .gitignore so it's never pushed to GitHub, and tell me exactly what to add in Vercel's environment variables.
-</div>
-
-## The short version
+## 3. The Rules of Secret Safety
 
 <div class="versus" markdown>
 <div class="vs-bad" markdown>
-#### 🚨 Never
-
-- Key typed into your code
-- Key in a screenshot
-- Key pasted in a group chat
-- `.env` pushed to GitHub
+#### :material-alert: NEVER DO THIS
+- Type an API key directly into a `.tsx` or `.ts` file
+- Share an API key in a screenshot on Discord or WhatsApp
+- Commit a `.env` file to a public repository
+- Think *"I'll delete the key from the code in the next commit"*
 </div>
 <div class="vs-good" markdown>
-#### ✅ Always
-
-- Keys in `.env`
-- `.env` in `.gitignore`
-- Real keys in Vercel settings
-- Leaked it? Delete and make a new one
+#### :material-check-decagram: ALWAYS DO THIS
+- Store all credentials in `.env.local`
+- Check `.gitignore` before every initial commit
+- Configure secrets in Vercel / cloud settings
+- If you accidentally commit a key: **Immediately revoke and delete the key at the provider!**
 </div>
 </div>
-
-!!! tip "Already pushed a key?"
-    Don't panic — go to the provider, **delete that key**, generate a new one.
-
-    Deleting it from GitHub isn't enough. It's in the history. Kill the key itself.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">You're safe now</div>
+<div class="vc-title">"I already committed a secret to GitHub! What do I do?"</div>
 
-Live site works. Keys hidden. Repo clean.
+Deleting the line of code and making a new commit **does not fix the leak**. The secret remains visible forever in your Git commit history.
 
-That's a professional setup. Genuinely.
+**The only safe response:**  
+Go directly to Supabase (or the API provider), **revoke and delete that key immediately**, and generate a fresh replacement.
 </div>
 
+---
+
+## 4. Have Your AI Audit Your Security
+
+Before we wrap up, let's ask our AI coding partner to verify our project security:
+
+<div class="prompt-slab" markdown>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> RUN SECURITY AUDIT', 2000)"><span class="copy-icon"></span> RUN SECURITY AUDIT</button>
+
+Please inspect our repository and perform a quick security audit:
+1. Verify that no private API keys, database connection strings, or passwords are hardcoded inside any files in `src/`.
+2. Check that `.gitignore` properly includes `.env` and `.env.local`.
+3. Confirm that all Supabase references properly use environment variables.
+</div>
+
+Your app is live, your database is connected, and your credentials are locked tight. You are now running an authentic, professional setup.
+
 <div class="nav-next" markdown>
-[One last trick →](05-whats-next.md){ .md-button .md-button--primary }
+[The Full Picture & Beyond →](05-whats-next.md){ .md-button .md-button--primary }
 </div>

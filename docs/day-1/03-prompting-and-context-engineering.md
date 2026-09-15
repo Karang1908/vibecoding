@@ -13,9 +13,13 @@ description: "Mastering the 3 pillars of prompt engineering, context window mana
   Vague instructions force AI models to make ungrounded guesses. In this module, we break prompts into their 3 indispensable pillars, master context window memory limits, contrast zero-shot with few-shot prompting, and author reusable agent instructions using SKILL.md and project rules.
 </div>
 
-## The Core Equation of AI Coding
-
-$$\text{Output Precision} = \text{Model Reasoning} \times \mathbf{\text{Context Cleanliness}}$$
+<div class="process-flow" markdown>
+<span class="flow-item">Output Precision</span>
+<span class="flow-arrow">=</span>
+<span class="flow-item">Model Reasoning</span>
+<span class="flow-arrow">&times;</span>
+<span class="flow-item highlight">Context Cleanliness</span>
+</div>
 
 When your prompt is ambiguous, the AI is mathematically forced to sample from a broad probability distribution. Across a multi-file project, unstated assumptions produce architectural drift, broken imports, and mismatched data structures.
 

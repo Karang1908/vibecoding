@@ -23,7 +23,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - content.code.copy
     - content.code.annotate
     - content.tabs.link
 
@@ -31,8 +30,15 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/story.css
 
-extra:
+extra:                # just change true/false to lock that particular page
   generator: false
+  locks:
+    day_1: false
+    day_2: false
+    post_workshop: false
+
+hooks:
+  - scripts/lock_content.py
 
 plugins: []
 
@@ -68,25 +74,29 @@ nav:
       - "0.1 The Vibecoding Stack Setup": pre-workshop/01-stack-setup.md
       - "0.2 Account Provisioning: Free Cloud Tiers": pre-workshop/02-account-provisioning.md
       - "0.3 API Keys 101: Generation & Secret Safety": pre-workshop/03-api-keys-101.md
-  - "Day 1: Your First App":
-      - "1.1 What Even Is Vibecoding?": day-1-new/01-what-is-vibecoding.md
-      - "1.2 So What Actually Is AI?": day-1-new/02-what-is-ai.md
-      - "1.3 Set Up Your Workshop": day-1-new/03-setup.md
-      - "1.4 Your Turn": day-1-new/04-your-turn.md
-      - "1.5 What Do You Want To Build?": day-1-new/05-what-next.md
-  - "Day 2: Build Your Idea":
-      - "2.1 Today We Build Your Idea": day-2-new/01-the-plan.md
-      - "2.2 The Memory Trick": day-2-new/02-the-memory-trick.md
-      - "2.3 Break It Into Pieces": day-2-new/03-break-it-down.md
-      - "2.4 Build It": day-2-new/04-build-it.md
-      - "2.5 When It Breaks": day-2-new/05-when-it-breaks.md
-      - "2.6 Save It Forever": day-2-new/06-save-it.md
-  - "Day 3: Make It Real":
-      - "3.1 Show & Tell": day-3-new/01-show-and-tell.md
-      - "3.2 A Real Database": day-3-new/02-database.md
-      - "3.3 Put It On The Internet": day-3-new/03-ship-it.md
-      - "3.4 Don't Get Hacked": day-3-new/04-dont-get-hacked.md
-      - "3.5 One Last Trick": day-3-new/05-whats-next.md
+  - "Day 0: Your First App":
+      - "0.1 What Even Is Vibecoding?": day-1-new/01-what-is-vibecoding.md
+      - "0.2 So What Actually Is AI?": day-1-new/02-what-is-ai.md
+      - "0.3 Set Up Your Workshop": day-1-new/03-setup.md
+      - "0.4 Your Turn": day-1-new/04-your-turn.md
+      - "0.5 What Do You Want To Build?": day-1-new/05-what-next.md
+  - "Day 1: Build Your Idea":
+      - "1.1 Today We Build Your Idea": day-2-new/01-the-plan.md
+      - "1.2 The Memory Trick": day-2-new/02-the-memory-trick.md
+      - "1.3 Break It Into Pieces": day-2-new/03-break-it-down.md
+      - "1.4 Build It": day-2-new/04-build-it.md
+      - "1.5 When It Breaks": day-2-new/05-when-it-breaks.md
+      - "1.6 Save It Forever": day-2-new/06-save-it.md
+  - "Day 2: Make It Real":
+      - "2.1 Show & Tell": day-3-new/01-show-and-tell.md
+      - "2.2 A Real Database": day-3-new/02-database.md
+      - "2.3 Put It On The Internet": day-3-new/03-ship-it.md
+      - "2.4 Don't Get Hacked": day-3-new/04-dont-get-hacked.md
+      - "2.5 One Last Trick": day-3-new/05-whats-next.md
   - "Post-Workshop: Beyond Vibecoding 101":
       - "Beyond Vibecoding: Docs, Scaling & Open Source": post-workshop/01-beyond-vibecoding.md
       - "The Vibecoder's Handbook & Next Steps": post-workshop/02-handbook-and-roadmap.md
+      - "Under the Hood: LLMs & Tooling": post-workshop/03-transformers-ast-lsp.md
+      - "Architecture, Specs & MCP": post-workshop/04-mcp-and-architecture.md
+      - "Database Schema & Supabase RLS": post-workshop/05-database-schema-rls.md
+      - "Autonomous Agents & Self-Healing": post-workshop/06-agentic-workflows.md

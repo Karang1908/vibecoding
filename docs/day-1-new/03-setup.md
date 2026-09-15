@@ -1,5 +1,5 @@
 ---
-title: "1.3 Set Up Your Workshop"
+title: "0.3 Set Up Your Workshop"
 description: "Four things to install. Fifteen minutes."
 hide:
   - toc
@@ -12,10 +12,10 @@ hide:
 Stuck at any point? **Hand up.** Half the room will hit the same error.
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">✨</span><strong>Antigravity</strong><span>2.0 + IDE + CLI</span></div>
-<div class="icon-card"><span class="ic">⚙️</span><strong>Node.js</strong><span>Makes apps run</span></div>
-<div class="icon-card"><span class="ic">⏪</span><strong>Git</strong><span>Undo, forever</span></div>
-<div class="icon-card"><span class="ic">☁️</span><strong>GitHub</strong><span>Cloud save</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-star-four-points:</span><strong>Antigravity</strong><span>2.0 + IDE + CLI</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-cog:</span><strong>Node.js</strong><span>Makes apps run</span></div>
+<div class="icon-card" markdown="span"><span class="ic">⏪</span><strong>Git</strong><span>Undo, forever</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-cloud:</span><strong>GitHub</strong><span>Cloud save</span></div>
 </div>
 
 <div class="step" data-step="1" markdown>

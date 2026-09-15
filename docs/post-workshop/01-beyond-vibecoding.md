@@ -45,13 +45,13 @@ Once your prototype is live on Vercel, the temptation is to immediately prompt f
 
 ```mermaid
 flowchart TB
-    subgraph Anti_Pattern ["❌ Unstructured Scaling (Regression Cascade)"]
+    subgraph Anti_Pattern [":material-close: Unstructured Scaling (Regression Cascade)"]
         direction TB
         A1["1. Add New Feature Prompt"] --> A2["2. AI modifies multiple files simultaneously"]
         A2 --> A3["3. Breaks existing working auth & database contracts"]
     end
 
-    subgraph Best_Practice ["✅ Defensive Scaling Strategy"]
+    subgraph Best_Practice [":material-check: Defensive Scaling Strategy"]
         direction TB
         B1["1. Git Feature Branch: feat/new-feature"] --> B2["2. Freeze Existing Contracts"]
         B2 --> B3["3. Component-Driven Generation in Isolated Directory"]

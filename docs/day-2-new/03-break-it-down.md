@@ -1,96 +1,193 @@
 ---
-title: "2.3 Break It Into Pieces"
-description: "The one skill that separates people who ship from people who get mush."
+title: "1.3 Break It Into Pieces"
+description: "Why prompting isn't magic, how to inspect code without reading 300 lines, and creating the data layer."
 hide:
   - toc
 ---
 
-# Don't ask for the whole app
+# Break It Into Pieces: The Data Layer
 
-Here's where most people fail. Watch:
+You have your workshop set up. You have `PRD.md` and `AGENT.md` in place.
+
+Now comes the big question: **How do we actually start building?**
+
+<p class="beat">We don't ask the AI to build the entire application in one giant prompt.</p>
+
+<p class="beat">We break the application down into pieces: Data first, then Interface, then Logic.</p>
+
+---
+
+## 1. Prompting Is Not Magic
+
+Many beginners think great vibe coders have memorized secret prompt incantations. 
+
+They haven't. They just know how to communicate clearly.
 
 <div class="versus" markdown>
 <div class="vs-bad" markdown>
-#### 💀 One giant ask
+#### :material-close-circle: Bad Prompt (Vague & Fragile)
+*"Make me a game."*  
+or  
+*"Make me a leaderboard."*
 
-*"Build me a full app with login, database, dark mode, notifications and payments"*
-
-- Half-finished everything
-- Nothing actually works
-- Too broken to fix
-- You start over
+**What happens:**  
+The AI guesses your game rules, imports 12 random libraries, breaks existing styles, and rewires your project into a confusing mess.
 </div>
 <div class="vs-good" markdown>
-#### ✅ One piece at a time
+#### :material-check-circle: Architect Prompt (Clear Context & Boundaries)
+*"Add 10 university survival scenarios to our project in `src/data/scenarios.ts`. Follow the guidelines in `AGENT.md`. Use mock data with TypeScript interfaces. Don't install any new packages. First inspect the project structure and show me the data shape."*
 
-*"Add a button that adds a task to a list"*
-
-- Works immediately
-- You can see it
-- Easy to fix
-- Then the next piece
+**What happens:**  
+The AI does exactly what you asked, adheres to your stack, and doesn't touch anything else.
 </div>
 </div>
-
-<p class="beat">Same app. Same AI. Completely different outcome.</p>
-
-## Why the big ask fails
-
-Your intern is brilliant and has no memory.
-
-Give it twenty instructions at once and it does what you'd do — remembers the first three, panics, guesses the rest.
-
-Give it one instruction and it nails it. Every time.
-
-## The smallest version that still works
-
-Before building anything, ask yourself one question:
-
-> If I could only build **one** thing and it still counted as this app — what is it?
-
-<div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">📝</span><strong>To-do app</strong><span>Add a task. Not login, tags, reminders.</span></div>
-<div class="icon-card"><span class="ic">💸</span><strong>Bill splitter</strong><span>Split one bill. Not history or payments.</span></div>
-<div class="icon-card"><span class="ic">🤖</span><strong>Chat app</strong><span>One message, one reply. Not voice or images.</span></div>
-</div>
-
-That's your first build. Everything else is later.
-
-!!! tip "Pros call this an MVP"
-    Minimum Viable Product. Fancy name, simple idea: **the smallest thing that still works.**
-
-    Build that first. Always.
-
-## Make your list
-
-Take today's app and write it as small steps — each one a thing you could *see* on screen.
-
-<div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
-
-Here's what I want to build: [DESCRIBE THE APP IN 2 LINES]
-
-Don't build it yet. First, break this into the smallest possible steps, in the order we should build them. Start with the simplest version that still works.
-
-Keep it short and in plain English.
-</div>
-
-It'll give you a list. **That list is your plan for the next hour.**
-
-## The rule
-
-<p class="beat">One step. Look at it. Next step.</p>
-
-Never move on while something's broken. Never do two steps at once.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">You should now have</div>
+<div class="vc-title">The Big Takeaway</div>
 
-A list of 5–10 small steps, in order, starting with something boring and simple.
+The lesson isn't *"memorize this prompt."*  
+**The lesson is: Give the AI enough context and constraints to make a good decision.**
+</div>
 
-**Boring and simple is correct.** That's what shipping looks like.
+---
+
+## 2. Don't Read 300 Lines Of Code
+
+When the AI creates or edits a file, it might output 200 or 300 lines of code.
+
+Here is the truth: **We are not expecting you to understand or audit every single semicolon.**
+
+Professional developers don't read every line of code their tools generate either. Instead, learn to answer these **5 orientation questions**:
+
+<div class="icon-row" markdown>
+
+<div class="icon-card" markdown>
+:material-briefcase-check:
+
+**1. Responsibility**
+
+What is this piece responsible for?
+</div>
+
+<div class="icon-card" markdown>
+:material-arrow-right-bold-box:
+
+**2. Inputs**
+
+What information does it receive?
+</div>
+
+<div class="icon-card" markdown>
+:material-package-down:
+
+**3. Outputs**
+
+What does it produce?
+</div>
+
+<div class="icon-card" markdown>
+:material-map-marker:
+
+**4. Location**
+
+Where is it used in the app?
+</div>
+
+<div class="icon-card" markdown>
+:material-alert-circle:
+
+**5. Failure**
+
+What happens if this piece fails?
+</div>
+
+</div>
+
+If you can answer those 5 questions, you are 100% in control of your project, even as a beginner.
+
+---
+
+## 3. The Mental Model: Build The Data First
+
+<div class="process-flow" markdown>
+<span class="flow-item">Interface</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item">Logic</span>
+<span class="flow-arrow">:material-arrow-right:</span>
+<span class="flow-item highlight">Data Layer</span>
+</div>
+
+Before we build buttons and screens, we need something for the screen to show. We will create our **Data Layer** in a separate file: `src/data/scenarios.ts`.
+
+Let's give the AI a precise prompt:
+
+<div class="prompt-slab" markdown>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY PROMPT', 2000)"><span class="copy-icon"></span> COPY PROMPT</button>
+
+Following the guidelines in `AGENT.md`, create a new data file at `src/data/scenarios.ts`.
+
+Export a strongly-typed TypeScript array containing 10 realistic university-life scenarios for 'Survive Uni'.
+
+Each scenario object must have:
+- `id`: unique number (1 to 10)
+- `description`: a short, relatable college scenario (e.g. 8AM lecture vs sleep, unexpected quiz, broken laptop)
+- `choices`: an array of 2 choice objects. Each choice must have a `label` and an `impact` object containing integer adjustments for `money`, `time`, and `sanity` (e.g. money: -15, time: +10, sanity: -5).
+
+Include the TypeScript `Scenario` and `Choice` interfaces at the top of the file. Do not touch any other files yet.
+</div>
+
+---
+
+## 4. Inspect The Data (Answer the 5 Questions)
+
+Open `src/data/scenarios.ts` in your IDE.
+
+You should see something like this:
+
+```typescript
+export interface Choice {
+  label: string;
+  impact: {
+    money: number;
+    time: number;
+    sanity: number;
+  };
+}
+
+export interface Scenario {
+  id: number;
+  description: string;
+  choices: Choice[];
+}
+
+export const scenarios: Scenario[] = [
+  {
+    id: 1,
+    description: "Your alarm didn't go off. 8:00 AM lecture starts in 10 minutes.",
+    choices: [
+      { label: "Sprint across campus", impact: { money: 0, time: -10, sanity: -10 } },
+      { label: "Go back to sleep", impact: { money: 0, time: +20, sanity: +15 } }
+    ]
+  },
+  // ... 9 more scenarios
+];
+```
+
+Now ask your 5 questions:
+- **Responsibility:** Holds the game's scenarios and numerical stat changes.
+- **Inputs:** None (it's static data).
+- **Outputs:** An array of 10 scenario objects.
+- **Location:** Will be imported by our main page (`src/app/page.tsx`).
+- **Failure:** If this file is missing or corrupted, the game has no questions to show.
+
+<div class="vibe-check" markdown>
+<div class="vc-title">Data Layer Verified</div>
+
+Does `src/data/scenarios.ts` exist? Does it contain 10 scenarios? Does each choice adjust money, time, and sanity?
+
+If yes, your Data layer is rock solid. Now we give it an Interface.
 </div>
 
 <div class="nav-next" markdown>
-[Now build it →](04-build-it.md){ .md-button .md-button--primary }
+[Build It: Interface & State →](04-build-it.md){ .md-button .md-button--primary }
 </div>

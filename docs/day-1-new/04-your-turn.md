@@ -1,5 +1,5 @@
 ---
-title: "1.4 Your Turn"
+title: "0.4 Your Turn"
 description: "You type it. You watch it build."
 hide:
   - toc
@@ -16,12 +16,12 @@ hide:
 A panel slides in. That's your intern.
 
 !!! tip "Nothing happened?"
-    Click the chat or ✨ icon in the right sidebar.
+    Click the chat or :material-star-four-points: icon in the right sidebar.
 
 ## Type this
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Copy me</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY', 2000)"><span class="copy-icon"></span> COPY</button>
 
 Build a single-page personal profile website in one HTML file.
 

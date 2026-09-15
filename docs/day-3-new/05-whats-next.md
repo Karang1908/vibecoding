@@ -1,142 +1,171 @@
 ---
-title: "3.5 One Last Trick"
-description: "You've been writing skills all along."
+title: "2.5 One Last Trick & The Big Picture"
+description: "Turning project notes into reusable AI skills, the full-stack recap, and your final message."
 hide:
   - toc
 ---
 
-# One last trick
+# One Last Trick: The Big Picture
 
-Remember `AGENTS.md`? The notebook you gave your intern on Day 2?
+Take a breath and look back at what you started with.
 
-Here's what nobody told you at the time.
+Three sessions ago, you had never built a full-stack web application.
 
-<p class="beat">That was a skill. You've been writing them all along.</p>
+Today, you have:
+- A responsive React game built with Next.js and Tailwind CSS.
+- A live PostgreSQL database hosted on Supabase.
+- A global leaderboard tracking scores in real time.
+- A production URL hosted on Vercel that anyone can play on their phone.
+- A GitHub repository with clean commit history and protected secrets.
 
-## Notebook → superpower
+<p class="beat">You didn't just write prompts. You engineered a full-stack system.</p>
+
+---
+
+## 1. The Skill Trick: You've Been Writing Skills All Along
+
+Remember `AGENTS.md`? The instruction notebook you gave your AI intern on Day 1?
+
+Here is what most people don't realize:
+
+> **That was an AI Skill. You have been writing agent skills since the very first hour.**
 
 <div class="versus" markdown>
 <div class="vs-good" markdown>
-#### 📓 AGENTS.md
-
-One note.
-
-For **one** project.
-
-"Here's what we're building."
+#### :material-notebook: `AGENTS.md` (Project Level)
+A single instruction note for **one specific project**.  
+*"Here is what this specific app does, and what packages not to touch."*
 </div>
 <div class="vs-good" markdown>
-#### ⚡ A skill
-
-A reusable note.
-
-For **every** project, forever.
-
-"Here's how I always do this."
+#### :material-lightning-bolt: An AI Skill (Reusable Superpower)
+A reusable instruction guide for **every project you ever touch**.  
+*"Here is how I like my Tailwind colors configured, here is my favorite tech stack, and here is how I want error messages explained."*
 </div>
 </div>
 
-Same idea. Same markdown file. Just saved somewhere the AI can always reach it.
+### Create Your Own Reusable Skill
 
-## What people actually make
-
-<div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🎨</span><strong>My style</strong><span>Colours and layout, every project</span></div>
-<div class="icon-card"><span class="ic">🚀</span><strong>My setup</strong><span>How I start a new app</span></div>
-<div class="icon-card"><span class="ic">🔍</span><strong>My checklist</strong><span>Check before pushing</span></div>
-<div class="icon-card"><span class="ic">📝</span><strong>My explainer</strong><span>Explain code the way I like</span></div>
-</div>
-
-Write it once. Never explain it again.
-
-## Make one now
+You can ask your AI to summarize everything it learned about your workflow into a personal skill:
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">Type this</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> GENERATE SKILL', 2000)"><span class="copy-icon"></span> GENERATE SKILL</button>
 
-Turn everything you've learned about how I like to build things into a reusable skill file I can drop into any future project.
+Turn everything you've learned about how I build software across this workshop into a concise, reusable AI skill file (`MY_SKILL.md`) that I can copy into any future project.
 
-Include my style preferences, my rules, and how I like things explained. Keep it short and in plain English.
+Include:
+- My preferred stack (Next.js, TypeScript, Tailwind CSS, Supabase)
+- My communication rules (explain the 5 orientation questions, propose fixes before applying, don't install packages silently)
+- My security rules (never commit API keys, use .env.local)
+- My debugging loop (BUILD -> TEST -> BREAK -> INVESTIGATE -> FIX -> TEST)
 </div>
 
-Save that file. Drop it into your next project.
+Save that file. Whenever you start a new idea, drop it into your project. Your AI will instantly adapt to how you work on day one.
 
-<p class="beat">Your AI now knows how you work. On day one. Every time.</p>
+---
 
-## What you actually did this week
+## 2. What You Walk Out With Today
 
 <div class="stat-row" markdown>
-<div class="big-stat"><span class="num">3</span><span class="cap">sessions</span></div>
-<div class="big-stat"><span class="num">1</span><span class="cap">live app</span></div>
-<div class="big-stat"><span class="num">0</span><span class="cap">syntax memorised</span></div>
+<div class="big-stat" markdown="span"><span class="num">3</span><span class="cap">sessions</span></div>
+<div class="big-stat" markdown="span"><span class="num">1</span><span class="cap">live production app</span></div>
+<div class="big-stat" markdown="span"><span class="num">0</span><span class="cap">black boxes</span></div>
 </div>
-
-Look at what you're walking out with:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🎨</span><strong>Frontend</strong><span>An app people can use</span></div>
-<div class="icon-card"><span class="ic">🗄️</span><strong>Database</strong><span>Real data, real Postgres</span></div>
-<div class="icon-card"><span class="ic">🌍</span><strong>Deployed</strong><span>Live URL, real internet</span></div>
-<div class="icon-card"><span class="ic">🔐</span><strong>Secure</strong><span>Keys handled properly</span></div>
+
+<div class="icon-card" markdown>
+:material-monitor-dashboard:
+
+**Interface**
+
+Interactive UI with React & Tailwind
 </div>
 
-<p class="beat">That's full-stack. You're a full-stack developer.</p>
+<div class="icon-card" markdown>
+:material-cpu-64-bit:
 
-Nine days ago you'd never made a website.
+**Logic**
 
-## Where to go now
+Game loop & reactive state tracking
+</div>
+
+<div class="icon-card" markdown>
+:material-database:
+
+**Data**
+
+Persistent cloud storage with Supabase
+</div>
+
+<div class="icon-card" markdown>
+:material-earth:
+
+**Cloud Deployment**
+
+Automated Git-to-Vercel pipeline
+</div>
+
+</div>
+
+---
+
+## 3. The Final Message
+
+We want to leave you with this:
+
+<div class="vibe-check" markdown>
+<div class="vc-title">The Philosophy of the Vibecoder</div>
+
+**You don't need to become a professional programmer before using AI.**
+
+**But you also shouldn't become completely dependent on AI.**
+
+Your goal is to understand the shape of the system:
+
+1. **Know what the pieces are.** *(Interface, Logic, Data)*
+2. **Know what each piece is responsible for.** *(UI components, state, database tables)*
+3. **Know what you're asking AI to change.** *(Clear context, goals, and constraints)*
+4. **Know how to test the result.** *(Verify in the browser and cloud tables)*
+5. **Know when to stop and ask questions.** *(The 6-step debugging loop and traffic lights)*
+
+<p class="beat" style="margin-top: 1.5rem; font-size: 1.15rem; font-weight: 700;">AI gives you the ability to build faster.</p>
+
+<p class="beat" style="font-size: 1.15rem; font-weight: 700;">Understanding gives you the ability to stay in control.</p>
+</div>
+
+---
+
+## 4. Where To Go From Here
 
 <div class="step" data-step="1" markdown>
-
-### This week — finish it
-
-Your app is half-done. Finish it. Add the thing you ran out of time for.
-
-Put the live URL on your CV and your LinkedIn. It's real work.
-
+### This Week: Polish & Share Survive Uni
+Don't abandon your project now! Spend 30 minutes adding sound effects, writing 5 more funny scenarios, or customizing the Survival Ranks. Put your live Vercel URL on your LinkedIn and resume.
 </div>
 
 <div class="step" data-step="2" markdown>
-
-### This month — build three more
-
-Speed comes from reps, not reading.
-
-Three small apps beats one perfect one. Reuse your skill file each time.
-
+### This Month: Build Three More Apps
+Skill comes from repetitions, not passive reading. Pick small, fun ideas:
+- A personal habit tracker
+- A study flashcard generator
+- A mock interview quiz
+Build them using your `AGENT.md` guidelines and Supabase.
 </div>
 
 <div class="step" data-step="3" markdown>
-
-### Then — go deeper
-
-Now the theory's worth it, because you've got somewhere to put it:
-
-- **React / Next.js** — how real teams build
-- **Login systems** — real user accounts
-- **RLS** — locking your database per-user
-- **Agents** — AI that runs and fixes its own code
-
-That's in the handbook. Read it when you're curious, not before.
-
+### Go Deeper When You Need It
+When you are ready for advanced concepts like Row Level Security (RLS), AI Subagents, Model Context Protocol (MCP), and Abstract Syntax Trees (ASTs), explore our **Post-Workshop** section. Read it when you're curious, not before.
 </div>
 
-## The honest truth
+---
 
-You didn't learn to code this week.
+## Stay Connected
 
-You learned something that lasts longer: **you can build things now.**
+Built something cool? Pushed a new update? **Show us!**
 
-When you want something to exist, you're no longer someone who wishes it existed.
+Tag **GDG BPDC** and share your live links in the community channel. 
 
-<p class="beat">You're someone who builds it over a weekend.</p>
-
-## Stay in touch
-
-Ship something? **Show us.** Tag GDG BPDC.
-
-Genuinely — we want to see it.
+We can't wait to see what you build next.
 
 <div class="stat-row" markdown>
-<div class="big-stat"><span class="num">🚀</span><span class="cap">now go build</span></div>
+<div class="big-stat" markdown="span"><span class="num">:material-rocket-launch:</span><span class="cap">Now go build.</span></div>
 </div>

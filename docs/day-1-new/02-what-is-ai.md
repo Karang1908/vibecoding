@@ -1,5 +1,5 @@
 ---
-title: "1.2 So What Actually Is AI?"
+title: "0.2 So What Actually Is AI?"
 description: "The fun version. No maths."
 hide:
   - toc
@@ -10,10 +10,10 @@ hide:
 You've used AI five times today already.
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🔓</span><strong>Face unlock</strong><span>AI</span></div>
-<div class="icon-card"><span class="ic">📱</span><strong>That reel it knew you'd like</strong><span>AI</span></div>
-<div class="icon-card"><span class="ic">🗺️</span><strong>Maps dodging traffic</strong><span>AI</span></div>
-<div class="icon-card"><span class="ic">⌨️</span><strong>Keyboard predicting words</strong><span>← this one's the secret</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-lock-open:</span><strong>Face unlock</strong><span>AI</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-cellphone:</span><strong>That reel it knew you'd like</strong><span>AI</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-map:</span><strong>Maps dodging traffic</strong><span>AI</span></div>
+<div class="icon-card" markdown="span"><span class="ic">⌨️</span><strong>Keyboard predicting words</strong><span>← this one's the secret</span></div>
 </div>
 
 <p class="beat">It's that autocomplete. Turned up to a thousand.</p>
@@ -35,16 +35,16 @@ Now scale up. You type *"a webpage with a dark header and three cards"* and it t
 Correct. And that explains everything weird it'll ever do:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">🤥</span><strong>Confidently wrong</strong><span>Guessing what a right answer looks like</span></div>
-<div class="icon-card"><span class="ic">🔍</span><strong>Detail wins</strong><span>Less for it to guess at</span></div>
-<div class="icon-card"><span class="ic">🥺</span><strong>Never argues</strong><span>Helpful replies don't say "bad idea"</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-emoticon-sad:</span><strong>Confidently wrong</strong><span>Guessing what a right answer looks like</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-magnify:</span><strong>Detail wins</strong><span>Less for it to guess at</span></div>
+<div class="icon-card" markdown="span"><span class="ic">:material-emoticon-cry:</span><strong>Never argues</strong><span>Helpful replies don't say "bad idea"</span></div>
 </div>
 
 ## Good at / bad at
 
 <div class="versus" markdown>
 <div class="vs-good" markdown>
-#### ✅ It's brilliant at
+#### :material-check: It's brilliant at
 
 - Writing code fast
 - Making things look decent
@@ -52,7 +52,7 @@ Correct. And that explains everything weird it'll ever do:
 - Fixing what you point at
 </div>
 <div class="vs-bad" markdown>
-#### ❌ It's rubbish at
+#### :material-close: It's rubbish at
 
 - Knowing what *you* want
 - Telling you your idea is bad

@@ -1,130 +1,149 @@
 ---
-title: "2.4 Build It"
-description: "One piece at a time. Watch it appear."
+title: "1.4 Build It"
+description: "Letting AI build while staying in charge, connecting Interface to Logic with React State."
 hide:
   - toc
 ---
 
-# Build it
+# Build It: Interface Meets Logic
 
-You have a notebook. You have a list.
+Your data is ready in `src/data/scenarios.ts`. 
 
-<p class="beat">Now we just... go down the list.</p>
+Now we need an **Interface** so the user can see the scenarios, and **Logic** so the buttons actually do something when clicked.
 
-## The loop
+<p class="beat">We are going to let the AI build the interface, while YOU stay in the driver's seat.</p>
 
-Every single step, all hour, is the same four moves:
+---
+
+## 1. Let AI Build — But Stay In Charge
+
+As the AI starts generating files and writing components, you will see code fly across your screen.
+
+**Do not panic, and do not try to inspect every single line.**
+
+Instead, maintain your role as the project lead. As code is written, keep asking these 5 mental check questions:
 
 <div class="icon-row" markdown>
-<div class="icon-card"><span class="ic">1️⃣</span><strong>Ask</strong><span>One step from your list</span></div>
-<div class="icon-card"><span class="ic">2️⃣</span><strong>Accept</strong><span>Let it write the code</span></div>
-<div class="icon-card"><span class="ic">3️⃣</span><strong>Look</strong><span>Refresh. Does it work?</span></div>
-<div class="icon-card"><span class="ic">4️⃣</span><strong>Next</strong><span>Only if it worked</span></div>
+
+<div class="icon-card" markdown>
+:material-shield-star:
+
+**1. Responsibility**
+
+*"What is this file or component responsible for?"*
 </div>
 
-That's it. That's the whole hour.
+<div class="icon-card" markdown>
+:material-help-circle:
 
-## Start it up
+**2. Purpose**
 
-```bash
-cd ~/Desktop/my-first-app
-```
-
-Right-click `index.html` → **Open with Live Server**
-
-Now your browser updates the second the AI changes anything. Keep it open on half your screen.
-
-<div class="vibe-check" markdown>
-<div class="vc-title">Screen setup</div>
-
-**Left half:** your editor and the chat.
-**Right half:** the browser.
-
-You want to *see* things appear. Don't skip this — it's half the fun.
+*"Why did we create it instead of adding it to an existing file?"*
 </div>
 
-## Step one — the skeleton
+<div class="icon-card" markdown>
+:material-swap-horizontal:
+
+**3. Frontend or Backend?**
+
+*"Is this running in the browser (user's screen) or on a server?"*
+</div>
+
+<div class="icon-card" markdown>
+:material-transit-connection:
+
+**4. Data Flow**
+
+*"What information is moving through here (e.g. stats, clicks)?"*
+</div>
+
+<div class="icon-card" markdown>
+:material-history:
+
+**5. The Diff**
+
+*"What actually changed compared to the previous version?"*
+</div>
+
+</div>
+
+This is how senior architects review code. You don't get lost in curly braces; you maintain the high-level map of the system.
+
+---
+
+## 2. The Magic of React State
+
+In traditional web development, if you changed a number, you had to manually find the HTML element and update it, or reload the entire web page.
+
+In **React and Next.js**, we use **State**. 
+
+> **State is the application's short-term memory.**
+
+When state changes (e.g. Sanity drops from 50 to 40), React instantly re-renders just the stat bar on the screen. Smooth, reactive, and lightning-fast.
+
+For *Survive Uni*, our state will track:
+- `money`: starts at 50
+- `time`: starts at 50
+- `sanity`: starts at 50
+- `currentScenarioIndex`: starts at 0 (first question)
+
+---
+
+## 3. Build The Main Game Component
+
+Let's tell the AI to construct `src/app/page.tsx`:
 
 <div class="prompt-slab" markdown>
-<span class="slab-label">First ask</span>
+<button class="copy-btn" title="Copy to clipboard" onclick="const p = this.closest('.prompt-slab').cloneNode(true); p.querySelector('.copy-btn').remove(); navigator.clipboard.writeText(p.textContent.trim()); this.innerHTML = '<span class=\'copy-icon\'></span> COPIED!'; setTimeout(() => this.innerHTML = '<span class=\'copy-icon\'></span> COPY PROMPT', 2000)"><span class="copy-icon"></span> COPY PROMPT</button>
 
-Build the basic layout for [THE APP] — just the visual structure, no working features yet.
+Following `AGENT.md`, update `src/app/page.tsx` to build the core game interface for 'Survive Uni'.
 
-Follow the style rules in AGENTS.md. Keep it in one HTML file. Make it work on mobile.
+Requirements:
+1. Use the `'use client'` directive at the very top for React client state.
+2. Import `scenarios` from `@/data/scenarios`.
+3. Set up React state (`useState`) to track:
+   - `money` (number, default: 50)
+   - `time` (number, default: 50)
+   - `sanity` (number, default: 50)
+   - `currentIndex` (number, default: 0)
+4. UI Structure:
+   - Header with game title: "Survive Uni".
+   - Top Stat Bars: 3 distinct visual bars for Money, Time, and Sanity showing both numerical values (e.g. 50/100) and colored progress fills.
+   - Current Scenario Card: Displays the description of `scenarios[currentIndex]`.
+   - Choice Buttons: 2 large, tap-friendly buttons displaying choice labels and stat preview badges.
+5. Interaction Logic:
+   - When a choice is clicked, calculate new stats by applying `impact.money`, `impact.time`, `impact.sanity` (clamped between 0 and 100).
+   - Increment `currentIndex` by 1 to advance to the next scenario.
+6. Styling: Modern, clean, dark-mode inspired design using Tailwind CSS.
 </div>
 
-Refresh. There's your app. It doesn't *do* anything yet — that's correct.
+---
 
-## Then make it work
+## 4. Test It Live in Your Browser
 
-Now go down your list. One at a time. Ask in plain English:
+Open your terminal in VS Code (press `++ctrl+tilde++`).
 
-```
-make the button actually add the task to the list
-```
-```
-save the list so it's still there when I refresh
-```
-```
-add a delete button to each item
+Make sure your development server is running:
+
+```bash
+npm run dev
 ```
 
-Refresh after every single one.
-
-!!! tip "The magic words"
-    **`remember it after refresh`** — this makes it save your data in the browser.
-
-    Say it in plain English. It knows what you mean.
-
-??? note "Is your app AI-powered? (skip if not)"
-    If your idea needs actual AI inside it — a chatbot, a summariser, something that generates text — you need a free key.
-
-    **[aistudio.google.com](https://aistudio.google.com/)** → sign in → **Get API key** → copy it.
-
-    Then ask:
-
-    <div class="prompt-slab" markdown>
-    <span class="slab-label">AI apps only</span>
-
-    Connect this app to the free Gemini API.
-
-    Add a settings box where I paste my API key, and save it in the browser — never put the key in the code itself.
-
-    Show a loading indicator while it's thinking, and a friendly error message if something goes wrong.
-    </div>
-
-    🚨 **Never type your key directly into the code.** Bots scan GitHub and steal keys within 90 seconds. We'll do this properly on Day 3.
-
-## When you get stuck
-
-Don't fight it. Just describe what you're seeing:
-
-```
-the button does nothing when I click it
-```
-```
-it looks broken on my phone
-```
-```
-that's not what I meant — I wanted the list on the left
-```
-
-<p class="beat">Talking to it *is* the debugging.</p>
-
-## Keep going
-
-Down the list. One at a time. Refresh, refresh, refresh.
-
-Ahead of everyone? Add something nobody asked for. Make it yours.
+Open **`http://localhost:3000`** in your browser.
 
 <div class="vibe-check" markdown>
-<div class="vc-title">Where you should be</div>
+<div class="vc-title">The First Click</div>
 
-Something on screen that **does a thing** when you click it. Not finished. Not perfect.
-
-Working. That's the bar.
+1. Look at the screen. Can you see your Money, Time, and Sanity bars?
+2. Read the first scenario.
+3. Click one of the choices.
+4. **Notice what happened:** Your stats immediately changed, and Scenario #2 appeared! No page refresh required.
 </div>
 
+You now have a real application with a functioning **Interface** connected to live **Logic** reading from your **Data layer**.
+
+Now... what happens when we reach scenario 10, or what happens when an error shows up? Let's find out.
+
 <div class="nav-next" markdown>
-[It's going to break →](05-when-it-breaks.md){ .md-button .md-button--primary }
+[When It Breaks & The Debugging Loop →](05-when-it-breaks.md){ .md-button .md-button--primary }
 </div>
